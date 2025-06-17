@@ -1,0 +1,42 @@
+<div>
+    <div><h1>Registro de enfermedad</h1></div>
+    <div>
+        <form [formGroup]="form" (submit)="aceptar()">
+            <mat-form-field>
+                <mat-label>ID</mat-label>
+                <input matInput formControlName="codigo" />
+                <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+                    El código es obligatorio para actualizar!!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput formControlName="nombre" />
+                <mat-error *ngIf="form.get('nombre')?.hasError('required')">
+                    El nombre es obligatorio para actualizar!!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Descripción</mat-label>
+                <input matInput formControlName="descripcion" />
+                <mat-error *ngIf="form.get('descripcion')?.hasError('required')">
+                    La descripción es obligatoria para actualizar!!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>TipoEnfermedad</mat-label>
+                <input matInput formControlName="tipoEnfermedad" />
+                <mat-error *ngIf="form.get('tipoEnfermedad')?.hasError('required')">
+                    El tipo de enfermedad es obligatorio para actualizar!!
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Tipo Transmision</mat-label>
+                <input matInput formControlName="tTransmision" />
+                <mat-error *ngIf="form.get('tTransmision')?.hasError('required')">
+                    El tipo de transmision es obligatorio para actualizar!!
+                </mat-error>
+            </mat-form-field>
+        </form>
+    </div>
+</div>
