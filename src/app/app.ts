@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { ZonaComponent } from './components/zona/zona';
+import { RolComponent } from './components/rol/rol';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [ZonaComponent, RolComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'frontBrotesApp';
+  title = 'frontBrotesApp';
 }

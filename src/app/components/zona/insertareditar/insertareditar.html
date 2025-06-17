@@ -1,0 +1,50 @@
+<div>
+  <div><h1>Registro de Zonas</h1></div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field  *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El código es obligatorio para actualizar, brindar un código
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Provincia</mat-label>
+        <input matInput formControlName="provincia" />
+        <mat-error *ngIf="form.get('provincia')?.hasError('required')">
+          El nombre de la provincia es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Distrito</mat-label>
+        <input matInput formControlName="distrito" />
+        <mat-error *ngIf="form.get('distrito')?.hasError('required')">
+          El nombre del distrito es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Latitud</mat-label>
+        <input matInput formControlName="latitud" />
+        <mat-error *ngIf="form.get('latitud')?.hasError('required')">
+          La latitud es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field>
+        <mat-label>Longitud</mat-label>
+        <input matInput formControlName="longitud" />
+        <mat-error *ngIf="form.get('longitud')?.hasError('required')">
+          La longitud es obligatoria!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button matButton="filled">Registrar</button>
+    </form>
+  </div>
+</div>
