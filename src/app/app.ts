@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Contagio } from "./components/contagio/contagio";
+import { TipoTransmision } from "./components/tipo-transmision/tipo-transmision";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Contagio, TipoTransmision],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'frontBrotesApp';
+ title = 'frontBrotesApp';
 }
