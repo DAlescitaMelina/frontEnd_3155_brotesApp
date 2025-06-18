@@ -9,26 +9,32 @@ import { Enfermedad } from '../../../models/enfermedad';
 import { ActivatedRoute, Params,Router } from '@angular/router';
 
 import { EnfermedadService } from '../../../services/enfermedad';
+import { TipoEnfermedad } from '../../../models/tipoEnfermedad';
+import { TipoTransmision } from '../../../models/tipoTransmision';
+import { MatOption, MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-insertareditar',
   imports: [MatInputModule,CommonModule,MatFormFieldModule,
-    MatDatepickerModule,ReactiveFormsModule,MatButtonModule],
+    MatDatepickerModule,ReactiveFormsModule,MatButtonModule, MatOption, MatSelectModule],
   templateUrl: './insertareditar.html',
   styleUrl: './insertareditar.css'
 })
 export class Insertareditar implements OnInit{
   form:FormGroup=new FormGroup({})
   enfermedad:Enfermedad=new Enfermedad()
-
+  tipoEnfermedad: TipoEnfermedad[]=[]
+  tipoTransmision: TipoTransmision[]=[]
   id:number=0
   edicion:boolean=false
+
   constructor(
     private formBuilder:FormBuilder,
     private eS:EnfermedadService,
     private router:Router,
     private route:ActivatedRoute,
   ){}
+
   ngOnInit(): void {
       this.route.params.subscribe((data:Params)=>{
         this.id=data['id']
@@ -42,7 +48,7 @@ export class Insertareditar implements OnInit{
         nombre:['',Validators.required],
         descripcion:['',Validators.required],
         tipoEnfermedad:['',Validators.required],
-        tTransmision:['',Validators.required]
+        tipoTransmision:['',Validators.required]
       })
     }
     aceptar(){
@@ -50,8 +56,8 @@ export class Insertareditar implements OnInit{
       this.enfermedad.idEnfermedad=this.form.value.codigo
       this.enfermedad.nombre=this.form.value.nombre
       this.enfermedad.descripcionEnfermedad=this.form.value.descripcion
-      this.enfermedad.tipoEnfermedad=this.form.value.tipoEnfermedad
-      this.enfermedad.tipoTransmision=this.form.value.tTransmision
+      this.enfermedad.tipoEnfermedad.idTipoE=this.form.value.tipoEnfermedad
+      this.enfermedad.tipoTransmision.idTipoT=this.form.value.tTransmision
       if(this.edicion){
           this.eS.update(this.enfermedad).subscribe(data=>{
             this.eS.list().subscribe(data=>{
@@ -77,8 +83,8 @@ export class Insertareditar implements OnInit{
           codigo:new FormControl(data.idEnfermedad),
           nombre:new FormControl(data.nombre),
           descripcion:new FormControl(data.descripcionEnfermedad),
-          tipoEnfermedad: new FormControl(data.tipoEnfermedad),
-          tTransmision:new FormControl(data.tipoTransmision)
+          tipoEnfermedad: new FormControl(data.tipoEnfermedad.idTipoE, Validators.required),
+          tipoTransmision:new FormControl(data.tipoTransmision.idTipoT, Validators.required)
         })
       })
     }

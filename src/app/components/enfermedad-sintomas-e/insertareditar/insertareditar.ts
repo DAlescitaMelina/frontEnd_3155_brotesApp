@@ -12,11 +12,12 @@ import { sintomasEnfermedad } from '../../../models/sintomasEnfermedad';
 import { Enfermedad } from '../../../models/enfermedad';
 import { SintomasEnfermedadService } from '../../../services/sintomas-enfermedad';
 import { EnfermedadService } from '../../../services/enfermedad';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'app-insertareditar',
   imports: [MatInputModule,CommonModule,MatFormFieldModule,
-    MatDatepickerModule,ReactiveFormsModule,MatButtonModule],
+    MatDatepickerModule,ReactiveFormsModule,MatButtonModule, MatSelectModule],
   templateUrl: './insertareditar.html',
   styleUrl: './insertareditar.css'
 })
@@ -25,9 +26,9 @@ export class Insertareditar implements OnInit{
   enfermedadSintomasE:EnfermedadSintomasE=new EnfermedadSintomasE()
   listasintomasEnfermedad: sintomasEnfermedad[] = [];
   listaenfermedad: Enfermedad[] = [];
-
   id:number=0
   edicion:boolean=false
+
   constructor(
     private formBuilder:FormBuilder,
     private eSe:EnfermedadSintomasEService,
@@ -60,8 +61,8 @@ export class Insertareditar implements OnInit{
     aceptar(){
     if(this.form.valid){
       this.enfermedadSintomasE.idEnfermedadSE=this.form.value.codigo
-      this.enfermedadSintomasE.sintomasEnfermedad = this.form.value.sintomaEnfermedad;
-      this.enfermedadSintomasE.enfermedad = this.form.value.enfermedad;
+      this.enfermedadSintomasE.sintomasEnfermedad.idSintomasE = this.form.value.sintomaEnfermedad;
+      this.enfermedadSintomasE.enfermedad.idEnfermedad = this.form.value.enfermedad;
       if(this.edicion){
           this.eSe.update(this.enfermedadSintomasE).subscribe(data=>{
             this.eSe.list().subscribe(data=>{
@@ -85,8 +86,8 @@ export class Insertareditar implements OnInit{
       this.eSe.listId(this.id).subscribe(data=>{
         this.form=new FormGroup({
           codigo:new FormControl(data.idEnfermedadSE),
-          sintomasEnfermedad: new FormControl(data.sintomasEnfermedad, Validators.required),
-          enfermedad: new FormControl(data.enfermedad, Validators.required)
+          sintomasEnfermedad: new FormControl(data.sintomasEnfermedad.idSintomasE, Validators.required),
+          enfermedad: new FormControl(data.enfermedad.idEnfermedad, Validators.required)
         })
       })
     }

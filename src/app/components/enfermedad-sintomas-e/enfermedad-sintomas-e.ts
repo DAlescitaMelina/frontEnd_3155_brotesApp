@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { ListarenfermedadS } from './listarenfermedad-s/listarenfermedad-s';
+import { ListarenfermedadSComponent } from './listarenfermedad-s/listarenfermedad-s';
 
 @Component({
   selector: 'app-enfermedad-sintomas-e',
-  imports: [RouterOutlet, ListarenfermedadS],
+  imports: [RouterOutlet, ListarenfermedadSComponent],
   templateUrl: './enfermedad-sintomas-e.html',
   styleUrl: './enfermedad-sintomas-e.css'
 })
