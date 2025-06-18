@@ -1,6 +1,7 @@
-<div>
-  <div><h1>Listado de Roles</h1></div>
-  <div>
+<div class="fondo">
+  <button routerLink="/roles/nuevo" class="boto">Registrar nuevo rol</button>
+  <div class="Listado-Rol"><h2>Listado de Roles</h2></div>
+  <div class="container">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      
       <!-- Position Column -->
       <ng-container matColumnDef="c1">

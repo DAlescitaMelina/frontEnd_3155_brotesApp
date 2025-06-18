@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
-import { ZonaComponent } from './components/zona/zona';
-import { RolComponent } from './components/rol/rol';
+import { MenuComponent } from './components/menu/menu';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [ZonaComponent, RolComponent],
+  imports: [MenuComponent, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

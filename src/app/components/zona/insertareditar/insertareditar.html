@@ -1,5 +1,6 @@
-<div>
-  <div><h1>Registro de Zonas</h1></div>
+<div class="form-zona">
+  <div id="titu"><h1>{{edicion ? 'Modificar Zona': 'Registro de Zonas'}}</h1>
+</div>
   <div>
     <form [formGroup]="form" (submit)="aceptar()">
       <mat-form-field  *ngIf="edicion">

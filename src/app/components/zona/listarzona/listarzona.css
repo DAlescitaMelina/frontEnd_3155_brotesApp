@@ -1,0 +1,26 @@
+.Listado-Zona {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-right: 14%;
+  margin-top: 10px;
+}
+.fondo {
+  height: 100%;         
+  padding: 21px;
+}
+
+.boto {
+  padding: 12px 24px;
+  margin-top: 40px;
+  margin-left: 14%;
+  border-radius: 8px;
+  background-color: rgb(10, 19, 113);
+  color: white;
+  border: none;
+}
+.boto:hover{
+  background-color: rgb(88, 94, 163);
+    
+}
