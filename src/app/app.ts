@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
+import { MenuComponent } from './components/menu/menu';
 import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [MenuComponent, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected title = 'frontBrotesApp';
+  title = 'frontBrotesApp';
 }

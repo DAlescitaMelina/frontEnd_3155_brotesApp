@@ -1,0 +1,24 @@
+<div class="form-rol">
+  <div id="titu"><h1>{{edicion ? 'Modificar Rol': 'Registro de Roles'}}</h1>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field  *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El código es obligatorio para actualizar, brindar un código
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Rol</mat-label>
+        <input matInput formControlName="rol" />
+        <mat-error *ngIf="form.get('rol')?.hasError('required')">
+          El tipo de rol es necesario
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button matButton="filled">Registrar</button>
+    </form>
+  </div>
+</div>

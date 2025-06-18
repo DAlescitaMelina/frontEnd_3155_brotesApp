@@ -1,0 +1,13 @@
+.form-rol {
+  display: flex;
+  justify-content: center;   
+  align-items: center;       
+  flex-direction: column;    
+  height: 100%;       
+  padding: 24px;
+  background-color: #C8ECF6;
+}
+#titu {
+  margin-top: -40px;
+  margin-bottom: 34px;
+}
