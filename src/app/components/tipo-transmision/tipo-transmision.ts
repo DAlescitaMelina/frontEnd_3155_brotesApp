@@ -1,15 +1,14 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { ListartipoTransmision } from '../tipoTransmision/listartipo-transmision/listartipo-transmision';
+import {ListartipoTrasnmisionComponent } from './listartipo-trasnmision/listartipo-trasnmision';
+
 
 @Component({
   selector: 'app-tipo-transmision',
-  imports: [RouterOutlet, ListartipoTransmision],
+  imports: [RouterOutlet, ListartipoTrasnmisionComponent],
   templateUrl: './tipo-transmision.html',
   styleUrl: './tipo-transmision.css'
 })
-export class TipoTransmision {
-//inyección de dependencia
-  constructor(public route: ActivatedRoute){}
+export class TipoTransmisionComponent {
+   constructor(public route:ActivatedRoute){}
 }
- 

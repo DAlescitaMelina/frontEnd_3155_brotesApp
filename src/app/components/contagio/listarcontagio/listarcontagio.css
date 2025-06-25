@@ -1,0 +1,50 @@
+.Listado-Contagio {
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  margin-bottom: 16px;
+  margin-right: 14%;
+  margin-top: 10px;
+}
+.fondo {
+  height: 100%;         
+  padding: 21px;
+}
+
+.boton {
+  padding: 12px 24px;
+  margin-top: 40px;
+  margin-left: 14%;
+  border-radius: 8px;
+  background-color:#1971D7;
+  color: white;
+  border: none;
+}
+.boton:hover{
+  background-color: rgb(88, 94, 163);
+    
+}
+
+.header-celeste {
+  background-color: #72D7F3;
+  color: #000;
+  font-weight: bold;
+}
+
+ table {
+  width: 100%;
+  border-collapse: separate;  
+  border-spacing: 0;
+  border: 2px solid #90caf9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+th, td {
+  padding: 12px;
+  text-align: left;
+  border-right: 0.5px solid #888888; /* línea intermedia entre columnas */
+  
+}

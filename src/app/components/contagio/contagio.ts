@@ -1,14 +1,16 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
-import { ListarContagio } from "./listar-contagio/listar-contagio";
+import { Listarcontagio } from "./listarcontagio/listarcontagio";
 
 @Component({
   selector: 'app-contagio',
-  imports: [RouterOutlet, ListarContagio],
+  imports: [
+    RouterOutlet,
+    Listarcontagio
+  ],
   templateUrl: './contagio.html',
   styleUrl: './contagio.css'
 })
-export class Contagio {
-//inyección de dependencia
-  constructor(public route: ActivatedRoute){}
+export class ContagioComponent {
+ constructor(public route:ActivatedRoute){}
 }
