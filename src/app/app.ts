@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
-import { Contagio } from "./components/contagio/contagio";
-import { TipoTransmision } from "./components/tipo-transmision/tipo-transmision";
+import { MenuComponent } from './components/menu/menu';
+import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  imports: [Contagio, TipoTransmision],
+  imports: [MenuComponent, RouterOutlet],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
- title = 'frontBrotesApp';
+  title = 'frontBrotesApp';
 }
