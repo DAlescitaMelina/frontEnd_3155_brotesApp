@@ -28,6 +28,19 @@
    Contagios
   </button>
  </div>
+<div>
+  <button mat-button [matMenuTriggerFor]="menuEnfermedad" class="btn-rojo">
+   <mat-icon>sick</mat-icon>
+   Enfermedad
+  </button>
+ </div>
+ <div>
+  <button mat-button [matMenuTriggerFor]="menuenfermedadSintomaE" class="btn-rojo">
+   <mat-icon>sick</mat-icon>
+   Enfermedad Sintomas
+  </button>
+ </div>
+
 </mat-toolbar>
 
 <mat-menu #menuZona="matMenu">
@@ -45,4 +58,12 @@
 <mat-menu #menuContagio="matMenu">
  <button mat-menu-item routerLink="/contagios">Listar</button>
  <button mat-menu-item routerLink="/contagios/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuEnfermedad="matMenu">
+ <button mat-menu-item routerLink="/enfermedad">Listar</button>
+ <button mat-menu-item routerLink="/enfermedad/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuenfermedadSintomaE="matMenu">
+ <button mat-menu-item routerLink="/enfermedadSintomaE">Listar</button>
+ <button mat-menu-item routerLink="/enfermedadSintomaE/nuevoESE">Registrar</button>
 </mat-menu>

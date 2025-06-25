@@ -14,80 +14,91 @@ import { EnfermedadComponent } from './components/enfermedad/enfermedad';
 import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
 
-
 export const routes: Routes = [
-    {
-        path:'',redirectTo: 'verinicio',pathMatch:'full' //cuando haya un path en blanco que me redirija a otra ruta
-        //de forma automatica a lo que se ponga en redirectTo
-
-    },
-    {
-        path:'verinicio',component:VerpantallaComponent
-    },
-    //zonas
-    {
-        path:'zonas',component:ZonaComponent,
-        children:[
-        {
-            path:'nuevo',component:InsertareditarComponentZona
-        },
-        {
-            path:'ediciones/:id',component:InsertareditarComponentZona
-
-        }
-        ]
-    },
-    //Rol
-    {
-        path:'roles',component:RolComponent,
-        children:[
-        {
-            path:'nuevo',component:InsertareditarComponentRol
-        },
-        {
-            path:'ediciones/:id',component:InsertareditarComponentRol
-
-        }
-        ]
-    },
-    //tipoTransmision
-        {
-        path:'tiposT',component:TipoTransmisionComponent,
-        children:[
-        {
-            path:'nuevo',component:InsertareditarComponentTipoTransmision 
-        },
-        {
-            path:'ediciones/:id',component:InsertareditarComponentTipoTransmision
-
-        }
-        ]
-    },
-    //contagios
-    {
-        path:'contagios',component:ContagioComponent,
-        children:[
-        {
-            path:'nuevo',component:InsertareditarComponentContagio
-        },
-        {
-            path:'ediciones/:id',component:InsertareditarComponentContagio
-
-        }
-          
-        ]
-    },
-   { path:'enfermedad',component:EnfermedadComponent,
-        children:[
-            {path:'nuevo',component:Insertareditar},
-            {path:'ediciones/:id', component:Insertareditar}
-        ]
-     },
-     { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
-        children:[
-            {path:'nuevoESE',component:Insertareditar},
-            {path:'ediciones/:id', component:Insertareditar}
-        ]
-     },
-
+  {
+    path: '',
+    redirectTo: 'verinicio',
+    pathMatch: 'full', //cuando haya un path en blanco que me redirija a otra ruta
+    //de forma automatica a lo que se ponga en redirectTo
+  },
+  {
+    path: 'verinicio',
+    component: VerpantallaComponent,
+  },
+  //zonas
+  {
+    path: 'zonas',
+    component: ZonaComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: InsertareditarComponentZona,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertareditarComponentZona,
+      },
+    ],
+  },
+  //Rol
+  {
+    path: 'roles',
+    component: RolComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: InsertareditarComponentRol,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertareditarComponentRol,
+      },
+    ],
+  },
+  //tipoTransmision
+  {
+    path: 'tiposT',
+    component: TipoTransmisionComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: InsertareditarComponentTipoTransmision,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertareditarComponentTipoTransmision,
+      },
+    ],
+  },
+  //contagios
+  {
+    path: 'contagios',
+    component: ContagioComponent,
+    children: [
+      {
+        path: 'nuevo',
+        component: InsertareditarComponentContagio,
+      },
+      {
+        path: 'ediciones/:id',
+        component: InsertareditarComponentContagio,
+      },
+    ],
+  },
+  {
+    path: 'enfermedad',
+    component: EnfermedadComponent,
+    children: [
+      { path: 'nuevo', component: Insertareditar },
+      { path: 'ediciones/:id', component: Insertareditar },
+    ],
+  },
+  {
+    path: 'enfermedadSintomaE',
+    component: EnfermedadSintomasEComponent,
+    children: [
+      { path: 'nuevoESE', component: Insertareditar },
+      { path: 'ediciones/:id', component: Insertareditar },
+    ],
+  },
 ];
