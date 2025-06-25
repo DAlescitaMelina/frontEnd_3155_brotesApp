@@ -8,6 +8,7 @@ const base_url=environment.base
 @Injectable({
   providedIn: 'root'
 })
+
 export class RolService {
   private url=`${base_url}/roles`
   private listaCambio=new Subject<Rol[]>
@@ -37,5 +38,6 @@ export class RolService {
   update(z:Rol){
     return this.http.put(this.url+"/modifica",z)
   }
+
 
 }

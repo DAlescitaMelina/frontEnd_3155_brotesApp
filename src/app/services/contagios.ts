@@ -12,6 +12,7 @@ export class ContagiosService  {
   private listaCambio = new Subject<Contagios[]>();
   constructor(private http:HttpClient) { }
 
+
     list(){
       return this.http.get<Contagios[]>(this.url +"/lista")
     }

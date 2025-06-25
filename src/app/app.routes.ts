@@ -1,4 +1,5 @@
 import { Routes } from '@angular/router';
+
 import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
 import { ContagioComponent } from './components/contagio/contagio';
@@ -9,6 +10,9 @@ import { InsertareditarComponentRol } from './components/rol/insertareditar/inse
 import { InsertareditarComponentTipoTransmision } from './components/tipo-transmision/insertareditar/insertareditar';
 import { InsertareditarComponentContagio } from './components/contagio/insertareditar/insertareditar';
 import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
+import { EnfermedadComponent } from './components/enfermedad/enfermedad';
+import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
+import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
 
 
 export const routes: Routes = [
@@ -70,6 +74,20 @@ export const routes: Routes = [
             path:'ediciones/:id',component:InsertareditarComponentContagio
 
         }
+          
         ]
-    }
+    },
+   { path:'enfermedad',component:EnfermedadComponent,
+        children:[
+            {path:'nuevo',component:Insertareditar},
+            {path:'ediciones/:id', component:Insertareditar}
+        ]
+     },
+     { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
+        children:[
+            {path:'nuevoESE',component:Insertareditar},
+            {path:'ediciones/:id', component:Insertareditar}
+        ]
+     },
+
 ];

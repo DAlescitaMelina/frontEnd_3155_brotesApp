@@ -3,10 +3,12 @@ import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Subject } from 'rxjs';
 import { TipoTransmision } from '../models/tipoTransmision';
+
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
 })
+
 export class TipoTransmisionService {
   private url=`${base_url}/tiposT`
   private listaCambio=new Subject<TipoTransmision[]>
@@ -39,4 +41,5 @@ export class TipoTransmisionService {
     deleteA(id:number){
       return this.http.delete(`${this.url}/${id}`)
     }
+
 }

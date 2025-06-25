@@ -1,0 +1,34 @@
+<div>
+    <div><h1>Registro de enfermedad sintoma</h1></div>
+    <div>
+        <form [formGroup]="form" (ngSubmit)="aceptar()">
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Código</mat-label>
+    <input matInput formControlName="codigo" placeholder="Código" [readonly]="true">
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Síntoma de Enfermedad</mat-label>
+    <mat-select formControlName="sintomaEnfermedad" required>
+      <mat-option *ngFor="let sintoma of listasintomasEnfermedad" [value]="sintoma">
+        {{ sintoma.nombreSintoma }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="full-width" appearance="fill">
+    <mat-label>Enfermedad</mat-label>
+    <mat-select formControlName="enfermedad" required>
+      <mat-option *ngFor="let enfermedad of listaenfermedad" [value]="enfermedad">
+        {{ enfermedad.nombre }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="actions">
+    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
+  </div>
+</form>
+
+    </div>
+</div>
