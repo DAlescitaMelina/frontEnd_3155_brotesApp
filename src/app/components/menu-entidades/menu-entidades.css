@@ -22,7 +22,7 @@
 .btn-rojo {
  background-color: hwb(191 30% 8%);
  border-radius: 4px;
- margin: 4px;
+ margin: 2px;
  border: none;
 }
 .logo{
@@ -40,22 +40,8 @@
 }
 
 .custom-toolbar button,
-
 .custom-toolbar mat-icon {
-
  color: black;
-
 }
 
-.btn-Inicio {
-  background-color: rgb(0, 0, 0);
-  color: white  !important;
-  border: 1px solid white;
-  border-radius: 8px;
-  padding: 8px 16px;
-  transition: background-color 0.3s ease;
-}
 
-.btn-Inicio:hover {
-  background-color: #00279b;
-}

@@ -13,6 +13,10 @@ import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/v
 import { EnfermedadComponent } from './components/enfermedad/enfermedad';
 import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
+import { VerpantallaLogin } from './components/pantalla-login/verpantalla-login/verpantalla-login';
+import { PantallaLoginComponent } from './components/pantalla-login/pantalla-login';
+import { PantallaEntidadesComponent } from './components/pantalla-entidades/pantalla-entidades';
+import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 
 
 export const routes: Routes = [
@@ -23,6 +27,26 @@ export const routes: Routes = [
     },
     {
         path:'verinicio',component:VerpantallaComponent
+    },
+    
+    {
+        path:'pantalla-login',component:PantallaLoginComponent,
+          children:[
+        {
+            path:'verpantalla-login',component:VerpantallaLogin
+        },
+       
+        ]
+    },
+    
+    {
+        path:'pantalla-entidades',component:PantallaEntidadesComponent,
+          children:[
+        {
+            path:'verpantalla-entidades',component:VerpantallaEntidades
+        },
+       
+        ]
     },
     //zonas
     {
@@ -77,12 +101,14 @@ export const routes: Routes = [
           
         ]
     },
+    //enfermedad
    { path:'enfermedad',component:EnfermedadComponent,
         children:[
             {path:'nuevo',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
         ]
      },
+     //enfermedadSintoma
      { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
         children:[
             {path:'nuevoESE',component:Insertareditar},

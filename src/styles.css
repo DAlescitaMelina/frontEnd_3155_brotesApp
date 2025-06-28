@@ -6,3 +6,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 .fondo{
     background-color: #C8ECF6;
 }
+
+html {
+  scroll-behavior: smooth;
+}

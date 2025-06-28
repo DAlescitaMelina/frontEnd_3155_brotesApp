@@ -18,6 +18,11 @@
             "assets": [
               {
                 "glob": "**/*",
+                "input": "src/assets/imgs", 
+                "output": "assets/imgs"
+              },
+              {
+                "glob": "**/*",
                 "input": "public"
               }
             ],
