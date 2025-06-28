@@ -43,5 +43,4 @@ export class ZonaService {
   deleteA(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
-
 }

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from './components/menu/menu';
+
 import { Router, RouterOutlet,NavigationEnd } from '@angular/router';
 import { MenuEntidades } from "./components/menu-entidades/menu-entidades";
 import { filter } from 'rxjs/operators'; 
 import { CommonModule } from '@angular/common';
+
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,6 +15,7 @@ import { CommonModule } from '@angular/common';
 })
 export class App {
   title = 'frontBrotesApp';
+  
    currentUrl: string = '';
 
   constructor(private router: Router) {

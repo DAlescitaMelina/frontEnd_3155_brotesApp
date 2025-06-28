@@ -1,4 +1,10 @@
 import { Routes } from '@angular/router';
+import { ZonaComponent } from './components/zona/zona';
+import { RolComponent } from './components/rol/rol';
+import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
+import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
+import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
+
 
 import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
@@ -18,6 +24,7 @@ import { PantallaLoginComponent } from './components/pantalla-login/pantalla-log
 import { PantallaEntidadesComponent } from './components/pantalla-entidades/pantalla-entidades';
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 
+
 export const routes: Routes = [
     {
         path:'',redirectTo: 'verinicio',pathMatch:'full' //cuando haya un path en blanco que me redirija a otra ruta
@@ -26,8 +33,7 @@ export const routes: Routes = [
     },
     {
         path:'verinicio',component:VerpantallaComponent
-    },
-    
+    },    
     {
         path:'pantalla-login',component:PantallaLoginComponent,
           children:[
@@ -47,7 +53,6 @@ export const routes: Routes = [
        
         ]
     },
-    //zonas
     {
         path:'zonas',component:ZonaComponent,
         children:[
@@ -60,7 +65,6 @@ export const routes: Routes = [
         }
         ]
     },
-    //Rol
     {
         path:'roles',component:RolComponent,
         children:[
