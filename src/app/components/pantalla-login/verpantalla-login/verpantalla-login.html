@@ -1,0 +1,32 @@
+<!-- Botón superior de Iniciar Sesión -->
+<button mat-button class="btn-Inicio" routerLink="/pantalla-entidades/verpantalla-entidades">
+  Iniciar Sesión
+</button>
+
+<div class="form-login-container">   
+  <div class="form-image">
+    <img src="logo-icon.png" alt="Imagen de registro" />
+  </div>
+  <!-- Formulario -->
+  <div class="form-login">
+    <h1 id="titulo">Registro de usuario</h1>
+
+    <form [formGroup]="form" (ngSubmit)="registrarUsuario()">
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre de usuario</mat-label>
+        <input matInput formControlName="usuario" />
+      </mat-form-field>
+ 
+      <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Contraseña</mat-label>
+        <input matInput formControlName="contrasena" type="password" />
+      </mat-form-field>
+
+      <button mat-button type="submit" class="btn-registrarse">Registrarse</button>
+
+      <div class="register-link">
+        ¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión aquí</a>
+      </div>
+    </form>
+  </div>
+</div>

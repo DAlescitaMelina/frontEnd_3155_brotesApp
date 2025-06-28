@@ -13,92 +13,105 @@ import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/v
 import { EnfermedadComponent } from './components/enfermedad/enfermedad';
 import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
+import { VerpantallaLogin } from './components/pantalla-login/verpantalla-login/verpantalla-login';
+import { PantallaLoginComponent } from './components/pantalla-login/pantalla-login';
+import { PantallaEntidadesComponent } from './components/pantalla-entidades/pantalla-entidades';
+import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'verinicio',
-    pathMatch: 'full', //cuando haya un path en blanco que me redirija a otra ruta
-    //de forma automatica a lo que se ponga en redirectTo
-  },
-  {
-    path: 'verinicio',
-    component: VerpantallaComponent,
-  },
-  //zonas
-  {
-    path: 'zonas',
-    component: ZonaComponent,
-    children: [
-      {
-        path: 'nuevo',
-        component: InsertareditarComponentZona,
-      },
-      {
-        path: 'ediciones/:id',
-        component: InsertareditarComponentZona,
-      },
-    ],
-  },
-  //Rol
-  {
-    path: 'roles',
-    component: RolComponent,
-    children: [
-      {
-        path: 'nuevo',
-        component: InsertareditarComponentRol,
-      },
-      {
-        path: 'ediciones/:id',
-        component: InsertareditarComponentRol,
-      },
-    ],
-  },
-  //tipoTransmision
-  {
-    path: 'tiposT',
-    component: TipoTransmisionComponent,
-    children: [
-      {
-        path: 'nuevo',
-        component: InsertareditarComponentTipoTransmision,
-      },
-      {
-        path: 'ediciones/:id',
-        component: InsertareditarComponentTipoTransmision,
-      },
-    ],
-  },
-  //contagios
-  {
-    path: 'contagios',
-    component: ContagioComponent,
-    children: [
-      {
-        path: 'nuevo',
-        component: InsertareditarComponentContagio,
-      },
-      {
-        path: 'ediciones/:id',
-        component: InsertareditarComponentContagio,
-      },
-    ],
-  },
-  {
-    path: 'enfermedad',
-    component: EnfermedadComponent,
-    children: [
-      { path: 'nuevo', component: Insertareditar },
-      { path: 'ediciones/:id', component: Insertareditar },
-    ],
-  },
-  {
-    path: 'enfermedadSintomaE',
-    component: EnfermedadSintomasEComponent,
-    children: [
-      { path: 'nuevoESE', component: Insertareditar },
-      { path: 'ediciones/:id', component: Insertareditar },
-    ],
-  },
+    {
+        path:'',redirectTo: 'verinicio',pathMatch:'full' //cuando haya un path en blanco que me redirija a otra ruta
+        //de forma automatica a lo que se ponga en redirectTo
+
+    },
+    {
+        path:'verinicio',component:VerpantallaComponent
+    },
+    
+    {
+        path:'pantalla-login',component:PantallaLoginComponent,
+          children:[
+        {
+            path:'verpantalla-login',component:VerpantallaLogin
+        },
+       
+        ]
+    },
+    
+    {
+        path:'pantalla-entidades',component:PantallaEntidadesComponent,
+          children:[
+        {
+            path:'verpantalla-entidades',component:VerpantallaEntidades
+        },
+       
+        ]
+    },
+    //zonas
+    {
+        path:'zonas',component:ZonaComponent,
+        children:[
+        {
+            path:'nuevo',component:InsertareditarComponentZona
+        },
+        {
+            path:'ediciones/:id',component:InsertareditarComponentZona
+
+        }
+        ]
+    },
+    //Rol
+    {
+        path:'roles',component:RolComponent,
+        children:[
+        {
+            path:'nuevo',component:InsertareditarComponentRol
+        },
+        {
+            path:'ediciones/:id',component:InsertareditarComponentRol
+
+        }
+        ]
+    },
+    //tipoTransmision
+        {
+        path:'tiposT',component:TipoTransmisionComponent,
+        children:[
+        {
+            path:'nuevo',component:InsertareditarComponentTipoTransmision 
+        },
+        {
+            path:'ediciones/:id',component:InsertareditarComponentTipoTransmision
+
+        }
+        ]
+    },
+    //contagios
+    {
+        path:'contagios',component:ContagioComponent,
+        children:[
+        {
+            path:'nuevo',component:InsertareditarComponentContagio
+        },
+        {
+            path:'ediciones/:id',component:InsertareditarComponentContagio
+
+        }
+          
+        ]
+    },
+    //enfermedad
+   { path:'enfermedad',component:EnfermedadComponent,
+        children:[
+            {path:'nuevo',component:Insertareditar},
+            {path:'ediciones/:id', component:Insertareditar}
+        ]
+     },
+     //enfermedadSintoma
+     { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
+        children:[
+            {path:'nuevoESE',component:Insertareditar},
+            {path:'ediciones/:id', component:Insertareditar}
+        ]
+     },
 ];
