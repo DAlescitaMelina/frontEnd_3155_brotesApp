@@ -1,0 +1,74 @@
+.form-login-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 20px;
+  min-height: 100vh;
+  background-color: #C2EEFA;
+  gap: 10px; /* sin espacio entre bloques */
+}
+
+.form-login,
+.form-image {
+  width: 700px;
+  height: 700px; /* altura fija para ambos */
+  box-sizing: border-box;
+  box-shadow: 9px 4px 20px rgba(0, 0, 0, 0.4);
+  border-radius: 12px;
+}
+
+.form-login {
+  background-color: #ffffff;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+    
+}
+
+.form-image {
+  background-color: #ffffff;
+  overflow: hidden;
+ 
+}
+.form-image img {
+  max-width: 90%;     /* puedes ajustar este valor según tu criterio */
+  max-height: 90%;    /* para que no desborde */
+  object-fit: contain; /* mantiene la proporción sin recortar */
+  display: block;
+  margin: auto;       /* centra la imagen */
+  border-radius: 12px; /* opcional */
+}
+
+
+.form-login h1#titulo {
+  margin-top: 0;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.full-width {
+  width: 100%;
+}
+
+.btn-registrarse {
+  background-color: #1971D7;
+  color: white !important;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  width: 100%;
+  transition: background-color 0.3s ease;
+}
+
+.btn-registrarse:hover {
+  background-color: #817dce;
+}
+
+.register-link {
+  text-align: center;
+  margin-top: 1rem;
+}

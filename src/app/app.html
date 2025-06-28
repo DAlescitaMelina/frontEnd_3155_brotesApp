@@ -1,2 +1,4 @@
-<app-menu></app-menu>
+<app-menu *ngIf="mostrarMenuNormal()"></app-menu>
+<app-menu-entidades *ngIf="mostrarMenuEntidades()"></app-menu-entidades>
 <router-outlet></router-outlet>
+

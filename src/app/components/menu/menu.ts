@@ -7,7 +7,13 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-menu',
-  imports: [MatToolbarModule,MatIconModule,MatButtonModule,MatMenuModule,RouterLink],
+  imports: [
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatMenuModule,
+    RouterLink
+  ],
   templateUrl: './menu.html',
   styleUrl: './menu.css'
 })

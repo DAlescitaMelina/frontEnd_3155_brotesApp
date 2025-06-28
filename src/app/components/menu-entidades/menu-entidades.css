@@ -1,0 +1,47 @@
+.custom-toolbar {
+ display: flex;
+ background-color: hwb(191 30% 8%);
+ justify-content: space-between;
+ align-items: center;
+}
+.spacer{
+    flex: 1 1;
+}
+
+.logo-img {
+  height: 100%;
+  max-height: 60px;
+  max-width: 100px;    
+  width: auto;
+  background-color: white;
+  padding: 1px;     
+  object-fit: contain;
+}
+
+
+.btn-rojo {
+ background-color: hwb(191 30% 8%);
+ border-radius: 4px;
+ margin: 2px;
+ border: none;
+}
+.logo{
+ background-color: hwb(191 30% 8%);
+ border-radius: 4px;
+ margin: 4px;
+ border: none;
+}
+.logo:hover{
+    background-color: hwb(191 29% 13%);
+    border-style:hidden;
+}
+.btn-rojo mat-icon {
+ color: black;
+}
+
+.custom-toolbar button,
+.custom-toolbar mat-icon {
+ color: black;
+}
+
+

@@ -11,26 +11,34 @@ export class ContagiosService  {
   private url=`${base_url}/contagios`
   private listaCambio = new Subject<Contagios[]>();
   constructor(private http:HttpClient) { }
-  list() {
-    return this.http.get<Contagios[]>(this.url);
-  }
-  insert(se: Contagios) {
-    return this.http.post(this.url, se);
-  }
-  listId(id: number) {
-    return this.http.get<Contagios>(`${this.url}/${id}`);
-  }
-  getList() {
-    return this.listaCambio.asObservable();
-  }
-  setList(listaNueva:Contagios[]) {
-    this.listaCambio.next(listaNueva);
-  }
-  update(s:Contagios){
-    return this.http.put(this.url,s);
-  }
-  delete(id: number) {
-    return this.http.delete(`${this.url}/${id}`);
-  }
+
+
+    list(){
+      return this.http.get<Contagios[]>(this.url +"/lista")
+    }
+  
+    insert(c:Contagios){
+      return this.http.post(this.url+"/inserta",c)
+    }
+  
+    setList(listaNueva:Contagios[]){
+      this.listaCambio.next(listaNueva)
+    }
+  
+    getList(){
+      return this.listaCambio.asObservable()
+    }
+  
+    listId(id:number){
+      return this.http.get<Contagios>(`${this.url}/${id}`)
+    }
+  
+    update(c:Contagios){
+      return this.http.put(this.url+"/modifica",c)
+    }
+  
+    deleteA(id:number){
+      return this.http.delete(`${this.url}/${id}`)
+    }
 
 }
