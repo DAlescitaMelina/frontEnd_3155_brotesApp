@@ -1,0 +1,33 @@
+<div class="form-login-container">   
+  <div class="form-image">
+    <img src="assets/imgs/map-geo.jpg" alt="Imagen de registro" />
+    <div class="image-overlay-text">
+      Localiza brotes al instante según tu geolocalización
+    </div>
+  </div>
+  <!-- Formulario -->
+  <div class="form-login">
+    <h1 id="titulo">Iniciar Sesión</h1>
+
+    <form [formGroup]="form" (ngSubmit)="validarUsuario()">
+    <mat-form-field appearance="outline" class="full-width">
+        <mat-label>Nombre de usuario</mat-label>
+        <input matInput formControlName="usuario" />
+      </mat-form-field>
+ 
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasena">
+      <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
+
+      <button mat-button type="submit" class="btn-registrarse">Iniciar Sesión</button>
+
+      <div class="register-link">
+        ¿Aun no tienes una cuenta? <a routerLink="/usuarios/nuevo">Registrate aquí</a>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,201 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #333;
+}
+
+header {
+
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), 
+              url('/assets/imgs/doctores-main.png') no-repeat center;
+  background-size: cover;
+  color: #0f6b7e;
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
+
+}
+
+h1{
+    margin-top: 20px;
+}
+
+h1, p {
+    margin: 10px 20px;
+    padding: 10px 20px;
+} 
+
+header p  {
+    font-size: 1.2em;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+}
+
+header h1  {
+    font-size: 4em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+}
+
+p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+
+.about-project p {
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+
+.about-project, .mission-vision, .testimonial, .contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.about-project h2, .testimonial h2, .contact h2 {
+    color: #0f6b7e;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+
+.mission-vision {
+    display: flex;
+    justify-content: space-around;
+    background-color: #fff;
+    padding: 40px 20px;
+    
+
+}
+
+.mission {
+    flex: 1;
+    margin: 0 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+
+}
+
+.vision {
+    flex: 1;
+    margin: 0 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #fafafa;
+    
+}
+
+.mission-vision p{
+    text-align: justify;
+    
+}
+
+.mission-vision img {
+    width: 20%;
+    float: left;
+    padding: 20px;
+}
+
+
+.mission-vision h3 {
+    color: #0f6b7e;
+    margin-top: 0;
+}
+
+.carousel {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+}
+
+.carousel-inner {
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+    transition: transform 0.5s ease;
+    display: none;
+    text-align: center;
+}
+
+.carousel-item.active {
+    display: block;
+}
+
+.carousel-item img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+    margin-bottom: 20px;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 2em;
+    color: #333;
+    cursor: pointer;
+    user-select: none;
+}
+
+.carousel-control.prev {
+    left: 10px;
+}
+
+.carousel-control.next {
+    right: 10px;
+}
+
+.contact p {
+    margin: 20px 0;
+    font-size: 1.2em;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+}
+
+button {
+    background-color: #e91e63;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #d81b60;
+}
+
+.testimonial{
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.testimonial p {
+
+    text-align: justify;
+
+
+}
+
+footer{
+    background-color: #6a6a6a;
+    color: #fff;
+    padding: 20px;
+    margin-top: 50px;
+    text-align: center;
+}

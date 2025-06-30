@@ -1,0 +1,53 @@
+.custom-toolbar {
+ display: flex;
+ background-color: hwb(191 30% 8%);
+ justify-content: space-between;
+ align-items: center;
+}
+.spacer{
+    flex: 1 1
+}
+
+.logo-img {
+  height: 100%;
+  max-height: 60px;
+  max-width: 100px;    
+  width: auto;
+  background-color: white;
+  padding: 1px;     
+  object-fit: contain;
+}
+
+.logo{
+ background-color: hwb(191 30% 8%);
+ border-radius: 4px;
+ margin: 4px;
+ border: none;
+}
+.logo:hover{
+    background-color: hwb(191 29% 13%);
+    border-style:hidden;
+}
+.btn-rojo {
+  background-color:  hwb(191 30% 8%);
+  border-radius: 4px;
+  margin: 4px;
+  border: none;
+  padding: 2px 6px;     /* Reduce el espacio interno del botón */
+  font-size: 12px;      /* Tamaño del texto en el botón */
+  height: 24px;         /* Establece una altura menor */
+  min-width: 24px;      /* Establece un ancho mínimo más pequeño */
+}
+
+.btn-rojo:hover{
+    background-color: hwb(191 29% 13%);
+    border-style:hidden;
+}
+.custom-toolbar button,
+.custom-toolbar a,
+.custom-toolbar mat-icon {
+ color: black; 
+ 
+}
+
+

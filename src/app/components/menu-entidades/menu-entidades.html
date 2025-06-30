@@ -1,0 +1,126 @@
+<mat-toolbar class="custom-toolbar">
+    <button routerLink="/verinicio" class="logo">
+   <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
+   </button>
+
+    <span class="spacer"></span>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo">
+   <mat-icon>person</mat-icon>
+   Usuario
+  </button>
+ </div>
+<div>
+  <button mat-button [matMenuTriggerFor]="menuRol" class="btn-rojo">
+   <mat-icon>business</mat-icon>
+   Roles
+  </button>
+ </div>
+ <div>
+  <button mat-button [matMenuTriggerFor]="menuZona" class="btn-rojo">
+   <mat-icon>business</mat-icon>
+   Zonas
+  </button>
+ </div>
+ <div>
+  <button mat-button [matMenuTriggerFor]="menuTiposTransmision" class="btn-rojo">
+   <mat-icon>coronavirus</mat-icon>
+   Tipos de transmisión
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuTiposEnfermedad" class="btn-rojo">
+   <mat-icon>business</mat-icon>
+   Tipos de enfermedad
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuSintomasEnfermedad" class="btn-rojo">
+   <mat-icon>business</mat-icon>
+   Sintomas de Enfermedades
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuContagio" class="btn-rojo">
+   <mat-icon>sick</mat-icon>
+   Contagios
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuEnfermedades" class="btn-rojo">
+   <mat-icon>business</mat-icon>
+   Enfermedades
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo">
+   <mat-icon>business</mat-icon>
+   Enfermedad-Sintoma
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuBrotes" class="btn-rojo">
+   <mat-icon>track_changes</mat-icon>
+   Brotes
+  </button>
+ </div>
+   <div>
+  <button mat-button [matMenuTriggerFor]="menuPrevenciones" class="btn-rojo">
+   <mat-icon>warning</mat-icon>
+   Prevenciones
+  </button>
+ </div>
+  <div>
+  <button mat-button [matMenuTriggerFor]="menuNotificaciones" class="btn-rojo">
+   <mat-icon>flag</mat-icon>
+   Notificaciones
+  </button>
+ </div>
+</mat-toolbar>
+
+<mat-menu #menuZona="matMenu">
+ <button mat-menu-item routerLink="/zonas">Listar</button>
+ <button mat-menu-item routerLink="/zonas/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuRol="matMenu">
+ <button mat-menu-item routerLink="/roles">Listar</button>
+ <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuTiposTransmision="matMenu">
+ <button mat-menu-item routerLink="/tiposT">Listar</button>
+ <button mat-menu-item routerLink="/tiposT/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuContagio="matMenu">
+ <button mat-menu-item routerLink="/contagios">Listar</button>
+ <button mat-menu-item routerLink="/contagios/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuEnfermedades="matMenu">
+ <button mat-menu-item routerLink="/enfermedad">Listar</button>
+ <button mat-menu-item routerLink="/enfermedad/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuEnfermedadSintoma="matMenu">
+<button mat-menu-item routerLink="/enfermedadSintomaE">Listar</button>
+<button mat-menu-item routerLink="/enfermedadSintomaE/nuevoESE">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuUsuario="matMenu">
+<button mat-menu-item routerLink="/usuarios">Listar</button>
+<button mat-menu-item routerLink="/usuarios/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuTiposEnfermedad="matMenu">
+</mat-menu>
+
+<mat-menu #menuSintomasEnfermedad="matMenu">
+</mat-menu>
+
+<mat-menu #menuBrotes="matMenu">
+</mat-menu>
+
+<mat-menu #menuPrevenciones="matMenu">
+</mat-menu>
+
+<mat-menu #menuNotificaciones="matMenu">
+</mat-menu>

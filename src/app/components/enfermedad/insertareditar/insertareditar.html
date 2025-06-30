@@ -1,0 +1,52 @@
+<div>
+    <div><h1>Registro de enfermedad</h1></div>
+    <div>
+        <form [formGroup]="form" (ngSubmit)="aceptar()">
+
+  <mat-form-field appearance="fill">
+    <mat-label>ID</mat-label>
+    <input matInput placeholder="Código" formControlName="codigo">
+    <mat-error *ngIf="edicion && form.get('codigo')?.invalid">El código es obligatorio para actualizar, brindar un código</mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Nombre</mat-label>
+    <input matInput placeholder="Nombre" formControlName="nombre">
+    <mat-error *ngIf="form.get('nombre')?.touched && form.get('nombre')?.invalid">El nombre de la enfermedad es obligatorio</mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Descripción</mat-label>
+    <textarea matInput placeholder="Descripción" formControlName="descripcion"></textarea>
+    <mat-error *ngIf="form.get('descripcion')?.touched && form.get('descripcion')?.invalid">La descripción es obligatoria</mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo de Enfermedad</mat-label>
+    <mat-select formControlName="tipoEnfermedad">
+      <mat-option *ngFor="let tipo of tipoEnfermedad" [value]="tipo.idTipoE">
+        {{ tipo.nombreTipoE }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('tipoEnfermedad')?.touched && form.get('tipoEnfermedad')?.invalid">Seleccione un tipo de enfermedad</mat-error>
+  </mat-form-field>
+  <br>
+
+  <mat-form-field appearance="fill">
+    <mat-label>Tipo de Transmisión</mat-label>
+    <mat-select formControlName="tipoTransmision">
+      <mat-option *ngFor="let trans of tipoTransmision" [value]="trans.idTipoT">
+        {{ trans.transmision }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('tipoTransmision')?.touched && form.get('tipoTransmision')?.invalid">Seleccione un tipo de transmisión</mat-error>
+  </mat-form-field>
+  <br>
+
+  <button mat-raised-button color="primary" type="submit">Registrar</button>
+        </form>
+    </div>
+</div>

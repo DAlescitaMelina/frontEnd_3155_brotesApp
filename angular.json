@@ -18,10 +18,16 @@
             "assets": [
               {
                 "glob": "**/*",
+                "input": "src/assets/imgs", 
+                "output": "assets/imgs"
+              },
+              {
+                "glob": "**/*",
                 "input": "public"
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ],
             "server": "src/main.server.ts",
@@ -80,6 +86,7 @@
               }
             ],
             "styles": [
+              "@angular/material/prebuilt-themes/azure-blue.css",
               "src/styles.css"
             ]
           }
