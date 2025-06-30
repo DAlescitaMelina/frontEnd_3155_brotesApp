@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { ListarTipoEnfermedadComponent } from "../listar-tipo-enfermedad/listar-tipo-enfermedad.component";
+import { ListarTipoEnfermedadComponent } from "./listar-tipo-enfermedad/listar-tipo-enfermedad.component";
 import { ActivatedRoute, RouterOutlet } from '@angular/router';
 
 @Component({
