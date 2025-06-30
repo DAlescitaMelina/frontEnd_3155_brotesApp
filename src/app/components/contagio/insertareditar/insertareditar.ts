@@ -11,12 +11,12 @@ import { MatSelectModule } from '@angular/material/select';
 import { provideNativeDateAdapter } from '@angular/material/core';
 import { Contagios } from '../../../models/contagios';
 import { Zona } from '../../../models/zona';
-import { Usuario } from '../../../models/usuario';
 import { Enfermedad } from '../../../models/enfermedad';
 import { ContagiosService } from '../../../services/contagios';
 import { ZonaService } from '../../../services/zona';
 import { UsuarioService } from '../../../services/usuario';
 import { EnfermedadService } from '../../../services/enfermedad';
+import { Usuario } from '../../../models/usuario';
 
 @Component({
   selector: 'app-insertareditar',

@@ -1,31 +1,32 @@
-<!-- Botón superior de Iniciar Sesión -->
-<button mat-button class="btn-Inicio" routerLink="/pantalla-entidades/verpantalla-entidades">
-  Iniciar Sesión
-</button>
-
 <div class="form-login-container">   
   <div class="form-image">
-    <img src="logo-icon.png" alt="Imagen de registro" />
+    <img src="assets/imgs/map-geo.jpg" alt="Imagen de registro" />
+    <div class="image-overlay-text">
+      Localiza brotes al instante según tu geolocalización
+    </div>
   </div>
   <!-- Formulario -->
   <div class="form-login">
-    <h1 id="titulo">Registro de usuario</h1>
+    <h1 id="titulo">Iniciar Sesión</h1>
 
-    <form [formGroup]="form" (ngSubmit)="registrarUsuario()">
-      <mat-form-field appearance="outline" class="full-width">
+    <form [formGroup]="form" (ngSubmit)="validarUsuario()">
+    <mat-form-field appearance="outline" class="full-width">
         <mat-label>Nombre de usuario</mat-label>
         <input matInput formControlName="usuario" />
       </mat-form-field>
  
-      <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Contraseña</mat-label>
-        <input matInput formControlName="contrasena" type="password" />
-      </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="contrasena">
+      <button mat-icon-button matSuffix (click)="togglePasswordVisibility()" type="button">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+    </mat-form-field>
 
-      <button mat-button type="submit" class="btn-registrarse">Registrarse</button>
+      <button mat-button type="submit" class="btn-registrarse">Iniciar Sesión</button>
 
       <div class="register-link">
-        ¿Ya tienes una cuenta? <a routerLink="/login">Inicia sesión aquí</a>
+        ¿Aun no tienes una cuenta? <a routerLink="/usuarios/nuevo">Registrate aquí</a>
       </div>
     </form>
   </div>

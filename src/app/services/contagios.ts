@@ -10,8 +10,8 @@ const base_url=environment.base
 export class ContagiosService  {
   private url=`${base_url}/contagios`
   private listaCambio = new Subject<Contagios[]>();
-  constructor(private http:HttpClient) { }
 
+  constructor(private http:HttpClient) { }
 
     list(){
       return this.http.get<Contagios[]>(this.url +"/lista")

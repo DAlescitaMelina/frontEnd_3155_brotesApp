@@ -3,7 +3,7 @@
   justify-content: center;
   align-items: flex-start;
   flex-wrap: wrap;
-  padding: 20px;
+  padding: 40px;
   min-height: 100vh;
   background-color: #C2EEFA;
   gap: 10px; /* sin espacio entre bloques */
@@ -28,17 +28,31 @@
 }
 
 .form-image {
+   position: relative;
   background-color: #ffffff;
   overflow: hidden;
  
 }
 .form-image img {
-  max-width: 90%;     /* puedes ajustar este valor según tu criterio */
-  max-height: 90%;    /* para que no desborde */
-  object-fit: contain; /* mantiene la proporción sin recortar */
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
   display: block;
-  margin: auto;       /* centra la imagen */
-  border-radius: 12px; /* opcional */
+}
+
+.image-overlay-text {
+  position: absolute;
+  bottom: 20px;
+  left: 10px;
+  right: 10px;
+  color: rgb(0, 0, 0);
+   background-color: #C2EEFA;
+  padding: 10px 15px;
+  font-size: 2rem;
+  border-radius: 8px;
+  text-align: center;
+  font-style: italic;
+   
 }
 
 

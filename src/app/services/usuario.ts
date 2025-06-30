@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Usuario } from '../models/usuario';
 import { Subject } from 'rxjs';
+import { UsuarioRegistro } from '../models/usuario-registro';
+import { Usuario } from '../models/usuario';
+import { UsuarioModi } from '../models/usuario-modi';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
@@ -12,15 +14,21 @@ export class UsuarioService  {
   private listaCambio = new Subject<Usuario[]>();
 
   constructor(private http:HttpClient) { }
-  list() {
-      return this.http.get<Usuario[]>(this.url);
+
+    insert(u:UsuarioRegistro){
+      return this.http.post(this.url+"/registro-usuarios",u)
+    }
+
+    list() {
+      return this.http.get<Usuario[]>(this.url +"/lista")
     }
     listId(id: number) {
       return this.http.get<Usuario>(`${this.url}/${id}`);
     }
-    update(u:Usuario){
-      return this.http.put(this.url,u);
+    update(u:UsuarioModi){
+      return this.http.put(this.url+"/modifica",u);
     }
+
     delete(id: number) {
       return this.http.delete(`${this.url}/${id}`);
     }
