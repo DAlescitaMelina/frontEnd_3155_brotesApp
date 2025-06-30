@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { TipoEnfermedad } from '../../models/tipoEnfermedad';
+import { TipoEnfermedad } from '../../../models/tipoEnfermedad';
 import { MatButtonModule } from '@angular/material/button';
 import { RouterLink } from '@angular/router';
 import { MatIconModule } from '@angular/material/icon';
-import { TipoEnfermedadService } from '../../services/tipoEnfermedad.service';
+import { TipoEnfermedadService } from '../../../services/tipoEnfermedad.service';
 import {MatTableDataSource, MatTableModule} from '@angular/material/table';
 @Component({
   selector: 'app-listar-tipo-enfermedad',
