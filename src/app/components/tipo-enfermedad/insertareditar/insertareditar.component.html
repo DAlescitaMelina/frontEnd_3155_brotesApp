@@ -1,0 +1,23 @@
+<div>
+  <div><h1>Registro de Tipos de enfermedad</h1></div>
+</div>
+
+<form [formGroup]="form" (submit)="aceptar()">
+  <mat-form-field *ngIf="edicion">
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="idTipoE" />
+    <mat-error *ngIf="form.get('idTipoE')?.hasError('required')">
+      El ID es obligatorio para actualizar.
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Nombre del tipo de enfermedad</mat-label>
+    <input matInput formControlName="nombreTipoE" />
+    <mat-error *ngIf="form.get('nombreTipoE')?.hasError('required')">
+      El nombre del tipo de enfermedad es obligatorio.
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Registrar</button>
+</form>
