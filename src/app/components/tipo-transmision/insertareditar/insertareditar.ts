@@ -8,13 +8,15 @@ import { MatInputModule } from '@angular/material/input';
 import { TipoTransmision } from '../../../models/tipoTransmision';
 import { TipoTransmisionService } from '../../../services/tipo-transmision';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { provideNativeDateAdapter } from '@angular/material/core';
 
 @Component({
   selector: 'app-insertareditar',
     imports: [MatInputModule,CommonModule,MatFormFieldModule,
     MatDatepickerModule,ReactiveFormsModule,MatButtonModule],
-  templateUrl: './insertareditar.html',
-  styleUrl: './insertareditar.css'
+    templateUrl: './insertareditar.html',
+    providers: [provideNativeDateAdapter()],
+    styleUrl: './insertareditar.css'
 })
 export class InsertareditarComponentTipoTransmision implements OnInit {
   form:FormGroup=new FormGroup({})
@@ -36,19 +38,15 @@ export class InsertareditarComponentTipoTransmision implements OnInit {
         this.init()
       })
 
-
       this.form=this.formBuilder.group({
         codigo:[''],
-        provincia:['',Validators.required],
-        distrito:['',Validators.required],
-        latitud:['',Validators.required],
-        longitud:['',Validators.required]
+        transmision:['',Validators.required]
       })
   } 
   aceptar(){
     if(this.form.valid){
       this.tipotrasmision.idTipoT=this.form.value.codigo
-      this.tipotrasmision.transmision=this.form.value.trasmision
+      this.tipotrasmision.transmision=this.form.value.transmision
   
       if(this.edicion){
           this.tS.update(this.tipotrasmision).subscribe(data=>{
@@ -72,7 +70,7 @@ export class InsertareditarComponentTipoTransmision implements OnInit {
       this.tS.listId(this.id).subscribe(data=>{
         this.form=new FormGroup({
           codigo:new FormControl(data.idTipoT),
-          trasmision:new FormControl(data.transmision)    
+          transmision:new FormControl(data.transmision)    
         })
       })
     }

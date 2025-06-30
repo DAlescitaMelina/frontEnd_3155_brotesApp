@@ -1,0 +1,75 @@
+<div class="form-usuario">
+  <div id="titulo">
+    <h1>{{ edicion ? 'Modificar usuario' : 'Registro de usuario' }}</h1>
+  </div>
+
+  
+  <form [formGroup]="form" (ngSubmit)="aceptar()">
+    
+    <!-- Nombre -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre</mat-label>
+      <input matInput formControlName="nomb"/>
+      <mat-error *ngIf="form.get('nomb')?.hasError('required')">
+        El nombre es obligatorio.
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <!-- Apellido -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Apellido</mat-label>
+      <input matInput formControlName="apell" />
+      <mat-error *ngIf="form.get('apell')?.hasError('required')">
+        El apellido es obligatorio.
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <!-- Username -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Nombre de usuario</mat-label>
+      <input matInput formControlName="usern" />
+      <mat-error *ngIf="form.get('usern')?.hasError('required')">
+        El nombre de usuario es obligatorio.
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <!-- Password -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Contraseña</mat-label>
+      <input matInput type="password" formControlName="passw" />
+      <mat-error *ngIf="form.get('passw')?.hasError('required')">
+        La contraseña es obligatoria.
+      </mat-error>
+    </mat-form-field>
+    <br>
+
+     <!-- Zona -->
+    <mat-form-field>
+    <mat-label>Zonas</mat-label>
+    <mat-select formControlName="zon">
+        @for (food of listaZonas; track food) {
+        <mat-option [value]="food.idZona">{{food.provincia}}</mat-option>
+        }
+    </mat-select>
+    <mat-error *ngIf="form.get('zon')?.hasError('required')">
+        Zona es obligatoria!!
+        </mat-error>
+    </mat-form-field>
+    <br>
+
+    <!-- Rol -->
+    <mat-form-field>
+    <mat-label>Roles</mat-label>
+    <mat-select formControlName="ro">
+        @for (food of listaRoles; track food) {
+        <mat-option [value]="food.idRol">{{food.rol}}</mat-option>
+        }
+    </mat-select>
+    <mat-error *ngIf="form.get('ro')?.hasError('required')">
+        Rol es obligatorio!!
+        </mat-error>
+    </mat-form-field>
+
+    <button matButton="filled">Registrar</button>
+  </form>
+</div>

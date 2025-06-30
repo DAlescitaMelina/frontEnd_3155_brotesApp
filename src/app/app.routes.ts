@@ -17,6 +17,8 @@ import { VerpantallaLogin } from './components/pantalla-login/verpantalla-login/
 import { PantallaLoginComponent } from './components/pantalla-login/pantalla-login';
 import { PantallaEntidadesComponent } from './components/pantalla-entidades/pantalla-entidades';
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
+import { UsuarioComponent } from './components/usuario/usuario';
+import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
 
 export const routes: Routes = [
     {
@@ -114,4 +116,12 @@ export const routes: Routes = [
             {path:'ediciones/:id', component:Insertareditar}
         ]
      },
+       //usuario
+     { path:'usuarios',component:UsuarioComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarComponentUsuario},
+            {path:'ediciones/:id', component:InsertareditarComponentUsuario}
+        ]
+     },
+
 ];

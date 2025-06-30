@@ -35,7 +35,9 @@ export class App {
     '/zonas','/zonas/nuevo','/zonas/ediciones/:id',
     '/roles','/roles/nuevo','/roles/ediciones/:id',
     '/tiposT','/tiposT/nuevo','/tiposT/ediciones/:id',
-    '/contagios','/contagios/nuevo','/contagios/ediciones/:id'
+    '/contagios','/contagios/nuevo','/contagios/ediciones/:id',
+    '/usuarios','/usuarios/ediciones/:id',
+    '/efermedades','/efermedades/nuevo','/efermedades/ediciones/:id',
   ];
   return rutas.some(ruta => this.currentUrl.includes(ruta));
 }

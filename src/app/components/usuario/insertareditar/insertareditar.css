@@ -1,0 +1,50 @@
+.form-usuario {
+  display: flex;
+  justify-content: flex-start; /* Mueve el contenido hacia arriba */
+  align-items: center;       
+  flex-direction: column;    
+  padding-top: 40px; /* menos padding superior */
+  background-color: #C8ECF6;
+  min-height: 100vh;
+}
+
+form {
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
+  max-width: 500px;
+  margin-top: 4px;  
+
+}
+
+mat-form-field {
+  width: 100%;
+  margin-bottom: 0rem;
+}
+
+#titulo {
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+button[matButton="filled"] {
+  background-color: #1971D7;  
+  color: white;
+  border: none;
+  padding: 0.5rem 1.25rem;
+  font-size: 1.1rem;
+  border-radius: 0.375rem;  
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 50%;
+  align-self: center;
+}
+
+button[matButton="filled"]:hover {
+  background-color: #817dce;  
+}
