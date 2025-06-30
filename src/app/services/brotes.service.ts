@@ -2,25 +2,25 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Subject } from 'rxjs';
-import { TipoEnfermedad } from '../models/tipoEnfermedad';
+import { Brotes } from '../models/brotes';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
 })
-export class TipoEnfermedadService {
-  private url=`${base_url}/tiposE`
+export class BrotesService {
+  private url=`${base_url}/brotes`
   constructor(private http:HttpClient) { }
-  private listaCambio=new Subject<TipoEnfermedad[]>
+  private listaCambio=new Subject<Brotes[]>
 
 list() {
-  return this.http.get<TipoEnfermedad[]>(`${this.url}/lista`);
+  return this.http.get<Brotes[]>(`${this.url}/lista`);
 }
 
-  insert(a:TipoEnfermedad){
+  insert(a:Brotes){
     return this.http.post(`${this.url}/inserta`, a)
   }
 
-  setList(listaNueva:TipoEnfermedad[]){
+  setList(listaNueva:Brotes[]){
    this.listaCambio.next(listaNueva)
   }
 
@@ -28,10 +28,10 @@ list() {
   return this.listaCambio.asObservable()
   }
   listId(id:number){
-    return this.http.get<TipoEnfermedad>(`${this.url}/${id}`)
+    return this.http.get<Brotes>(`${this.url}/${id}`)
   }
 
-  update(ar:TipoEnfermedad){
+  update(ar:Brotes){
     return this.http.put(`${this.url}/modifica`, ar)
   }
   deleteA(id:number){
