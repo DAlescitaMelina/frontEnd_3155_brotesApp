@@ -1,0 +1,42 @@
+<div>
+<div><h1>Lista de Tipo de enfermedades</h1></div>
+<div>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+  <!-- Column -->
+  <ng-container matColumnDef="c1">
+    <th mat-header-cell *matHeaderCellDef> Tipo de enfermedad Id</th>
+    <td mat-cell *matCellDef="let element"> {{element.idTipoE}} </td>
+  </ng-container>
+
+  <!-- Column -->
+  <ng-container matColumnDef="c2">
+    <th mat-header-cell *matHeaderCellDef> Nombre de tipo de enfermedad</th>
+    <td mat-cell *matCellDef="let element"> {{element.nombreTipoE}} </td>
+  </ng-container>
+
+<ng-container matColumnDef="c3">
+  <th mat-header-cell *matHeaderCellDef> Actualizar </th>
+  <td mat-cell *matCellDef="let element">
+    <button mat-icon-button [routerLink]="['ediciones', element.idTipoE]">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </td>
+</ng-container>
+
+<ng-container matColumnDef="c4">
+  <th mat-header-cell *matHeaderCellDef> Eliminar </th>
+  <td mat-cell *matCellDef="let element">
+    <button mat-icon-button (click)="eliminar(element.idTipoE)">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </td>
+</ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+</table>
+
+</div>
+
+</div>

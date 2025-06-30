@@ -1,0 +1,50 @@
+<div>
+   <div><h1>Registro de Brotes</h1></div>
+</div>
+
+  <form [formGroup]="form" (submit)="aceptar()">
+    <mat-form-field *ngIf="edicion">
+    <mat-label>ID</mat-label>
+    <input matInput formControlName="codigo" />
+    <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+      El codigo del área es obligatorio para actualizar!!
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Fecha Inicio</mat-label>
+    <input matInput [matDatepicker]="pickerInicio" formControlName="fechain" />
+    <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+    <mat-datepicker #pickerInicio></mat-datepicker>
+    <mat-error *ngIf="form.get('fechain')?.hasError('required')">
+      La fecha de inicio es obligatoria
+    </mat-error>
+  </mat-form-field>
+
+  <!-- FECHA FIN -->
+  <mat-form-field>
+    <mat-label>Fecha Fin</mat-label>
+    <input matInput [matDatepicker]="pickerFin" formControlName="fechafin" />
+    <mat-datepicker-toggle matSuffix [for]="pickerFin"></mat-datepicker-toggle>
+    <mat-datepicker #pickerFin></mat-datepicker>
+    <mat-error *ngIf="form.get('fechafin')?.hasError('required')">
+      La fecha fin es obligatoria
+    </mat-error>
+  </mat-form-field>
+
+  <!-- CONTAGIO RELACIONADO -->
+  <mat-form-field>
+    <mat-label>Contagio relacionado</mat-label>
+    <mat-select formControlName="conta">
+      <mat-option *ngFor="let contagio of listaContagios" [value]="contagio.idContagio">
+        ID: {{ contagio.idContagio }}
+      </mat-option>
+    </mat-select>
+    <mat-error *ngIf="form.get('conta')?.hasError('required')">
+      Seleccionar un contagio es obligatorio
+    </mat-error>
+  </mat-form-field>
+
+  <button mat-raised-button color="primary" type="submit">Registrar</button>
+</form>
+
