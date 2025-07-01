@@ -1,10 +1,4 @@
-import { Routes } from '@angular/router';
-import { ZonaComponent } from './components/zona/zona';
-import { RolComponent } from './components/rol/rol';
-import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
-import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
-import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
-
+import { Routes } from '@angular/router';  
 
 import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
