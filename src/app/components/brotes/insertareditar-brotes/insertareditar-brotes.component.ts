@@ -4,6 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ContagiosService } from '../../../services/contagios.service';
 import { BrotesService } from '../../../services/brotes.service';
 import { Contagios } from '../../../models/contagios';
 import { Brotes } from '../../../models/brotes';
