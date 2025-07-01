@@ -22,6 +22,8 @@ import { PantallaEntidadesComponent } from './components/pantalla-entidades/pant
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
+import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
+import { BrotesComponent } from './components/brotes/brotes.component';
 
 
 export const routes: Routes = [
