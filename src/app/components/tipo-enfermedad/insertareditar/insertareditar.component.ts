@@ -23,7 +23,7 @@ import { TipoEnfermedadService } from '../../../services/tipoEnfermedad.service'
   templateUrl: './insertareditar.component.html',
   styleUrl: './insertareditar.component.css'
 })
-export class InsertareditarComponent implements OnInit {
+export class InsertareditarTipoEnfermedadComponent implements OnInit {
   form: FormGroup = new FormGroup({});
   tipoEnfermedad: TipoEnfermedad = new TipoEnfermedad();
   id: number = 0;
@@ -71,7 +71,7 @@ export class InsertareditarComponent implements OnInit {
         });
       }
 
-      this.router.navigate(['tipoEnfermedad']);
+      this.router.navigate(['tipoE']);
     }
   }
 
