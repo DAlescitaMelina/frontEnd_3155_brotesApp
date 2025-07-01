@@ -3,14 +3,10 @@ import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
 import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
 import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
-
 import { ContagioComponent } from './components/contagio/contagio';
 import { TipoTransmisionComponent } from './components/tipo-transmision/tipo-transmision';
-
-
 import { InsertareditarComponentTipoTransmision } from './components/tipo-transmision/insertareditar/insertareditar';
 import { InsertareditarComponentContagio } from './components/contagio/insertareditar/insertareditar';
-
 import { EnfermedadComponent } from './components/enfermedad/enfermedad';
 import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
@@ -110,7 +106,7 @@ export const routes: Routes = [
         ]
      },
      //enfermedadSintoma
-     { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
+     { path:'EnfermedadSintomasE',component:EnfermedadSintomasEComponent,
         children:[
             {path:'nuevoESE',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}

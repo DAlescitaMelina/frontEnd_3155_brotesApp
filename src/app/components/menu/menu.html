@@ -23,6 +23,12 @@
       Enfermedades
     </button>
   </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo">
+      <mat-icon>healing</mat-icon>
+      Enfermedades y Síntomas
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-menu #menuZona="matMenu">
@@ -36,6 +42,10 @@
 <mat-menu #menuEnfermedad="matMenu">
   <button mat-menu-item routerLink="/enfermedades">Listar</button>
   <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuEnfermedadSintoma="matMenu">
+  <button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
+  <button mat-menu-item routerLink="/EnfermedadSintomasE/nuevo">Registrar</button>
 </mat-menu>
 =======
   <button routerLink="/verinicio" class="logo">
