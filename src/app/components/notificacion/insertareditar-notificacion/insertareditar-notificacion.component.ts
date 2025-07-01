@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { ContagiosService } from '../../../services/contagios.service';
+
 import { NotificacionService } from '../../../services/notificacion.service';
 import { Notificacion } from '../../../models/notificacion';
 import { MatDatepickerModule } from '@angular/material/datepicker';

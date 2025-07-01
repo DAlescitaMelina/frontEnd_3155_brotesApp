@@ -4,7 +4,7 @@ import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angula
 import { MatButtonModule } from '@angular/material/button';
 import { MatSelectModule } from '@angular/material/select';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { ContagiosService } from '../../../services/contagios.service';
+
 import { BrotesService } from '../../../services/brotes.service';
 import { Contagios } from '../../../models/contagios';
 import { Brotes } from '../../../models/brotes';
@@ -12,6 +12,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatNativeDateModule } from '@angular/material/core';
+import { ContagiosService } from '../../../services/contagios';
 
 @Component({
   selector: 'app-insertareditar-brotes',

@@ -57,7 +57,7 @@ export class Insertareditar implements OnInit{
       this.enfermedad.nombre=this.form.value.nombre
       this.enfermedad.descripcionEnfermedad=this.form.value.descripcion
       this.enfermedad.tipoEnfermedad.idTipoE=this.form.value.tipoEnfermedad
-      this.enfermedad.tipoTransmision.idTipoT=this.form.value.tTransmision
+      this.enfermedad.tipoTransmision.idTipoT=this.form.value.tipoTransmision
       if(this.edicion){
           this.eS.update(this.enfermedad).subscribe(data=>{
             this.eS.list().subscribe(data=>{
@@ -71,7 +71,7 @@ export class Insertareditar implements OnInit{
                     })
                   })
       }
-      this.router.navigate(['enfermedad'])     
+      this.router.navigate(['enfermedades'])     
     }
    
   }

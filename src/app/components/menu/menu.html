@@ -17,6 +17,12 @@
    Roles
   </button>
  </div>
+ <div>
+    <button mat-button [matMenuTriggerFor]="menuEnfermedad" class="btn-rojo">
+      <mat-icon>healing</mat-icon>
+      Enfermedades
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-menu #menuZona="matMenu">
@@ -26,6 +32,10 @@
 <mat-menu #menuRol="matMenu">
  <button mat-menu-item routerLink="/roles">Listar</button>
  <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuEnfermedad="matMenu">
+  <button mat-menu-item routerLink="/enfermedades">Listar</button>
+  <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
 </mat-menu>
 =======
   <button routerLink="/verinicio" class="logo">
@@ -51,5 +61,5 @@
     Iniciar Sesión
     </button>
   </div>
-</mat-toolbar>
+
 
