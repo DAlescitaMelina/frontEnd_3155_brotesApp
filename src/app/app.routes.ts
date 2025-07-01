@@ -23,6 +23,10 @@ import { InsertareditarComponentUsuario } from './components/usuario/insertaredi
  
 
 import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
+import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
+import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
+import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
+import { NotificacionComponent } from './components/notificacion/notificacion.component';
   
 
 
@@ -127,4 +131,25 @@ export const routes: Routes = [
         ]
      },
 
+     //brotes
+     { path:'brotes',component:UsuarioComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarBrotesComponent},
+            {path:'ediciones/:id', component:InsertareditarBrotesComponent}
+        ]
+     },
+     //tiposEnfermedad
+     { path:'tiposE',component:UsuarioComponent,
+        children:[
+            {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
+            {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
+        ]
+     },
+    //notificaciones
+     { path:'notificaciones',component:NotificacionComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarNotificacionComponent},
+            {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
+        ]
+     },
 ];
