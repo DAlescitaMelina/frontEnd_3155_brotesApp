@@ -13,7 +13,7 @@ export class NotificacionService {
   private listaCambio=new Subject<Notificacion[]>
 
 list() {
-  return this.http.get<Notificacion[]>(`${this.url}/lista-todo`);
+  return this.http.get<Notificacion[]>(`${this.url}/lista`);
 }
 
   insert(a:Notificacion){

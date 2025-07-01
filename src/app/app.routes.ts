@@ -3,8 +3,6 @@ import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
 import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
 import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
-import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
-
 
 import { ContagioComponent } from './components/contagio/contagio';
 import { TipoTransmisionComponent } from './components/tipo-transmision/tipo-transmision';
@@ -22,8 +20,7 @@ import { PantallaEntidadesComponent } from './components/pantalla-entidades/pant
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
-import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
-import { BrotesComponent } from './components/brotes/brotes.component';
+import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
 
 
 export const routes: Routes = [
@@ -126,29 +123,5 @@ export const routes: Routes = [
             {path:'ediciones/:id', component:InsertareditarComponentUsuario}
         ]
      },
-        //brotes
-     { path:'brotes',component:BrotesComponent,
-        children:[
-            {path:'nuevo',component:InsertareditarBrotesComponent},
-            {path:'ediciones/:id', component:InsertareditarBrotesComponent}
-        ]
-     },
-       //tiposEnfermedad
-     { path:'tiposE',component: TipoEnfermedadComponent,
-        children:[
-            {path:'nuevo',component:InsertareditarTipoEnfermedadComponent},
-            {path:'ediciones/:id', component:InsertareditarTipoEnfermedadComponent}
-        ]
-     },
-       //notificaciones
-     { path:'notificaciones',component:NotificacionComponent,
-        children:[
-            {path:'nuevo',component:InsertareditarNotificacionComponent},
-            {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
-        ]
-     },
-      //prevenciones
-      //sintomasEnfermedad
-      
 
 ];
