@@ -19,6 +19,25 @@ import { PantallaEntidadesComponent } from './components/pantalla-entidades/pant
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
+<<<<<<< Updated upstream
+=======
+ 
+
+import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
+import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
+import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
+import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
+import { NotificacionComponent } from './components/notificacion/notificacion.component';
+import { BrotesComponent } from './components/brotes/brotes.component';
+import { TipoEnfermedadService } from './services/tipoEnfermedad.service';
+import { ReportesComponent } from './components/reportes/reportes';
+import { cantidadBrotesActivosPorZonaDTO } from './models/q_1bdto';
+import { cantidadBrotesTotalesDTO } from './models/q_2bdto';
+import { Q1bdto } from './components/reportes/q1bdto/q1bdto';
+import { Q2bdto } from './components/reportes/q2bdto/q2bdto';
+  
+
+>>>>>>> Stashed changes
 
 export const routes: Routes = [
     {
@@ -124,4 +143,38 @@ export const routes: Routes = [
         ]
      },
 
+<<<<<<< Updated upstream
+=======
+     //brotes
+     { path:'brotes',component:BrotesComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarBrotesComponent},
+            {path:'ediciones/:id', component:InsertareditarBrotesComponent}
+        ]
+     },
+     //tiposEnfermedad
+     { path:'tiposE',component: TipoEnfermedadService,
+        children:[
+            {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
+            {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
+        ]
+     },
+    //notificaciones
+     { path:'notificaciones',component:NotificacionComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarNotificacionComponent},
+            {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
+        ]
+     },
+
+    {
+        path:'reportes',component:ReportesComponent,
+        children:[
+        //Q_1BDTO
+        {path:'cantidades-BrotesActivos-PorZona',component:Q1bdto},
+         //Q_2BDTO
+        {path:'cantidadBrotesTotales',component:Q2bdto},
+        ]
+    }
+>>>>>>> Stashed changes
 ];

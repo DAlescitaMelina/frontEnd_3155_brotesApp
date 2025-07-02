@@ -5,6 +5,12 @@
 
     <span class="spacer"></span>
   <div>
+  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+   <mat-icon>file_copy</mat-icon>
+   Reportes
+  </button>
+ </div>
+  <div>
   <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo">
    <mat-icon>person</mat-icon>
    Usuario
@@ -78,6 +84,10 @@
  </div>
 </mat-toolbar>
 
+<mat-menu #menuReportes="matMenu">
+ <button mat-menu-item routerLink="/reportes/cantidades-BrotesActivos-PorZona">Cantidad brotes activos por zona</button> 
+ <button mat-menu-item routerLink="/reportes/cantidadBrotesTotales">Cantidad brotes totales</button> 
+</mat-menu>
 <mat-menu #menuZona="matMenu">
  <button mat-menu-item routerLink="/zonas">Listar</button>
  <button mat-menu-item routerLink="/zonas/nuevo">Registrar</button>
@@ -96,13 +106,13 @@
 </mat-menu>
 
 <mat-menu #menuEnfermedades="matMenu">
- <button mat-menu-item routerLink="/enfermedad">Listar</button>
- <button mat-menu-item routerLink="/enfermedad/nuevo">Registrar</button>
+ <button mat-menu-item routerLink="/enfermedades">Listar</button>
+ <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuEnfermedadSintoma="matMenu">
-<button mat-menu-item routerLink="/enfermedadSintomaE">Listar</button>
-<button mat-menu-item routerLink="/enfermedadSintomaE/nuevoESE">Registrar</button>
+<button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
+<button mat-menu-item routerLink="/EnfermedadSintomasE/nuevoESE">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuUsuario="matMenu">

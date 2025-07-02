@@ -38,6 +38,13 @@ export class App {
     '/contagios','/contagios/nuevo','/contagios/ediciones/:id',
     '/usuarios','/usuarios/ediciones/:id',
     '/efermedades','/efermedades/nuevo','/efermedades/ediciones/:id',
+    '/brotes','/brotes/nuevo','/brotes/ediciones/:id',
+    '/notificaciones','/notificaciones/nuevo','/notificaciones/ediciones/:id',
+    '/EnfermedadSintomasE','/EnfermedadSintomasE/nuevo','/EnfermedadSintomasE/ediciones/:id',
+    '/tiposE','/tiposE/nuevo','/tiposE/ediciones/:id',
+    //Brenda (Q_1BDTO Y Q_2BDTO )
+    '/reportes','/reportes/cantidades-BrotesActivos-PorZona','/reportes/cantidadBrotesTotales',
+
   ];
   return rutas.some(ruta => this.currentUrl.includes(ruta));
 }

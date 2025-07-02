@@ -2,7 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { Contagios } from '../models/contagios';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
+import { cantidadBrotesActivosPorZonaDTO } from '../models/q_1bdto';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
@@ -41,4 +42,8 @@ export class ContagiosService  {
       return this.http.delete(`${this.url}/${id}`)
     }
 
+    //CONTAGIO>>cantidadBrotesTotalesDTO
+    getQuantityBrotesActivosxZona():Observable<cantidadBrotesActivosPorZonaDTO[]>{
+      return this.http.get<cantidadBrotesActivosPorZonaDTO[]>(`${this.url}/cantidades-BrotesActivos-PorZona`)
+    } 
 }
