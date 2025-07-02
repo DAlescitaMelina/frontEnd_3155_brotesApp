@@ -23,6 +23,9 @@ import { InsertareditarBrotesComponent } from './components/brotes/insertaredita
 import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
 import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
 import { NotificacionComponent } from './components/notificacion/notificacion.component';
+import { Reportescomponent } from './components/reportes/reportes';
+import { QD1 } from './components/reportes/q-d1/q-d1';
+import { QD2Component } from './components/reportes/q-d2/q-d2';
   
 
 
@@ -108,7 +111,7 @@ export const routes: Routes = [
     //enfermedad
    { path:'enfermedades',component:EnfermedadComponent,
         children:[
-            {path:'nuevo',component:Insertareditar},
+            {path:'inserta',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
         ]
      },
@@ -148,4 +151,12 @@ export const routes: Routes = [
             {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
         ]
      },
+     //reportes
+    {   path:'reportes',component:Reportescomponent,
+        children:[
+            //{path:'qw1',component:Qw1Component}
+            {path:'qd1',component:QD1},
+            {path:'qd2',component:QD2Component}
+        ]
+    }
 ];
