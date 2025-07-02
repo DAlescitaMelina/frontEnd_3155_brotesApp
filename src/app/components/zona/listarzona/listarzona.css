@@ -2,7 +2,6 @@
   display: flex;
   justify-content: right;
   align-items: center;
-  margin-bottom: 16px;
   margin-right: 14%;
   margin-top: 10px;
 }
@@ -12,8 +11,7 @@
 }
 
 .boto {
-  padding: 12px 24px;
-  margin-top: 40px;
+  padding: 10px 24px;
   margin-left: 14%;
   border-radius: 8px;
   background-color: rgb(10, 19, 113);
@@ -24,3 +22,51 @@
   background-color: rgb(88, 94, 163);
     
 }
+
+table {
+  width: 100%;
+  border-collapse: separate;  
+  border-spacing: 0;
+  border: 2px solid #90caf9;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: sans-serif;
+}
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  padding: 16px;
+  overflow: hidden;
+}
+
+#map {
+  width: 1300px;
+  height: 300px;
+  border-radius: 14px;
+}
+
+.header-celeste {
+  background-color: #72D7F3;
+  color: #000;
+  font-weight: bold;
+}
+th, td {
+  padding: 4px; /*para reducir el tamaño-ancho  de la celda*/ 
+  text-align: left;
+  border-right: 0.5px solid #888888; /* línea intermedia entre columnas */
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+

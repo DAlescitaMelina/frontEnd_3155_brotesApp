@@ -1,0 +1,92 @@
+ 
+.fondo {
+  min-height: 100vh; /* fuerza a ocupar todo el alto de la ventana */
+  background-color: #C2EEFA;
+  padding: 21px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin: 40px auto 30px auto;  
+  background-color: #f4f7fa;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px; /* Este valor limita el ancho */
+  width: 100%;      /* Que use el 100% hasta 600px */
+}
+
+.input-container label {
+  font-weight: 600;
+  color: #333;
+}
+
+.input-container input {
+  width: 100px;
+  padding: 8px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  transition: border-color 0.3s;
+}
+
+.input-container input:focus {
+  outline: none;
+  border-color: #4682B4;
+}
+
+.input-container button {
+  padding: 10px 20px;
+  background-color: #4169E1;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.input-container button:hover {
+  background-color: #3151b7;
+  transform: scale(1.05);
+}
+
+/* Título */
+.title-container {
+  text-align: center;
+  margin-bottom: 40px;  
+  margin-top: 60px;   
+}
+
+ 
+.title h1 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 2em;
+  color: #333;
+}
+
+/* Contenedor del gráfico */
+.chart-container {
+  width: 70%;            
+  margin: 0 auto;       
+  padding: 9px;         
+  box-sizing: border-box;
+  background-color: white;
+  border-radius: 15px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+  .chart-container {
+    width: 100%;       /* Ancho completo en pantallas pequeñas */
+    padding: 10px;     /* Ajuste de padding */
+  }
+}

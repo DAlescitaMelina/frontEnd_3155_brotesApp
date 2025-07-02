@@ -23,7 +23,9 @@ import { TipoEnfermedadService } from '../../../services/tipoEnfermedad.service'
   templateUrl: './insertareditar.component.html',
   styleUrl: './insertareditar.component.css'
 })
+
 export class InsertareditartipoEnfermedadComponent implements OnInit {
+
   form: FormGroup = new FormGroup({});
   tipoEnfermedad: TipoEnfermedad = new TipoEnfermedad();
   id: number = 0;
@@ -70,7 +72,6 @@ export class InsertareditartipoEnfermedadComponent implements OnInit {
           });
         });
       }
-
       this.router.navigate(['tipoE']);
     }
   }

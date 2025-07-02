@@ -76,7 +76,14 @@
    Notificaciones
   </button>
  </div>
+   <div>
+  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+   <mat-icon>file_copy</mat-icon>
+   Reportes
+  </button>
+ </div>
 </mat-toolbar>
+
 
 <mat-menu #menuZona="matMenu">
  <button mat-menu-item routerLink="/zonas">Listar</button>
@@ -96,13 +103,13 @@
 </mat-menu>
 
 <mat-menu #menuEnfermedades="matMenu">
- <button mat-menu-item routerLink="/enfermedad">Listar</button>
- <button mat-menu-item routerLink="/enfermedad/nuevo">Registrar</button>
+ <button mat-menu-item routerLink="/enfermedades">Listar</button>
+ <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuEnfermedadSintoma="matMenu">
-<button mat-menu-item routerLink="/enfermedadSintomaE">Listar</button>
-<button mat-menu-item routerLink="/enfermedadSintomaE/nuevoESE">Registrar</button>
+<button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
+<button mat-menu-item routerLink="/EnfermedadSintomasE/nuevoESE">Registrar</button>
 </mat-menu>
 <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
    <mat-icon>file_copy</mat-icon>
@@ -136,4 +143,13 @@
 <mat-menu #menuNotificaciones="matMenu">
 <button mat-menu-item routerLink="/notificaciones">Listar</button>
 <button mat-menu-item routerLink="/notificaciones/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuReportes="matMenu">
+<button mat-menu-item routerLink="/reportes/qw1">Cantidad de usuarios Notificados por brotes y Cantidad de contagios por Tipo de Transmisión</button>
+<button mat-menu-item routerLink="/reportes/cantidades-BrotesActivos-PorZona">Cantidad brotes activos por zona</button> 
+<button mat-menu-item routerLink="/reportes/cantidadBrotesTotales">Cantidad brotes totales</button> 
+<button mat-menu-item routerLink="/reportes/qd1">Cantidad de Enfermedades por Provincia</button> 
+<button mat-menu-item routerLink="/reportes/qd2">Cantidad de Enfermedades por Tipo de Transmisión</button> 
+<button mat-menu-item routerLink="/reportes/qt1">Cantidad de Usuarios por Distrito y Cantidad de Contagios por Distrito</button>
 </mat-menu>
