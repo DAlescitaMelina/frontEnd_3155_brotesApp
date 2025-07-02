@@ -16,8 +16,6 @@ import { PantallaEntidadesComponent } from './components/pantalla-entidades/pant
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
- 
-
 import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
 import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
 import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
