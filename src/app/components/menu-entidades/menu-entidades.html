@@ -76,6 +76,12 @@
    Notificaciones
   </button>
  </div>
+ <div>
+  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+   <mat-icon>report</mat-icon>
+   Reportes
+  </button>
+ </div>
 </mat-toolbar>
 
 <mat-menu #menuZona="matMenu">
@@ -129,4 +135,9 @@
 <mat-menu #menuNotificaciones="matMenu">
 <button mat-menu-item routerLink="/notificaciones">Listar</button>
 <button mat-menu-item routerLink="/notificaciones/nuevo">Registrar</button>
+</mat-menu>
+
+<mat-menu #menuReportes="matMenu">
+<button mat-menu-item routerLink="/reportes/qw1">QW1</button>
+
 </mat-menu>

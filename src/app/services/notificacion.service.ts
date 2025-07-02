@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Notificacion } from '../models/notificacion';
+import { QWDTO1 } from '../models/q_w1dto';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
@@ -38,4 +39,8 @@ list() {
     return this.http.delete(`${this.url}/${id}`)
   }
 
+  //q_w1dto
+      getqw1():Observable<QWDTO1[]>{
+        return this.http.get<QWDTO1[]>(this.url+"/CantidadUsuarios_Notificados")
+      }
 }

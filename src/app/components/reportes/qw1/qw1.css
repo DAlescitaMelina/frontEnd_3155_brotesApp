@@ -1,10 +1,7 @@
-.Listado-Rol {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-bottom: 16px;
-  margin-right: 14%;
-  margin-top: 10px;
+.Listado-qw {
+  text-align: center;
+  margin-bottom: 11px;
+  margin-top: 54px;
 }
 .fondo {
   height: 100vh;         
@@ -13,19 +10,7 @@
 .container{
     width: 70%;
 }
-.boto {
-  padding: 12px 24px;
-  margin-top: 40px;
-  margin-left: 14%;
-  border-radius: 8px;
-  background-color: #1971D7;
-  color: white;
-  border: none;
-}
-.boto:hover{
-  background-color: rgb(88, 94, 163);
-    
-}
+
 .header-celeste {
   background-color: #72D7F3;
   color: #000;
