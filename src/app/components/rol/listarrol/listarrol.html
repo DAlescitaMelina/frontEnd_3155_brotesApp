@@ -26,8 +26,14 @@
         </td>
       </ng-container>
 
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-celeste"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+    <!-- Paginador -->
+    <mat-paginator [pageSize]="10"
+                  [pageSizeOptions]="[5, 10, 25, 100]"
+                  showFirstLastButtons
+                  aria-label="Select page">
+    </mat-paginator>
   </div>
 </div>
