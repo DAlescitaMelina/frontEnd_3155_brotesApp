@@ -23,8 +23,16 @@ import { InsertareditarBrotesComponent } from './components/brotes/insertaredita
 import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
 import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
 import { NotificacionComponent } from './components/notificacion/notificacion.component';
-import { ReportesComponent } from './components/reportes/reportes';
+import { BrotesComponent } from './components/brotes/brotes.component';
+import { TipoEnfermedadService } from './services/tipoEnfermedad.service';
+import { ReportesComponent } from './components/reportes/reportes'; 
+import { Q1bdto } from './components/reportes/q1bdto/q1bdto';
+import { Q2bdto } from './components/reportes/q2bdto/q2bdto';
 import { Qw1Component } from './components/reportes/qw1/qw1';
+import { QD2Component } from './components/reportes/q-d2/q-d2';
+import { QD1 } from './components/reportes/q-d1/q-d1';
+import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
+import { Qt1Component } from './components/reportes/qt1/qt1';
   
 
 
@@ -130,19 +138,21 @@ export const routes: Routes = [
      },
 
      //brotes
-     { path:'brotes',component:UsuarioComponent,
+     { path:'brotes',component:BrotesComponent,
         children:[
             {path:'nuevo',component:InsertareditarBrotesComponent},
             {path:'ediciones/:id', component:InsertareditarBrotesComponent}
         ]
      },
+      
      //tiposEnfermedad
-     { path:'tiposE',component:UsuarioComponent,
+     { path:'tiposE',component:TipoEnfermedadComponent,
         children:[
             {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
             {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
         ]
      },
+
     //notificaciones
      { path:'notificaciones',component:NotificacionComponent,
         children:[
@@ -150,11 +160,26 @@ export const routes: Routes = [
             {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
         ]
      },
+
+
     //reportes
     {   path:'reportes',component:ReportesComponent,
         children:[
-            {path:'qw1',component:Qw1Component}
-            
+        //Q_WDTO  
+        {path:'qw1',component:Qw1Component},
+
+        //Q_1BDTO
+        {path:'cantidades-BrotesActivos-PorZona',component:Q1bdto},
+         //Q_2BDTO
+        {path:'cantidadBrotesTotales',component:Q2bdto},
+        
+        //Q_1DDTO
+        {path:'qd1',component:QD1},
+        //Q_2DDTO
+        {path:'qd2',component:QD2Component},
+                
+        //Q_1TDTO
+        {path:'qt1',component:Qt1Component}
         ]
     }
 ];

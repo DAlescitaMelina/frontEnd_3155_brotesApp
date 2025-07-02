@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Brotes } from '../models/brotes';
+import { cantidadBrotesTotalesDTO } from '../models/q_2bdto';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,14 @@ list() {
   deleteA(id:number){
     return this.http.delete(`${this.url}/${id}`)
   }
-
+  
+  //BROTES>>cantidadBrotesActivosPorZonaDTO  
+    getQuantityBrotesTotales(anio: number, mes: number):Observable<cantidadBrotesTotalesDTO[]>{
+        return this.http.get<cantidadBrotesTotalesDTO[]>(`${this.url}/cantidadBrotesTotales`, {
+      params: {
+      anio: anio.toString(),
+      mes: mes.toString(),
+    },
+  });
+}
 }
