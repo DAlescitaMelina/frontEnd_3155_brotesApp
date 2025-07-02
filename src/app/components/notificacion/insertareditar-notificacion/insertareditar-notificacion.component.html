@@ -1,0 +1,52 @@
+<div class="form-noti">
+  <h1 class="form-title">Registro de Notificación</h1>
+
+  <form [formGroup]="form" (ngSubmit)="aceptar()" class="formulario">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Título</mat-label>
+      <input matInput formControlName="title" />
+      <mat-error *ngIf="form.get('title')?.hasError('required')">
+        El título es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Contenido</mat-label>
+      <input matInput formControlName="content" />
+      <mat-error *ngIf="form.get('content')?.hasError('required')">
+        El contenido es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Estado</mat-label>
+      <input matInput formControlName="estate" />
+      <mat-error *ngIf="form.get('estate')?.hasError('required')">
+        El estado es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Fecha de Envio</mat-label>
+      <input matInput [matDatepicker]="pickerInicio" formControlName="fechaenvio" />
+      <mat-datepicker-toggle matSuffix [for]="pickerInicio"></mat-datepicker-toggle>
+      <mat-datepicker #pickerInicio></mat-datepicker>
+      <mat-error *ngIf="form.get('fechaenvio')?.hasError('required')">
+        La fecha de envio es obligatoria.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Brotes relacionados</mat-label>
+      <mat-select formControlName="bro">
+        <mat-option *ngFor="let brote of listaBrotes" [value]="brote.idBrote">
+          ID: {{ brote.idBrote }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('bro')?.hasError('required')">
+        Seleccionar un brote es obligatorio.
+      </mat-error>
+    </mat-form-field>
+      <button matButton="filled">Registrar</button>
+  </form>
+</div>

@@ -17,6 +17,18 @@
    Roles
   </button>
  </div>
+ <div>
+    <button mat-button [matMenuTriggerFor]="menuEnfermedad" class="btn-rojo">
+      <mat-icon>healing</mat-icon>
+      Enfermedades
+    </button>
+  </div>
+  <div>
+    <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo">
+      <mat-icon>healing</mat-icon>
+      Enfermedades y Síntomas
+    </button>
+  </div>
 </mat-toolbar>
 
 <mat-menu #menuZona="matMenu">
@@ -27,9 +39,17 @@
  <button mat-menu-item routerLink="/roles">Listar</button>
  <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
 </mat-menu>
-=======
+<mat-menu #menuEnfermedad="matMenu">
+  <button mat-menu-item routerLink="/enfermedades">Listar</button>
+  <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
+</mat-menu>
+<mat-menu #menuEnfermedadSintoma="matMenu">
+  <button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
+  <button mat-menu-item routerLink="/EnfermedadSintomasE/nuevo">Registrar</button>
+</mat-menu>
   <button routerLink="/verinicio" class="logo">
     <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
+    BrotesApp
   </button>
   <span class="spacer"></span>
 
@@ -50,6 +70,4 @@
     <button mat-button class="btn-Inicio" routerLink="/pantalla-login/verpantalla-login">
     Iniciar Sesión
     </button>
-  </div>
-</mat-toolbar>
-
+  </div> 

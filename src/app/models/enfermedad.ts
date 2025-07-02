@@ -1,3 +1,4 @@
+
 import { TipoEnfermedad } from "./tipoEnfermedad"
 import { TipoTransmision } from "./tipoTransmision"
 

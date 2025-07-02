@@ -1,15 +1,16 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { Notificacion } from '../models/notificacion';
+
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
 })
 export class NotificacionService  {
   private url=`${base_url}/notificaciones`
-private listaCambio = new Subject<Notificacion[]>();
+  private listaCambio = new Subject<Notificacion[]>();
 
   constructor(private http:HttpClient) { }
       list() {
@@ -33,4 +34,5 @@ private listaCambio = new Subject<Notificacion[]>();
       delete(id: number) {
         return this.http.delete(`${this.url}/${id}`);
       }
+      
 }

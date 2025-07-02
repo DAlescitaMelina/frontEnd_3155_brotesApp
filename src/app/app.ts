@@ -19,6 +19,7 @@ export class App {
    currentUrl: string = '';
 
   constructor(private router: Router) {
+    
     // Escucha los cambios de ruta
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)

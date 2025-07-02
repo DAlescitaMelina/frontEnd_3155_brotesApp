@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { UsuarioRegistro } from '../models/usuario-registro';
 import { Usuario } from '../models/usuario';
 import { UsuarioModi } from '../models/usuario-modi';
+import { QTDTO1 } from '../models/q_t1dto';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
@@ -37,5 +38,9 @@ export class UsuarioService  {
     }
     setList(listaNueva:Usuario[]) {
       this.listaCambio.next(listaNueva);
+    }
+    
+    getQW1(): Observable<QTDTO1[]> {
+    return this.http.get<QTDTO1[]>(`${this.url}/cantidad-usuarios-zona`);
     }
 }

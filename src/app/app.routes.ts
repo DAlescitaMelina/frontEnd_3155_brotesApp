@@ -3,19 +3,10 @@ import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
 import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
 import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
-import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
-
-
-import { ZonaComponent } from './components/zona/zona';
-import { RolComponent } from './components/rol/rol';
 import { ContagioComponent } from './components/contagio/contagio';
 import { TipoTransmisionComponent } from './components/tipo-transmision/tipo-transmision';
-
-import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
-import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
 import { InsertareditarComponentTipoTransmision } from './components/tipo-transmision/insertareditar/insertareditar';
 import { InsertareditarComponentContagio } from './components/contagio/insertareditar/insertareditar';
-import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
 import { EnfermedadComponent } from './components/enfermedad/enfermedad';
 import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
@@ -25,6 +16,19 @@ import { PantallaEntidadesComponent } from './components/pantalla-entidades/pant
 import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
+ 
+
+import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
+import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
+import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
+import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
+import { NotificacionComponent } from './components/notificacion/notificacion.component';
+import { ReportesComponent } from './components/reportes/reportes';
+import { Qw1Component } from './components/reportes/qw1/qw1';
+import { Qt1Component } from './components/reportes/qt1/qt1';
+import { BrotesComponent } from './components/brotes/brotes.component';
+import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
+  
 
 
 export const routes: Routes = [
@@ -107,14 +111,14 @@ export const routes: Routes = [
         ]
     },
     //enfermedad
-   { path:'enfermedad',component:EnfermedadComponent,
+   { path:'enfermedades',component:EnfermedadComponent,
         children:[
             {path:'nuevo',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
         ]
      },
      //enfermedadSintoma
-     { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
+     { path:'EnfermedadSintomasE',component:EnfermedadSintomasEComponent,
         children:[
             {path:'nuevoESE',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
@@ -128,4 +132,32 @@ export const routes: Routes = [
         ]
      },
 
+     //brotes
+     { path:'brotes',component:BrotesComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarBrotesComponent},
+            {path:'ediciones/:id', component:InsertareditarBrotesComponent}
+        ]
+     },
+     //tiposEnfermedad
+     { path:'tiposE',component:TipoEnfermedadComponent,
+        children:[
+            {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
+            {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
+        ]
+     },
+    //notificaciones
+     { path:'notificaciones',component:NotificacionComponent,
+        children:[
+            {path:'nuevo',component:InsertareditarNotificacionComponent},
+            {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
+        ]
+     },
+    //reportes
+    {   path:'reportes',component:ReportesComponent,
+        children:[
+            {path:'qw1',component:Qw1Component},
+            {path:'qt1',component:Qt1Component}
+        ]
+    }
 ];

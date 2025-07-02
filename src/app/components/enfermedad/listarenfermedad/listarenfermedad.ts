@@ -2,13 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { Enfermedad } from '../../../models/enfermedad';
 import { MatTableDataSource, MatTableModule } from '@angular/material/table';
 import { EnfermedadService } from '../../../services/enfermedad';
-import { RouterLink } from '@angular/router';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-listarenfermedad',
-  imports: [MatTableModule, MatButtonModule , RouterLink, MatIconModule],
+  imports: [MatTableModule, MatButtonModule, MatIconModule, RouterModule],
   templateUrl: './listarenfermedad.html',
   styleUrls: ['./listarenfermedad.css']
 })

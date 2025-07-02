@@ -3,7 +3,15 @@
 <div class="Listado-Zona">
   <h2>Listado de Zonas</h2>
 </div>
+
+<div class="map-container">
+  <div class="map-frame">
+  <div id="map" #mapDiv></div>
+  </div>
+</div>
+
   <div class="container">
+    <div class="tabla">
     <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">      
       <!-- Position Column -->
       <ng-container matColumnDef="c1">
@@ -54,8 +62,17 @@
         </td>
       </ng-container>
       
-      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns" class="header-celeste"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
+    </div>
+    <!-- Paginador -->
+     <div class="paginador">
+    <mat-paginator [pageSize]="5"
+                  [pageSizeOptions]="[5, 10, 25]"
+                  showFirstLastButtons
+                  aria-label="Select page">
+    </mat-paginator>
+    </div>
   </div>
 </div>
