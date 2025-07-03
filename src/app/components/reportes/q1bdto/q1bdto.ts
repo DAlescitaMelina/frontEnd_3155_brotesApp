@@ -32,6 +32,7 @@ export class Q1bdto implements OnInit{
               '#9F7AEA',  // Morado
               '#F58CA0',  // Rosa
               '#E74C3C'   // Rojo
+              
             ],
             borderColor:'#00008B',
             borderWidth:1
