@@ -1,11 +1,12 @@
 .Listado-Rol {
-  display: flex;
-  justify-content: right;
-  align-items: center;
-  margin-bottom: 16px;
-  margin-right: 14%;
-  margin-top: 10px;
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-size: 1.4rem;
+  font-weight: bold;
 }
+ 
+
 .fondo {
   height: 100vh;         
   padding: 21px;
