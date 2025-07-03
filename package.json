@@ -23,10 +23,7 @@
     "@angular/ssr": "^20.0.0",
     "chart.js": "^4.5.0",
     "express": "^5.1.0",
-<<<<<<< HEAD
-=======
-    "maplibre-gl": "^5.6.0",
->>>>>>> 1dfa73feaf9ad2519d504209fd1b1bfca9c52f6f
+    "maplibre-gl": "^5.6.1",
     "ng2-charts": "^8.0.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

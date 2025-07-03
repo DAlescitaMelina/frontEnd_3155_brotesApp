@@ -1,22 +1,41 @@
-<div class="title-container">
-  <div style="text-align: center" class="title">
-    <h1>Cantidad de Enfermedades por Tipo de Transmisión</h1>
+<div class="formulario">
+  <form (ngSubmit)="buscarPorProvincia()">
+    <mat-form-field appearance="fill">
+      <mat-label>Provincia</mat-label>
+      <input
+        matInput
+        [(ngModel)]="provincia"
+        name="provincia"
+        placeholder="Ingrese una provincia"
+        required
+      />
+    </mat-form-field>
+    <button mat-raised-button color="accent" type="submit">Buscar</button>
+  </form>
+  <div *ngIf="hasData">
+     
+    <h2>Cantidad de enfermedades por transmision por provincia</h2>
+
+    <p *ngIf="hasData" class="leyenda">
+      Resultados para la provincia: <strong>{{ provincia }}</strong>
+    </p>
   </div>
 
-  <div style="text-align: center" class="chart-container" *ngIf="hasData">
+  <!-- Gráfico -->
+  <div *ngIf="hasData">
     <canvas
       baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
+      [data]="barChartData"
+      [type]="barChartType"
       [options]="barChartOptions"
       [legend]="barChartLegend"
-      [type]="barChartType"
-    >
-    </canvas>
+    ></canvas>
   </div>
 
-  <div class="no-data" *ngIf="!hasData">
-    <mat-icon class="no-data-icon">info_outline</mat-icon>
-    <p class="no-data-message">No hay datos disponibles para mostrar.</p>
+  <!-- Mensaje si no hay resultados -->
+  <div *ngIf="!hasData && fueBuscado">
+    <p class="mensaje-error">
+      No se encontraron resultados para la provincia ingresada.
+    </p>
   </div>
 </div>
