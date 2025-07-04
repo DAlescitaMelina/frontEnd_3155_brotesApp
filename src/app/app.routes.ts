@@ -9,21 +9,13 @@ import { InsertareditarComponentZona } from './components/zona/insertareditar/in
 import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
 import { InsertareditarComponentTipoTransmision } from './components/tipo-transmision/insertareditar/insertareditar';
 import { InsertareditarComponentContagio } from './components/contagio/insertareditar/insertareditar';
-import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
 import { EnfermedadComponent } from './components/enfermedad/enfermedad';
 import { Insertareditar } from './components/enfermedad/insertareditar/insertareditar';
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
-import { VerpantallaLogin } from './components/pantalla-login/verpantalla-login/verpantalla-login';
-import { PantallaLoginComponent } from './components/pantalla-login/pantalla-login';
-import { PantallaEntidadesComponent } from './components/pantalla-entidades/pantalla-entidades';
-import { VerpantallaEntidades } from './components/pantalla-entidades/verpantalla-entidades/verpantalla-entidades';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
-<<<<<<< Updated upstream
-=======
- 
-
 import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
+
 import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
 import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
 import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
@@ -31,13 +23,16 @@ import { NotificacionComponent } from './components/notificacion/notificacion.co
 import { BrotesComponent } from './components/brotes/brotes.component';
 import { TipoEnfermedadService } from './services/tipoEnfermedad.service';
 import { ReportesComponent } from './components/reportes/reportes';
-import { cantidadBrotesActivosPorZonaDTO } from './models/q_1bdto';
-import { cantidadBrotesTotalesDTO } from './models/q_2bdto';
 import { Q1bdto } from './components/reportes/q1bdto/q1bdto';
 import { Q2bdto } from './components/reportes/q2bdto/q2bdto';
+import { QD2Component } from './components/reportes/q-d2/q-d2';
+import { QD1 } from './components/reportes/q-d1/q-d1';
+import { Qt1Component } from './components/reportes/qt1/qt1';
+import { Login } from './components/login/login';
+import { seguridadGuard } from './guard/seguridad.guard';
+import { Home } from './components/home/home';
   
 
->>>>>>> Stashed changes
 
 export const routes: Routes = [
     {
@@ -50,25 +45,10 @@ export const routes: Routes = [
     },
     
     {
-        path:'pantalla-login',component:PantallaLoginComponent,
-          children:[
-        {
-            path:'verpantalla-login',component:VerpantallaLogin
-        },
-       
-        ]
+        path: 'login',
+        component: Login,
     },
-    
-    {
-        path:'pantalla-entidades',component:PantallaEntidadesComponent,
-          children:[
-        {
-            path:'verpantalla-entidades',component:VerpantallaEntidades
-        },
-       
-        ]
-    },
-    //zonas
+
     {
         path:'zonas',component:ZonaComponent,
         children:[
@@ -79,7 +59,8 @@ export const routes: Routes = [
             path:'ediciones/:id',component:InsertareditarComponentZona
 
         }
-        ]
+        ],
+            canActivate: [seguridadGuard],
     },
     //Rol
     {
@@ -92,7 +73,8 @@ export const routes: Routes = [
             path:'ediciones/:id',component:InsertareditarComponentRol
 
         }
-        ]
+        ],
+            canActivate: [seguridadGuard],
     },
     //tipoTransmision
         {
@@ -105,7 +87,8 @@ export const routes: Routes = [
             path:'ediciones/:id',component:InsertareditarComponentTipoTransmision
 
         }
-        ]
+        ],
+            canActivate: [seguridadGuard],
     },
     //contagios
     {
@@ -118,53 +101,57 @@ export const routes: Routes = [
             path:'ediciones/:id',component:InsertareditarComponentContagio
 
         }
-          
-        ]
+        ],
+            canActivate: [seguridadGuard],
     },
     //enfermedad
    { path:'enfermedad',component:EnfermedadComponent,
         children:[
             {path:'nuevo',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
-        ]
+        ],
+            canActivate: [seguridadGuard],
      },
      //enfermedadSintoma
      { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
         children:[
             {path:'nuevoESE',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
-        ]
+        ],
+            canActivate: [seguridadGuard],
      },
        //usuario
      { path:'usuarios',component:UsuarioComponent,
         children:[
             {path:'nuevo',component:InsertareditarComponentUsuario},
             {path:'ediciones/:id', component:InsertareditarComponentUsuario}
-        ]
+        ],
+            canActivate: [seguridadGuard],
      },
 
-<<<<<<< Updated upstream
-=======
      //brotes
      { path:'brotes',component:BrotesComponent,
         children:[
             {path:'nuevo',component:InsertareditarBrotesComponent},
             {path:'ediciones/:id', component:InsertareditarBrotesComponent}
-        ]
+        ],
+            canActivate: [seguridadGuard],
      },
      //tiposEnfermedad
      { path:'tiposE',component: TipoEnfermedadService,
         children:[
             {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
             {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
-        ]
+        ],
+            canActivate: [seguridadGuard],
      },
     //notificaciones
      { path:'notificaciones',component:NotificacionComponent,
         children:[
             {path:'nuevo',component:InsertareditarNotificacionComponent},
             {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
-        ]
+        ],
+            canActivate: [seguridadGuard],
      },
 
     {
@@ -174,7 +161,22 @@ export const routes: Routes = [
         {path:'cantidades-BrotesActivos-PorZona',component:Q1bdto},
          //Q_2BDTO
         {path:'cantidadBrotesTotales',component:Q2bdto},
-        ]
-    }
->>>>>>> Stashed changes
+        
+        //Q_1DDTO
+        {path:'qd1',component:QD1},
+        //Q_2DDTO
+        {path:'qd2',component:QD2Component},
+                
+        //Q_1TDTO
+        {path:'qt1',component:Qt1Component}
+        ],
+            canActivate: [seguridadGuard],
+    },
+  
+    {
+        path: 'homes',
+        component: Home,
+            canActivate: [seguridadGuard],
+
+    },
 ];

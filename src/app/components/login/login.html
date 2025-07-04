@@ -1,0 +1,52 @@
+<div class="bienvenida">
+    <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
+    <span class="welcome-text">¡Bienvenido a BrotesApp!</span>
+
+  <span class="spacer"></span>
+</div>
+
+  <mat-toolbar class="custom-toolbar"> 
+  <button mat-button [routerLink]="['/verinicio']" class="home-button">
+    <mat-icon>home</mat-icon> Volver al Menú Principal
+  </button>
+  </mat-toolbar>
+
+<div class="form-login-container">
+  <div class="form-image">
+    <img src="assets/imgs/map-geo.jpg" alt="Imagen de registro" />
+    <div class="image-overlay-text">
+      Localiza brotes al instante según tu geolocalización
+    </div>
+  </div>
+
+  <div class="form-login">
+    <h1 id="titulo">Iniciar Sesión</h1>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Nombre de usuario*</mat-label>
+      <input matInput placeholder="Username" [(ngModel)]="username" />
+    </mat-form-field>
+    <br />
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contraseña*</mat-label>
+      <input
+        type="password"
+        matInput
+        placeholder="Password"
+        [(ngModel)]="password"
+      />
+    </mat-form-field>
+    <br />
+
+    <button mat-raised-button class="sesion-button" (click)="login()">
+      Iniciar Sesión
+    </button>
+
+    <div class="register-link">
+      ¿Aún no tienes una cuenta?
+      <a routerLink="/usuarios/nuevo">Regístrate aquí</a>
+    </div>
+ 
+  </div>
+</div>

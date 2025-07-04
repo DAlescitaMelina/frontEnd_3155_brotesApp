@@ -31,7 +31,8 @@ export class App {
   
   mostrarMenuEntidades(): boolean {
   const rutas = [
-    '/pantalla-entidades',
+    '/homes',
+    
     '/zonas','/zonas/nuevo','/zonas/ediciones/:id',
     '/roles','/roles/nuevo','/roles/ediciones/:id',
     '/tiposT','/tiposT/nuevo','/tiposT/ediciones/:id',
@@ -42,6 +43,7 @@ export class App {
     '/notificaciones','/notificaciones/nuevo','/notificaciones/ediciones/:id',
     '/EnfermedadSintomasE','/EnfermedadSintomasE/nuevo','/EnfermedadSintomasE/ediciones/:id',
     '/tiposE','/tiposE/nuevo','/tiposE/ediciones/:id',
+
     //Brenda (Q_1BDTO Y Q_2BDTO )
     '/reportes','/reportes/cantidades-BrotesActivos-PorZona','/reportes/cantidadBrotesTotales',
 
