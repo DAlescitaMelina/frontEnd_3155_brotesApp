@@ -13,7 +13,7 @@ import { MatIconModule } from '@angular/material/icon';
   styleUrls: ['./listarenfermedad.css']
 })
 export class ListarenfermedadComponent implements OnInit{
-  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4','c5'];
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4','c5','c6','c7','c8','c9'];
   dataSource: MatTableDataSource<Enfermedad> = new MatTableDataSource();
 
   constructor(private eS:EnfermedadService){}

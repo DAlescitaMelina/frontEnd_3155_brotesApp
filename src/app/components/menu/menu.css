@@ -26,10 +26,11 @@
  border: none;
 }
 .logo{
+  
  background-color: hwb(191 30% 8%);
  border-radius: 4px;
  margin: 4px;
- border: none;
+ border: none; 
 }
 .logo:hover{
     background-color: hwb(191 29% 13%);

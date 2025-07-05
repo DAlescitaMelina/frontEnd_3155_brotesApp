@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from './components/menu/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { Router, RouterOutlet,NavigationEnd } from '@angular/router';
 import { MenuEntidades } from "./components/menu-entidades/menu-entidades";
@@ -36,13 +37,28 @@ export class App {
   
   mostrarMenuEntidades(): boolean {
   const rutas = [
-    '/pantalla-entidades',
+    '/homes',
+    
     '/zonas','/zonas/nuevo','/zonas/ediciones/:id',
     '/roles','/roles/nuevo','/roles/ediciones/:id',
     '/tiposT','/tiposT/nuevo','/tiposT/ediciones/:id',
     '/contagios','/contagios/nuevo','/contagios/ediciones/:id',
     '/usuarios','/usuarios/ediciones/:id',
-    '/efermedades','/efermedades/nuevo','/efermedades/ediciones/:id',
+    '/enfermedades','/enfermedades/nuevo','/enfermedades/ediciones/:id',
+    '/brotes','/brotes/nuevo','/brotes/ediciones/:id',
+    '/notificaciones','/notificaciones/nuevo','/notificaciones/ediciones/:id',
+    '/EnfermedadSintomasE','/EnfermedadSintomasE/nuevo','/EnfermedadSintomasE/ediciones/:id',
+    '/tiposE','/tiposE/nuevo','/tiposE/ediciones/:id',
+
+    //Brenda (Q_1BDTO Y Q_2BDTO )
+    '/reportes','/reportes/cantidades-BrotesActivos-PorZona','/reportes/cantidadBrotesTotales',
+    //Wilson
+    '/reportes','/reportes/qw1',
+
+    //DAlessandra
+    '/reportes','/reportes/qd1','/reportes/qd2',
+
+    //Tony
   ];
   return rutas.some(ruta => this.currentUrl.includes(ruta));
 }

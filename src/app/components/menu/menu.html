@@ -1,55 +1,7 @@
 <mat-toolbar class="custom-toolbar">
-
-    <button routerLink="/verinicio" class="logo">
-  BrotesApp
-</button>
-
-    <span class="spacer"></span>
- <div>
-  <button mat-button [matMenuTriggerFor]="menuZona" class="btn-rojo">
-   <mat-icon>business</mat-icon>
-   Zonas
-  </button>
- </div>
- <div>
-  <button mat-button [matMenuTriggerFor]="menuRol" class="btn-rojo">
-   <mat-icon>business</mat-icon>
-   Roles
-  </button>
- </div>
- <div>
-    <button mat-button [matMenuTriggerFor]="menuEnfermedad" class="btn-rojo">
-      <mat-icon>healing</mat-icon>
-      Enfermedades
-    </button>
-  </div>
-  <div>
-    <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo">
-      <mat-icon>healing</mat-icon>
-      Enfermedades y Síntomas
-    </button>
-  </div>
-</mat-toolbar>
-
-<mat-menu #menuZona="matMenu">
- <button mat-menu-item routerLink="/zonas">Listar</button>
- <button mat-menu-item routerLink="/zonas/nuevo">Registrar</button>
-</mat-menu>
-<mat-menu #menuRol="matMenu">
- <button mat-menu-item routerLink="/roles">Listar</button>
- <button mat-menu-item routerLink="/roles/nuevo">Registrar</button>
-</mat-menu>
-<mat-menu #menuEnfermedad="matMenu">
-  <button mat-menu-item routerLink="/enfermedades">Listar</button>
-  <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
-</mat-menu>
-<mat-menu #menuEnfermedadSintoma="matMenu">
-  <button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
-  <button mat-menu-item routerLink="/EnfermedadSintomasE/nuevo">Registrar</button>
-</mat-menu>
   <button routerLink="/verinicio" class="logo">
     <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
-    BrotesApp
+    BrotessApp
   </button>
   <span class="spacer"></span>
 
@@ -67,7 +19,10 @@
   </a>
 
   <div>
-    <button mat-button class="btn-Inicio" routerLink="/pantalla-login/verpantalla-login">
+    <button mat-button class="btn-Inicio" routerLink="/login">
     Iniciar Sesión
-    </button>
-  </div> 
+ 
+    </button> 
+  </div>
+</mat-toolbar> 
+ 
