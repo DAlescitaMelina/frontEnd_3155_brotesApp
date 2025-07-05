@@ -1,0 +1,28 @@
+.title-container {
+  margin: 20px;
+}
+
+.title h1 {
+  font-size: 24px;
+  color: #333;
+}
+
+.chart-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.no-data {
+  text-align: center;
+  margin-top: 20px;
+  color: #888;
+}
+
+.no-data-icon {
+  font-size: 48px;
+  color: #888;
+}
+
+.no-data-message {
+  font-size: 16px;
+}

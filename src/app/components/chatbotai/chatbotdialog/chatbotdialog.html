@@ -1,0 +1,22 @@
+
+<mat-card class="chat-window">
+  <mat-card-title class="title"> BrotessBot</mat-card-title>
+  <mat-icon class="ite">support_agent</mat-icon>
+  <mat-card-content>
+    <div class="mensajes">
+  <div *ngFor="let msg of historial" class="mensaje" [ngClass]="msg.tipo">
+    <span>{{ msg.texto }}</span>
+  </div>
+</div>
+    <mat-form-field appearance="outline" class="input-chat">
+  <textarea matInput [(ngModel)]="mensaje" placeholder="Envíe un mensaje" rows="1" cdkTextareaAutosize
+            cdkAutosizeMinRows="1" cdkAutosizeMaxRows="10"></textarea>
+    </mat-form-field>
+
+
+    <button mat-icon-button color="primary" (click)="enviar()">
+      <mat-icon>send</mat-icon>
+    </button>
+  </mat-card-content>
+</mat-card>
+

@@ -1,30 +1,59 @@
+<div class="fondo">
+  <button routerLink="/enfermedad-sintoma/nuevo" class="boto">
+    Registrar nueva relación
+  </button>
 
-<div>
-    <div><h1>Lista de enfermedad</h1></div>
-    <div>
-        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
-      <!-- Position Column -->
+  <div class="Listado-EnfermedadSintoma">
+    <h2>Listado de Enfermedades y Síntomas</h2>
+  </div>
+
+  <div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- ID relación -->
       <ng-container matColumnDef="c1">
-        <th mat-header-cell *matHeaderCellDef>ID.</th>
-        <td mat-cell *matCellDef="let element">{{ element.idEnfermedad }}</td>
-      </ng-container>
-
-      <!-- Name Column -->
-      <ng-container matColumnDef="c2">
-        <th mat-header-cell *matHeaderCellDef>Sintoma enfermedad</th>
+        <th mat-header-cell *matHeaderCellDef>ID Relación</th>
         <td mat-cell *matCellDef="let element">{{ element.idSintomasE }}</td>
       </ng-container>
 
-      <!-- Weight Column -->
-      <ng-container matColumnDef="c3">
+      <!-- Enfermedad -->
+      <ng-container matColumnDef="c2">
         <th mat-header-cell *matHeaderCellDef>Enfermedad</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.idEnfermedad.nombreEnfermedad }}
+          {{ element.enfermedad?.nombre || element.idEnfermedad?.nombre || 'Sin datos' }}
+        </td>
+      </ng-container>
+
+      <!-- Síntoma -->
+      <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef>Síntoma</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.sintoma?.descripcion || 'Sin datos' }}
+        </td>
+      </ng-container>
+
+      <!-- Modificar -->
+      <ng-container matColumnDef="c4">
+        <th mat-header-cell *matHeaderCellDef>Modificar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button [routerLink]="['/ediciones', element.idSintomasE]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Eliminar -->
+      <ng-container matColumnDef="c5">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="eliminar(element.idSintomasE)">
+            <mat-icon>delete</mat-icon>
+          </button>
         </td>
       </ng-container>
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
     </table>
-    </div>
+  </div>
 </div>

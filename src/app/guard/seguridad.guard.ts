@@ -13,5 +13,13 @@ export const seguridadGuard= (
       router.navigate(['/login']);
       return false;
     }
-    return rpta;
+      //Verificacion de roles     
+      const expectedRoles: string[] = route.data['roles']; // <-- roles permitidos en la ruta
+       const userRole = lService.showRole(); // <-- rol actual
+    if (expectedRoles && !expectedRoles.includes(userRole)) {
+        router.navigate(['/unauthorized']); 
+        return false;
+    }
+        return rpta;//tiene acceso
+
 };

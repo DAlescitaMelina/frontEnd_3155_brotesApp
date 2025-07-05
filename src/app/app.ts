@@ -1,21 +1,27 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from './components/menu/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+
 import { Router, RouterOutlet,NavigationEnd } from '@angular/router';
 import { MenuEntidades } from "./components/menu-entidades/menu-entidades";
 import { filter } from 'rxjs/operators'; 
 import { CommonModule } from '@angular/common';
+import { ChatbotaiComponent } from "./components/chatbotai/chatbotai";
+
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,MenuComponent, RouterOutlet, MenuEntidades],
+  imports: [CommonModule, MenuComponent, RouterOutlet, MenuEntidades, ChatbotaiComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
   title = 'frontBrotesApp';
+  
    currentUrl: string = '';
 
   constructor(private router: Router) {
+    
     // Escucha los cambios de ruta
     this.router.events.pipe(
       filter(event => event instanceof NavigationEnd)
@@ -38,7 +44,7 @@ export class App {
     '/tiposT','/tiposT/nuevo','/tiposT/ediciones/:id',
     '/contagios','/contagios/nuevo','/contagios/ediciones/:id',
     '/usuarios','/usuarios/ediciones/:id',
-    '/efermedades','/efermedades/nuevo','/efermedades/ediciones/:id',
+    '/enfermedades','/enfermedades/nuevo','/enfermedades/ediciones/:id',
     '/brotes','/brotes/nuevo','/brotes/ediciones/:id',
     '/notificaciones','/notificaciones/nuevo','/notificaciones/ediciones/:id',
     '/EnfermedadSintomasE','/EnfermedadSintomasE/nuevo','/EnfermedadSintomasE/ediciones/:id',
@@ -46,7 +52,13 @@ export class App {
 
     //Brenda (Q_1BDTO Y Q_2BDTO )
     '/reportes','/reportes/cantidades-BrotesActivos-PorZona','/reportes/cantidadBrotesTotales',
+    //Wilson
+    '/reportes','/reportes/qw1',
 
+    //DAlessandra
+    '/reportes','/reportes/qd1','/reportes/qd2',
+
+    //Tony
   ];
   return rutas.some(ruta => this.currentUrl.includes(ruta));
 }

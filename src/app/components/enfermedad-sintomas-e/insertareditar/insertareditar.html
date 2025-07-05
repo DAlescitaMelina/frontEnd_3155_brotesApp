@@ -1,34 +1,48 @@
-<div>
-    <div><h1>Registro de enfermedad sintoma</h1></div>
-    <div>
-        <form [formGroup]="form" (ngSubmit)="aceptar()">
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Código</mat-label>
-    <input matInput formControlName="codigo" placeholder="Código" [readonly]="true">
-  </mat-form-field>
-
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Síntoma de Enfermedad</mat-label>
-    <mat-select formControlName="sintomaEnfermedad" required>
-      <mat-option *ngFor="let sintoma of listasintomasEnfermedad" [value]="sintoma">
-        {{ sintoma.nombreSintoma }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <mat-form-field class="full-width" appearance="fill">
-    <mat-label>Enfermedad</mat-label>
-    <mat-select formControlName="enfermedad" required>
-      <mat-option *ngFor="let enfermedad of listaenfermedad" [value]="enfermedad">
-        {{ enfermedad.nombre }}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-
-  <div class="actions">
-    <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid">Aceptar</button>
+<div class="form-enfermedad-sintoma">
+  <div id="titu">
+    <h1>{{ edicion ? 'Modificar Relación Enfermedad-Síntoma' : 'Registrar Relación Enfermedad-Síntoma' }}</h1>
   </div>
-</form>
 
-    </div>
+  <form [formGroup]="form" (ngSubmit)="aceptar()">
+
+    <!-- Campo ID solo en edición -->
+    <mat-form-field appearance="fill" *ngIf="edicion">
+      <mat-label>ID Relación</mat-label>
+      <input matInput formControlName="codigo" placeholder="Código">
+    </mat-form-field>
+    <br>
+
+    <!-- Select de Síntomas -->
+    <mat-form-field appearance="fill">
+      <mat-label>Síntoma</mat-label>
+      <mat-select formControlName="sintomaEnfermedad">
+        <mat-option *ngFor="let sintoma of listasintomasEnfermedad" [value]="sintoma.idSintomasE">
+          {{ sintoma.nombreSintoma }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('sintomaEnfermedad')?.touched && form.get('sintomaEnfermedad')?.invalid">
+        Seleccione un síntoma
+      </mat-error>
+    </mat-form-field>
+    <br>
+
+    <!-- Select de Enfermedades -->
+    <mat-form-field appearance="fill">
+      <mat-label>Enfermedad</mat-label>
+      <mat-select formControlName="enfermedad">
+        <mat-option *ngFor="let enfermedad of listaenfermedad" [value]="enfermedad.idEnfermedad">
+          {{ enfermedad.nombre }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('enfermedad')?.touched && form.get('enfermedad')?.invalid">
+        Seleccione una enfermedad
+      </mat-error>
+    </mat-form-field>
+    <br>
+
+    <!-- Botón de acción -->
+    <button mat-raised-button color="primary" type="submit">
+      {{ edicion ? 'Actualizar' : 'Registrar' }}
+    </button>
+  </form>
 </div>

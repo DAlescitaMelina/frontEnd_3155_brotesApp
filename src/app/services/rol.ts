@@ -38,6 +38,4 @@ export class RolService {
   update(z:Rol){
     return this.http.put(this.url+"/modifica",z)
   }
-
-
 }

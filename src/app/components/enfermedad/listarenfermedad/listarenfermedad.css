@@ -1,0 +1,55 @@
+.Listado-Enfermedad {
+  text-align: center;
+  margin-bottom: 20px;
+  margin-top: 40px;
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.fondo {
+  height: 100%;
+  padding: 21px;
+}
+
+.boto {
+  padding: 12px 24px;
+  margin-top: 40px;
+  margin-left: 14%;
+  border-radius: 8px;
+  background-color: rgb(10, 19, 113);
+  color: white;
+  border: none;
+}
+
+.boto:hover {
+  background-color: rgb(88, 94, 163);
+}
+
+.container {
+  margin: 0 auto;
+  width: 80%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th.mat-header-cell {
+  background-color: #e0e0e0;
+  font-weight: bold;
+}
+
+td.mat-cell,
+th.mat-header-cell {
+  padding: 12px;
+  text-align: center;
+}
+
+button[mat-button] {
+  color: #0a1371;
+}
+
+button[mat-button]:hover {
+  background-color: rgba(10, 19, 113, 0.1);
+}

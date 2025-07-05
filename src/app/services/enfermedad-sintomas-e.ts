@@ -12,10 +12,10 @@ export class EnfermedadSintomasEService  {
   private listaCambio = new Subject<EnfermedadSintomasE[]>();
   constructor(private http:HttpClient) { }
   list() {
-    return this.http.get<EnfermedadSintomasE[]>(this.url);
+    return this.http.get<EnfermedadSintomasE[]>(this.url +"/lista");
   }
   insert(esintomas: EnfermedadSintomasE) {
-    return this.http.post(this.url, esintomas);
+    return this.http.post(this.url+"/inserta",esintomas)
   }
   getList() {
     return this.listaCambio.asObservable();
@@ -24,7 +24,7 @@ export class EnfermedadSintomasEService  {
     this.listaCambio.next(listaNueva);
   }
   update(s:EnfermedadSintomasE){
-    return this.http.put(this.url,s);
+    return this.http.put(this.url+"/modifica",s);
   }
   listId(id: number) {
     return this.http.get<EnfermedadSintomasE>(`${this.url}/${id}`);

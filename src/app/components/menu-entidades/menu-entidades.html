@@ -1,6 +1,6 @@
 <mat-toolbar class="custom-toolbar" *ngIf="verificar()"> 
   <!-- LOGO -->
-  <button routerLink="/verinicio" class="logo">
+  <button class="logo">
    <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
    </button>
     <span class="spacer"></span>
@@ -14,14 +14,7 @@
 
  <!-- ENTIDADES -->
   <div> 
-  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
-   <mat-icon>file_copy</mat-icon>
-   Reportes
-  </button>
- </div>
-  <div> 
   <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
->>>>>>> Stashed changes
    <mat-icon>person</mat-icon>
    Usuario
   </button>
@@ -97,9 +90,7 @@
    <mat-icon>file_copy</mat-icon>
    Reportes
   </button>
- </div>
-</mat-toolbar>
-
+ </div> 
 
 
  <!-- LOGIN USUARIO -->
@@ -109,10 +100,10 @@
       <mat-icon>person</mat-icon>Usuario
     </button>
  </div>
+
 </mat-toolbar>
 
- <!-- MENU-ENTIDADES -->
->>>>>>> Stashed changes
+
 <mat-menu #menuZona="matMenu">
  <button mat-menu-item routerLink="/zonas">Listar</button>
  <button mat-menu-item routerLink="/zonas/nuevo">Registrar</button>
@@ -146,18 +137,22 @@
 </mat-menu>
 
 <mat-menu #menuTiposEnfermedad="matMenu">
+<button mat-menu-item routerLink="/tiposE">Listar</button>
+<button mat-menu-item routerLink="/tiposE/nuevo">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuSintomasEnfermedad="matMenu">
 </mat-menu>
 
 <mat-menu #menuBrotes="matMenu">
+<button mat-menu-item routerLink="/brotes">Listar</button>
+<button mat-menu-item routerLink="/brotes/nuevo">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuPrevenciones="matMenu">
 </mat-menu>
 
-<mat-menu #menuNotificaciones="matMenu"></mat-menu>
+<mat-menu #menuNotificaciones="matMenu">
 <button mat-menu-item routerLink="/notificaciones">Listar</button>
 <button mat-menu-item routerLink="/notificaciones/nuevo">Registrar</button>
 </mat-menu>
@@ -169,6 +164,7 @@
 <button mat-menu-item routerLink="/reportes/qd1">Cantidad de Enfermedades por Provincia</button> 
 <button mat-menu-item routerLink="/reportes/qd2">Cantidad de Enfermedades por Tipo de Transmisión</button> 
 <button mat-menu-item routerLink="/reportes/qt1">Cantidad de Usuarios por Distrito y Cantidad de Contagios por Distrito</button>
+
 </mat-menu>
 
  <!-- MENU-LOGIN Y ROL -->
@@ -182,3 +178,4 @@
     <span>{{ role }}</span>
   </button>
 </mat-menu> 
+

@@ -1,12 +1,10 @@
 import { Routes } from '@angular/router';
-
 import { ZonaComponent } from './components/zona/zona';
 import { RolComponent } from './components/rol/rol';
-import { ContagioComponent } from './components/contagio/contagio';
-import { TipoTransmisionComponent } from './components/tipo-transmision/tipo-transmision';
-
 import { InsertareditarComponentZona } from './components/zona/insertareditar/insertareditar';
 import { InsertareditarComponentRol } from './components/rol/insertareditar/insertareditar';
+import { ContagioComponent } from './components/contagio/contagio';
+import { TipoTransmisionComponent } from './components/tipo-transmision/tipo-transmision';
 import { InsertareditarComponentTipoTransmision } from './components/tipo-transmision/insertareditar/insertareditar';
 import { InsertareditarComponentContagio } from './components/contagio/insertareditar/insertareditar';
 import { EnfermedadComponent } from './components/enfermedad/enfermedad';
@@ -14,6 +12,7 @@ import { Insertareditar } from './components/enfermedad/insertareditar/insertare
 import { EnfermedadSintomasEComponent } from './components/enfermedad-sintomas-e/enfermedad-sintomas-e';
 import { UsuarioComponent } from './components/usuario/usuario';
 import { InsertareditarComponentUsuario } from './components/usuario/insertareditar/insertareditar';
+
 import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
 
 import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
@@ -31,7 +30,9 @@ import { Qt1Component } from './components/reportes/qt1/qt1';
 import { Login } from './components/login/login';
 import { seguridadGuard } from './guard/seguridad.guard';
 import { Home } from './components/home/home';
-  
+import { Qw1Component } from './components/reportes/qw1/qw1';
+import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
+
 
 
 export const routes: Routes = [
@@ -42,8 +43,7 @@ export const routes: Routes = [
     },
     {
         path:'verinicio',component:VerpantallaComponent
-    },
-    
+    },    
     {
         path: 'login',
         component: Login,
@@ -62,7 +62,6 @@ export const routes: Routes = [
         ],
             canActivate: [seguridadGuard],
     },
-    //Rol
     {
         path:'roles',component:RolComponent,
         children:[
@@ -105,7 +104,7 @@ export const routes: Routes = [
             canActivate: [seguridadGuard],
     },
     //enfermedad
-   { path:'enfermedad',component:EnfermedadComponent,
+   { path:'enfermedades',component:EnfermedadComponent,
         children:[
             {path:'nuevo',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
@@ -113,7 +112,7 @@ export const routes: Routes = [
             canActivate: [seguridadGuard],
      },
      //enfermedadSintoma
-     { path:'enfermedadSintomaE',component:EnfermedadSintomasEComponent,
+     { path:'EnfermedadSintomasE',component:EnfermedadSintomasEComponent,
         children:[
             {path:'nuevoESE',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
@@ -134,22 +133,35 @@ export const routes: Routes = [
         children:[
             {path:'nuevo',component:InsertareditarBrotesComponent},
             {path:'ediciones/:id', component:InsertareditarBrotesComponent}
-        ],
-            canActivate: [seguridadGuard],
+
+        ]
      },
+      
      //tiposEnfermedad
-     { path:'tiposE',component: TipoEnfermedadService,
+     { path:'tiposE',component: TipoEnfermedadComponent,
         children:[
             {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
             {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
         ],
             canActivate: [seguridadGuard],
      },
+
     //notificaciones
      { path:'notificaciones',component:NotificacionComponent,
         children:[
             {path:'nuevo',component:InsertareditarNotificacionComponent},
             {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
+
+        ]
+     },
+
+
+    //reportes
+    {   path:'reportes',component:ReportesComponent,
+        children:[
+        //Q_WDTO  
+        {path:'qw1',component:Qw1Component},
+
         ],
             canActivate: [seguridadGuard],
      },
@@ -170,13 +182,13 @@ export const routes: Routes = [
         //Q_1TDTO
         {path:'qt1',component:Qt1Component}
         ],
-            canActivate: [seguridadGuard],
+         canActivate: [seguridadGuard],
     },
   
     {
         path: 'homes',
         component: Home,
             canActivate: [seguridadGuard],
-
+              
     },
 ];

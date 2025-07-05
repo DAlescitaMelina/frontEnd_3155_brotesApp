@@ -1,0 +1,49 @@
+.fondo {
+  padding: 24px;
+  background-color: #c8f1f9;
+  min-height: 100vh;
+}
+
+.titulo {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.zona-boton {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 12px;
+}
+
+button[mat-raised-button] {
+  background-color: #0a4cbd;
+  color: white;
+  padding: 8px 18px;
+  font-weight: 500;
+  border-radius: 8px;
+}
+
+button[mat-raised-button]:hover {
+  background-color: #155dc4;
+}
+
+.contenedor-tabla {
+  border-radius: 8px;
+  padding: 16px;
+}
+
+.tabla-estilizada {
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.header-celeste {
+  background-color: #72D7F3;
+  font-weight: bold;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+}
