@@ -1,6 +1,6 @@
 <mat-toolbar class="custom-toolbar" *ngIf="verificar()"> 
   <!-- LOGO -->
-  <button routerLink="/verinicio" class="logo">
+  <button class="logo">
    <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
    </button>
     <span class="spacer"></span>
@@ -13,12 +13,6 @@
     </div> 
 
  <!-- ENTIDADES -->
-  <div> 
-  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
-   <mat-icon>file_copy</mat-icon>
-   Reportes
-  </button>
- </div>
   <div> 
   <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>person</mat-icon>
@@ -96,9 +90,7 @@
    <mat-icon>file_copy</mat-icon>
    Reportes
   </button>
- </div>
-</mat-toolbar>
-
+ </div> 
 
 
  <!-- LOGIN USUARIO -->
@@ -108,13 +100,10 @@
       <mat-icon>person</mat-icon>Usuario
     </button>
  </div>
-   <div>
-  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
-   <mat-icon>file_copy</mat-icon>
-   Reportes
-  </button>
- </div>
-</mat-toolbar> 
+
+</mat-toolbar>
+
+
 <mat-menu #menuZona="matMenu">
  <button mat-menu-item routerLink="/zonas">Listar</button>
  <button mat-menu-item routerLink="/zonas/nuevo">Registrar</button>

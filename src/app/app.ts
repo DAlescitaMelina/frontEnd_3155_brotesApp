@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { MenuComponent } from './components/menu/menu';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 import { Router, RouterOutlet,NavigationEnd } from '@angular/router';
 import { MenuEntidades } from "./components/menu-entidades/menu-entidades";
@@ -9,7 +10,7 @@ import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,MenuComponent, RouterOutlet, MenuEntidades],
+  imports: [CommonModule,MenuComponent, RouterOutlet, MenuEntidades,MatSnackBarModule],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

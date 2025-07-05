@@ -15,24 +15,12 @@ import { InsertareditarComponentUsuario } from './components/usuario/insertaredi
 
 import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
 
-import { VerpantallaComponent } from './components/pantalla-inicio/verpantalla/verpantalla';
-
 import { InsertareditarBrotesComponent } from './components/brotes/insertareditar-brotes/insertareditar-brotes.component';
 import { InsertareditartipoEnfermedadComponent } from './components/tipo-enfermedad/insertareditar/insertareditar.component';
 import { InsertareditarNotificacionComponent } from './components/notificacion/insertareditar-notificacion/insertareditar-notificacion.component';
 import { NotificacionComponent } from './components/notificacion/notificacion.component';
 import { BrotesComponent } from './components/brotes/brotes.component';
 import { TipoEnfermedadService } from './services/tipoEnfermedad.service';
-
-import { ReportesComponent } from './components/reportes/reportes'; 
-import { Q1bdto } from './components/reportes/q1bdto/q1bdto';
-import { Q2bdto } from './components/reportes/q2bdto/q2bdto';
-import { Qw1Component } from './components/reportes/qw1/qw1';
-import { QD2Component } from './components/reportes/q-d2/q-d2';
-import { QD1 } from './components/reportes/q-d1/q-d1';
-import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
-import { Qt1Component } from './components/reportes/qt1/qt1';
-
 import { ReportesComponent } from './components/reportes/reportes';
 import { Q1bdto } from './components/reportes/q1bdto/q1bdto';
 import { Q2bdto } from './components/reportes/q2bdto/q2bdto';
@@ -42,6 +30,8 @@ import { Qt1Component } from './components/reportes/qt1/qt1';
 import { Login } from './components/login/login';
 import { seguridadGuard } from './guard/seguridad.guard';
 import { Home } from './components/home/home';
+import { Qw1Component } from './components/reportes/qw1/qw1';
+import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
 
 
 
@@ -59,16 +49,6 @@ export const routes: Routes = [
         component: Login,
     },
 
-    
-    {
-        path:'pantalla-entidades',component:PantallaEntidadesComponent,
-          children:[
-        {
-            path:'verpantalla-entidades',component:VerpantallaEntidades
-        },
-       
-        ]
-    },
     {
         path:'zonas',component:ZonaComponent,
         children:[
@@ -158,18 +138,7 @@ export const routes: Routes = [
      },
       
      //tiposEnfermedad
-     { path:'tiposE',component:TipoEnfermedadComponent,
-        children:[
-            {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
-            {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
-        ]
-     },
-
-        ],
-            canActivate: [seguridadGuard],
-     },
-     //tiposEnfermedad
-     { path:'tiposE',component: TipoEnfermedadService,
+     { path:'tiposE',component: TipoEnfermedadComponent,
         children:[
             {path:'nuevo',component:InsertareditartipoEnfermedadComponent},
             {path:'ediciones/:id', component:InsertareditartipoEnfermedadComponent}
@@ -212,17 +181,14 @@ export const routes: Routes = [
                 
         //Q_1TDTO
         {path:'qt1',component:Qt1Component}
-        ]
-    }
-
         ],
-            canActivate: [seguridadGuard],
+         canActivate: [seguridadGuard],
     },
   
     {
         path: 'homes',
         component: Home,
             canActivate: [seguridadGuard],
-
+              
     },
 ];
