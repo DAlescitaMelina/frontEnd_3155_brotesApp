@@ -58,6 +58,28 @@
         </td>
       </ng-container>
 
+
+      <!-- Encabezado y filas -->
+      <!-- Modificar -->
+      <ng-container matColumnDef="c6">
+        <th mat-header-cell *matHeaderCellDef>Modificar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button [routerLink]="['/ediciones', element.idEnfermedad]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Eliminar -->
+      <ng-container matColumnDef="c7">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-button (click)="eliminar(element.idEnfermedad)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
       <!-- Encabezado y filas -->
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
