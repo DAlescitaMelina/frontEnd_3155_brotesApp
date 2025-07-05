@@ -1,0 +1,46 @@
+.ite {
+  display: block;
+  margin: 0 auto;
+}
+
+.title{
+  margin-top: 20px;
+  text-align: center;
+  
+}
+.mensajes {
+  max-height: 480px;
+  overflow-y: auto;
+  padding: 1em;
+}
+.chat-window{
+  background-color: hwb(191 69% 9%);
+}
+.mensaje {
+  margin: 8px 0;
+  padding: 10px 14px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  max-width: 90%;
+}
+
+.usuario {
+  background-color: #d6f5d6;
+  align-self: flex-end;
+  justify-content: flex-end;
+  margin-left: auto;
+}
+
+.bot {
+  background-color: #8fc7e7;
+  align-self: flex-start;
+  justify-content: flex-start;
+  margin-right: auto;
+}
+
+.icono {
+  font-size: 18px;
+  margin-right: 8px;
+  color: #3f51b5;
+}

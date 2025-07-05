@@ -6,11 +6,12 @@ import { Router, RouterOutlet,NavigationEnd } from '@angular/router';
 import { MenuEntidades } from "./components/menu-entidades/menu-entidades";
 import { filter } from 'rxjs/operators'; 
 import { CommonModule } from '@angular/common';
+import { ChatbotaiComponent } from "./components/chatbotai/chatbotai";
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule,MenuComponent, RouterOutlet, MenuEntidades,MatSnackBarModule],
+  imports: [CommonModule, MenuComponent, RouterOutlet, MenuEntidades, ChatbotaiComponent],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
