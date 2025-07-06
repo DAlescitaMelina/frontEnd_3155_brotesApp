@@ -18,6 +18,8 @@ import { EnfermedadService } from '../../../services/enfermedad';
 import { TipoEnfermedad } from '../../../models/tipoEnfermedad';
 import { TipoTransmision } from '../../../models/tipoTransmision';
 import { MatOption, MatSelectModule } from '@angular/material/select';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-insertareditar',
@@ -30,6 +32,7 @@ import { MatOption, MatSelectModule } from '@angular/material/select';
     MatButtonModule,
     MatOption,
     MatSelectModule,
+    MatSnackBarModule
   ],
   templateUrl: './insertareditar.html',
   styleUrl: './insertareditar.css',
@@ -46,7 +49,8 @@ export class Insertareditar implements OnInit {
     private formBuilder: FormBuilder,
     private eS: EnfermedadService,
     private router: Router,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar
   ) {}
 
   ngOnInit(): void {
@@ -83,20 +87,32 @@ export class Insertareditar implements OnInit {
       this.enfermedad.descripcionEnfermedad = this.form.value.descripcion;
       this.enfermedad.tipoEnfermedad.idTipoE = this.form.value.tipoEnfermedad;
       this.enfermedad.tipoTransmision.idTipoT = this.form.value.tipoTransmision;
+
       if (this.edicion) {
-        this.eS.update(this.enfermedad).subscribe((data) => {
+        this.eS.update(this.enfermedad).subscribe(() => {
+          this.snackBar.open('Enfermedad actualizada correctamente', 'Cerrar', {
+            duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+          });
           this.eS.list().subscribe((data) => {
             this.eS.setList(data);
+            this.router.navigate(['enfermedades']);
           });
         });
       } else {
         this.eS.insert(this.enfermedad).subscribe(() => {
+          this.snackBar.open('Enfermedad registrada correctamente', 'Cerrar', {
+            duration: 3000,
+            horizontalPosition: 'right',
+            verticalPosition: 'top',
+          });
           this.eS.list().subscribe((data) => {
             this.eS.setList(data);
+            this.router.navigate(['enfermedades']);
           });
         });
       }
-      this.router.navigate(['enfermedades']);
     }
   }
 
