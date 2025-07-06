@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder,FormControl,FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder,FormControl,FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -17,6 +17,9 @@ import { ZonaService } from '../../../services/zona';
 import { UsuarioService } from '../../../services/usuario';
 import { EnfermedadService } from '../../../services/enfermedad';
 import { Usuario } from '../../../models/usuario';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import {MatTimepickerModule} from '@angular/material/timepicker';
+
 
 @Component({
   selector: 'app-insertareditar',
@@ -30,10 +33,13 @@ import { Usuario } from '../../../models/usuario';
     MatRadioModule,
     MatDatepickerModule,
     MatSelectModule,
-    MatButtonModule
+    MatButtonModule,
+    MatTimepickerModule
   ],
   templateUrl: './insertareditar.html',
-  styleUrl: './insertareditar.css'
+  styleUrl: './insertareditar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class InsertareditarComponentContagio implements OnInit{
 form: FormGroup=new FormGroup({})
@@ -53,8 +59,8 @@ listaEnfermedades:Enfermedad[]=[]
     private zS:ZonaService,
     private uS:UsuarioService,
     private eS:EnfermedadService,
-    private route: ActivatedRoute
-
+    private route: ActivatedRoute,
+    private snackBar: MatSnackBar, 
   ) {}
 
   ngOnInit(): void {
@@ -83,6 +89,20 @@ listaEnfermedades:Enfermedad[]=[]
       })          
   }
 
+
+  
+ validarFechaHora(control: AbstractControl) {
+    const valor = new Date(control.value);
+    const hoy = new Date();
+
+    valor.setHours(0, 0, 0, 0);
+    hoy.setHours(0, 0, 0, 0);
+
+    return valor < hoy ? null : { fechaNoPasada: true };
+  }
+
+
+
   aceptar(){
   if(this.form.valid){
     this.contagio.fechaContagio=this.form.value.fecha
@@ -105,6 +125,11 @@ listaEnfermedades:Enfermedad[]=[]
             })
           })
       }
+               // Muestra el snackbar
+      this.snackBar.open('¡Registrado exitosamente!', 'Cerrar', {
+      duration: 3000,
+    });
+
       this.router.navigate(['contagios'])
     }
   }
