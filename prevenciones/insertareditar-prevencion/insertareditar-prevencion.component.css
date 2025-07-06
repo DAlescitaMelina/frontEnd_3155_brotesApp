@@ -1,0 +1,42 @@
+.form-prev {
+  background-color: #c2f0fc;
+  height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+
+.formulario {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 300px;
+}
+
+.full-width {
+  width: 100%;
+  background-color: #e6e3f1;
+}
+
+.custom-button {
+  background-color: #007bff;
+  color: white;
+  font-weight: bold;
+  border-radius: 15px;
+  padding: 8px 24px;
+  align-self: center;
+  transition: background-color 0.3s ease;
+}
+
+.custom-button:hover {
+  background-color: #0056b3;
+}
