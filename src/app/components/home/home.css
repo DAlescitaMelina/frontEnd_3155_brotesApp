@@ -1,0 +1,14 @@
+.saludo {
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  background-color:  #007792; 
+}
+
+.saludo h2 {
+  font-size: 6rem; /* MUCHÍSIMO más grande que un h2 normal (~2rem) */
+  color: #ffffff;
+  font-weight: bold; 
+  margin: 0;
+  line-height: 1.2;
+}

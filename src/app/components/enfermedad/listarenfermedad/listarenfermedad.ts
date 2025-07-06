@@ -18,8 +18,10 @@ import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
   templateUrl: './listarenfermedad.html',
   styleUrls: ['./listarenfermedad.css'],
 })
+
 export class ListarenfermedadComponent implements OnInit {
   displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'];
+
   dataSource: MatTableDataSource<Enfermedad> = new MatTableDataSource();
 
   constructor(private eS: EnfermedadService, private snackBar: MatSnackBar) {}

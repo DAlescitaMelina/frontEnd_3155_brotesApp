@@ -1,87 +1,106 @@
-<mat-toolbar class="custom-toolbar">
-    <button routerLink="/verinicio" class="logo">
+<mat-toolbar class="custom-toolbar" *ngIf="verificar()"> 
+  <!-- LOGO -->
+  <button class="logo">
    <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
    </button>
-
     <span class="spacer"></span>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo">
+
+ <!-- HOME -->
+    <div>
+    <button mat-button [routerLink]="['/homes']">
+      <mat-icon>home</mat-icon>Home
+    </button>
+    </div> 
+
+ <!-- ENTIDADES -->
+  <div> 
+  <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>person</mat-icon>
    Usuario
   </button>
  </div>
-<div>
-  <button mat-button [matMenuTriggerFor]="menuRol" class="btn-rojo">
+ <div>
+  <button mat-button [matMenuTriggerFor]="menuRol" class="btn-rojo" *ngIf="isAdmin()"> 
    <mat-icon>business</mat-icon>
    Roles
   </button>
  </div>
  <div>
-  <button mat-button [matMenuTriggerFor]="menuZona" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuZona" class="btn-rojo"   *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>business</mat-icon>
    Zonas
   </button>
  </div>
  <div>
-  <button mat-button [matMenuTriggerFor]="menuTiposTransmision" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuTiposTransmision" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>coronavirus</mat-icon>
    Tipos de transmisión
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuTiposEnfermedad" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuTiposEnfermedad" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>business</mat-icon>
    Tipos de enfermedad
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuSintomasEnfermedad" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuSintomasEnfermedad" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>business</mat-icon>
    Sintomas de Enfermedades
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuContagio" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuContagio" class="btn-rojo"   *ngIf="isAdmin() || isPersona()">
    <mat-icon>sick</mat-icon>
    Contagios
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuEnfermedades" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuEnfermedades" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>business</mat-icon>
    Enfermedades
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>business</mat-icon>
    Enfermedad-Sintoma
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuBrotes" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuBrotes" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>track_changes</mat-icon>
    Brotes
   </button>
  </div>
    <div>
-  <button mat-button [matMenuTriggerFor]="menuPrevenciones" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuPrevenciones" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>warning</mat-icon>
    Prevenciones
   </button>
  </div>
   <div>
-  <button mat-button [matMenuTriggerFor]="menuNotificaciones" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuNotificaciones" class="btn-rojo"   *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>flag</mat-icon>
    Notificaciones
   </button>
- </div>
+  </div>
    <div>
-  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
    <mat-icon>file_copy</mat-icon>
    Reportes
   </button>
+ </div> 
+
+
+ <!-- LOGIN USUARIO -->
+ <span class="toolbar-spacer"></span>
+ <div class="right-menu">
+    <button mat-button [matMenuTriggerFor]="menuSalir" >
+      <mat-icon>person</mat-icon>Usuario
+    </button>
  </div>
+
 </mat-toolbar>
 
 
@@ -154,4 +173,18 @@
 <button mat-menu-item routerLink="/reportes/qd1">Cantidad de Enfermedades por Provincia</button> 
 <button mat-menu-item routerLink="/reportes/qd2">Cantidad de Enfermedades por Tipo de Transmisión</button> 
 <button mat-menu-item routerLink="/reportes/qt1">Cantidad de Usuarios por Distrito y Cantidad de Contagios por Distrito</button>
+
 </mat-menu>
+
+ <!-- MENU-LOGIN Y ROL -->
+<mat-menu #menuSalir="matMenu">
+  <button mat-menu-item routerLink="/login" (click)="cerrar()">
+    <mat-icon>logout</mat-icon>
+    <span>Cerrar sesión</span>
+  </button>
+  <button mat-menu-item>
+    Rol:
+    <span>{{ role }}</span>
+  </button>
+</mat-menu> 
+
