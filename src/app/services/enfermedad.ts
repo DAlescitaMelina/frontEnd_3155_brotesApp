@@ -41,7 +41,7 @@ export class EnfermedadService {
       { params }
     );
   }
-  getCantidadTransmisionPorProvincia(provincia: string) {
+  getCantidadTransmisionPorProvincia(provincia: string): Observable<cantidadEnfermedadTransmision[]> {
   const params = { provincia };
   return this.http.get<cantidadEnfermedadTransmision[]>(
     `${this.url}/cantidad-transmision-provincia`,
