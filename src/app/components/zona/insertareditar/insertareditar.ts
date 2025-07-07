@@ -8,6 +8,9 @@ import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatButtonModule } from '@angular/material/button';
+import maplibregl from 'maplibre-gl';
+import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-insertareditar',
@@ -27,8 +30,67 @@ export class InsertareditarComponentZona implements OnInit {
     private formBuilder:FormBuilder,
     private zS:ZonaService,
     private router:Router,
-    private route:ActivatedRoute
+    private route:ActivatedRoute,
+    private http:HttpClient
   ){}
+
+//mapaaaaaaaaaaaaaaaaaaa
+initMap(): void {
+  const container = document.getElementById('map');
+
+  if (container) {
+    const map = new maplibregl.Map({
+      container: 'map',
+      style: 'https://basemaps.cartocdn.com/gl/positron-gl-style/style.json',
+      center: [-77.0428, -12.0464],
+      zoom: 12
+    });
+
+    map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+    let marker: maplibregl.Marker | null = null; 
+
+    map.on('click', (e) => {
+      const lat = Number(e.lngLat.lat.toFixed(6))
+      const lng = Number(e.lngLat.lng.toFixed(6));
+
+      this.form.get('latitud')?.setValue(lat);
+      this.form.get('longitud')?.setValue(lng);
+      this.obtenerUbicacion(lat,lng)
+
+      //  Eliminar marcador anterior si existe
+      if (marker) {
+        marker.remove();
+      }
+
+      //  Crear nuevo marcador
+      marker = new maplibregl.Marker({ color: 'purple' })
+        .setLngLat([lng, lat])
+        .setPopup(new maplibregl.Popup().setText(`Lat: ${lat.toFixed(5)} | Lng: ${lng.toFixed(5)}`))
+        .addTo(map);
+    });
+  }
+}
+
+  //geodecodificacion - provincia y distrito
+  obtenerUbicacion(lat: number, lng: number): void {
+  const apiKey = 'cc3db89afed04f6fba3759a8b0dd7392';
+  const url = `https://api.opencagedata.com/geocode/v1/json?q=${lat}+${lng}&key=${apiKey}`;
+
+  this.http.get<any>(url).subscribe(res => {
+    const resultado = res.results[0];
+    const comp = resultado.components;
+
+    const provincia = comp.state || comp.region || '';
+    const distrito = comp.city || comp.town || comp.suburb || comp.village || '';
+
+    this.form.get('provincia')?.setValue(provincia);
+    this.form.get('distrito')?.setValue(distrito);
+
+    console.log('Ubicación obtenida:', provincia, distrito);
+  });
+}
+
 
   ngOnInit(): void {
       this.route.params.subscribe((data:Params)=>{
@@ -45,6 +107,8 @@ export class InsertareditarComponentZona implements OnInit {
         latitud:['',Validators.required],
         longitud:['',Validators.required]
       })
+
+      this.initMap()
   } 
   aceptar(){
     if(this.form.valid){

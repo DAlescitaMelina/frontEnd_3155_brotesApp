@@ -5,6 +5,15 @@ import { Observable, Subject } from 'rxjs';
 import { Notificacion } from '../models/notificacion';
 import { QWDTO1 } from '../models/q_w1dto';
 const base_url=environment.base
+
+export interface NotificacionPerDTO {
+  idNotificacion: number;
+  fechaEnvio: string;
+  estado: string;
+  titulo: string;
+  contenido: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -43,4 +52,8 @@ list() {
       getqw1():Observable<QWDTO1[]>{
         return this.http.get<QWDTO1[]>(this.url+"/CantidadUsuarios_Notificados")
       }
+  
+  listarNotificacionesPorPersona(): Observable<NotificacionPerDTO[]> {
+    return this.http.get<NotificacionPerDTO[]>(this.url+"/lista-cadapersona");
+  }
 }

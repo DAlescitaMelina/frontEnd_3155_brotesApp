@@ -39,8 +39,7 @@ import { InsertareditarComponentSintomasEnfermedad } from './components/sintomas
 
 export const routes: Routes = [
     {
-        path:'',redirectTo: 'verinicio',pathMatch:'full' //cuando haya un path en blanco que me redirija a otra ruta
-        //de forma automatica a lo que se ponga en redirectTo
+        path:'',redirectTo: 'verinicio',pathMatch:'full' 
 
     },
     {
