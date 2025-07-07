@@ -49,6 +49,8 @@ export class App {
     '/notificaciones','/notificaciones/nuevo','/notificaciones/ediciones/:id',
     '/EnfermedadSintomasE','/EnfermedadSintomasE/nuevo','/EnfermedadSintomasE/ediciones/:id',
     '/tiposE','/tiposE/nuevo','/tiposE/ediciones/:id',
+    '/sintomasE','/sintomasE/nuevo','/sintomasE/ediciones/:id',
+    '/prevenciones','/prevenciones/nuevo','/prevenciones/ediciones/:id',
 
     //Brenda (Q_1BDTO Y Q_2BDTO )
     '/reportes','/reportes/cantidades-BrotesActivos-PorZona','/reportes/cantidadBrotesTotales',

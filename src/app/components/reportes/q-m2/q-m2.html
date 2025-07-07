@@ -1,0 +1,24 @@
+<div class="fondo">
+  <div class="title-container">
+    <div class="title" style="text-align: center;">
+      <h1>Prevenciones por tipo de enfermedad</h1>
+    </div>
+
+    <div class="table-container" style="display: flex; justify-content: center; margin-top: 30px;">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Tipo de enfermedad</th>
+            <th>Descripción de prevención</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datosTabla">
+            <td>{{ item.tipoEnfermedad }}</td>
+            <td>{{ item.descripcionPrevencion }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

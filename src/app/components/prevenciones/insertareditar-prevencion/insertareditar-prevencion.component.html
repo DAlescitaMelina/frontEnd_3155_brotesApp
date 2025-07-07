@@ -1,0 +1,28 @@
+<div class="form-prev">
+  <h1 class="form-title">Registro de Prevenciónes</h1>
+
+  <form [formGroup]="form" (ngSubmit)="aceptar()" class="formulario">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Descripción</mat-label>
+      <input matInput formControlName="descripcion" />
+      <mat-error *ngIf="form.get('descripcion')?.hasError('required')">
+        La descripción es obligatoria.
+      </mat-error>
+    </mat-form-field>
+ 
+  
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Tipo de Enfermedad</mat-label>
+      <mat-select formControlName="tipoE">
+        <mat-option *ngFor="let tipo of listaTipos" [value]="tipo.idTipoE">
+          {{ tipo.nombreTipoE }}
+        </mat-option>
+      </mat-select>
+      <mat-error *ngIf="form.get('tipoE')?.hasError('required')">
+        Seleccionar un tipo de enfermedad es obligatorio.
+      </mat-error>
+    </mat-form-field>
+
+    <button mat-raised-button color="primary" type="submit">Registrar</button>
+  </form>
+</div>
