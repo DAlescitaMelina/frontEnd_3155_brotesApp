@@ -3,6 +3,19 @@
   background-color: #c8f1f9;
   min-height: 100vh;
 }
+.mapa-contenedor {
+  display: flex;
+  justify-content: center;
+  margin: 24px 0;
+}
+
+.mapa-estilo {
+  width: 90%;
+  max-width: 800px;
+  height: 400px;
+  border-radius: 12px;
+  box-shadow: 0 0 12px rgba(0,0,0,0.1);
+}
 
 .titulo-saludo {
   background-color: #9ad8e7;

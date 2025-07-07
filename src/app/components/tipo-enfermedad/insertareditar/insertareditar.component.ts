@@ -72,7 +72,7 @@ export class InsertareditartipoEnfermedadComponent implements OnInit {
           });
         });
       }
-      this.router.navigate(['tipoE']);
+      this.router.navigate(['tiposE']);
     }
   }
 

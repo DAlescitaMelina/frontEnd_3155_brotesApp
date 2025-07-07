@@ -1,68 +1,51 @@
 <div class="form-contagio">
-  <div id="titulo"><h1>{{edicion ? 'Modificar tipo de trasmisión': 'Registro de contagio'}}</h1>
+  <div id="titulo">
+    <h1>{{ edicion ? 'Modificar contagio' : 'Registro de contagio' }}</h1>
   </div>
-   <div> 
-        <form [formGroup]="form" (submit)="aceptar()">
-            <mat-form-field class="example-full-width">
-                <mat-label>Fecha</mat-label>
-                <input matInput [matDatepicker]="picker" formControlName="fecha">
-                <mat-hint>MM/DD/YYYY</mat-hint>
-                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-                <mat-datepicker #picker></mat-datepicker>                
-                <mat-error *ngIf="form.get('fecha')?.hasError('required')">
-                La fecha es obligatoria!!
-                </mat-error>
-            </mat-form-field>
-            <br>
-            <mat-form-field class="example-full-width">
-                <mat-label>Hora</mat-label>
-                <input matInput type="time" formControlName="hora">
-                <mat-error *ngIf="form.get('hora')?.hasError('required')">
-                La hora es obligatoria!!
-                </mat-error>
-            </mat-form-field>
-            <br>
-            <!-- Enfermedad -->
-            <mat-form-field>
-            <mat-label>Enfermedades</mat-label>
-            <mat-select formControlName="enf">
-                @for (food of listaEnfermedades; track food) {
-                <mat-option [value]="food.idEnfermedad">{{food.nombre}}</mat-option>
-                }
-            </mat-select>
-            <mat-error *ngIf="form.get('enf')?.hasError('required')">
-                Enfermedad es obligatoria!!
-                </mat-error>
-            </mat-form-field>
-            <br>
-            <!-- Zona -->
-            <mat-form-field>
-            <mat-label>Zonas</mat-label>
-            <mat-select formControlName="zon">
-                @for (food of listaZonas; track food) {
-                <mat-option [value]="food.idZona">{{food.provincia}}</mat-option>
-                }
-            </mat-select>
-            <mat-error *ngIf="form.get('zon')?.hasError('required')">
-                Zona es obligatoria!!
-                </mat-error>
-            </mat-form-field>
-            <br>
-            <!-- Usuario -->
-            <mat-form-field>
-            <mat-label>Usuarios</mat-label>
-            <mat-select formControlName="usr">
-                @for (food of listaUsuarios; track food) {
-                <mat-option [value]="food.idUsuario">{{food.nombre}}</mat-option>
-                }
-            </mat-select>
-            <mat-error *ngIf="form.get('usr')?.hasError('required')">
-                Usuario es obligatorio!!
-                </mat-error>
-            </mat-form-field>
-            <br>
 
-            <button matButton="filled">Registrar</button>
-        </form>
-    </div>
+  <form [formGroup]="form" (submit)="aceptar()">
+    <!-- Fecha -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Fecha</mat-label>
+      <input matInput type="date" formControlName="fecha" readonly>
+    </mat-form-field>
+    <br>
+
+    <!-- Hora -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Hora</mat-label>
+      <input matInput type="time" formControlName="hora" readonly>
+    </mat-form-field>
+    <br>
+
+    <!-- Zona (solo lectura usando el nombreZona del token) -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Zona asignada</mat-label>
+      <input matInput [value]="nombreZona" readonly>
+    </mat-form-field>
+    <br>
+
+    <!-- Usuario (nombre del usuario desde token) -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Usuario</mat-label>
+      <input matInput [value]="nombreUsuario" readonly>
+    </mat-form-field>
+    <br>
+
+    <!-- Enfermedad (seleccionable por el usuario) -->
+    <mat-form-field class="example-full-width">
+      <mat-label>Enfermedad</mat-label>
+      <mat-select formControlName="enf">
+        @for (item of listaEnfermedades; track item) {
+          <mat-option [value]="item.idEnfermedad">{{ item.nombre }}</mat-option>
+        }
+      </mat-select>
+      <mat-error *ngIf="form.get('enf')?.hasError('required')">
+        La enfermedad es obligatoria
+      </mat-error>
+    </mat-form-field>
+    <br>
+
+    <button mat-raised-button color="primary">Registrar</button>
+  </form>
 </div>
