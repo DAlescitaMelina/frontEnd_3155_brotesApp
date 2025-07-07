@@ -1,5 +1,5 @@
 <div class="form-contagio">
-  <div id="titulo"><h1>{{edicion ? 'Modificar tipo de trasmisión': 'Registro de tipo de trasmisión'}}</h1>
+  <div id="titulo"><h1>{{edicion ? 'Modificar tipo de trasmisión': 'Registro de contagio'}}</h1>
   </div>
    <div> 
         <form [formGroup]="form" (submit)="aceptar()">
@@ -10,15 +10,15 @@
                 <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker></mat-datepicker>                
                 <mat-error *ngIf="form.get('fecha')?.hasError('required')">
-                La fecha del contagio es obligatoria!!
+                La fecha es obligatoria!!
                 </mat-error>
             </mat-form-field>
             <br>
             <mat-form-field class="example-full-width">
                 <mat-label>Hora</mat-label>
-                <input matInput formControlName="hora">
+                <input matInput type="time" formControlName="hora">
                 <mat-error *ngIf="form.get('hora')?.hasError('required')">
-                La hora del contagio es obligatoria!!
+                La hora es obligatoria!!
                 </mat-error>
             </mat-form-field>
             <br>

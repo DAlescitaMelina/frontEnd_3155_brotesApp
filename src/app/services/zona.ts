@@ -20,6 +20,10 @@ export class ZonaService {
     return this.http.get<Zona[]>(this.url +"/lista-todo")
   }
 
+  listsina(){
+    return this.http.get<Zona[]>(this.url +"/lista-sa")
+  }
+
   insert(z:Zona){
     return this.http.post(this.url+"/inserta",z)
   }

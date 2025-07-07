@@ -16,7 +16,7 @@ import { MatPaginator, MatPaginatorModule } from '@angular/material/paginator';
   styleUrl: './listarzona.css'
 })
 export class Listarzona implements OnInit {
-  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5', 'c6', 'c7'];
+  displayedColumns: string[] = ['c1', 'c2', 'c3', 'c4', 'c5'];
   dataSource: MatTableDataSource<Zona> = new MatTableDataSource();
   private map: maplibregl.Map | undefined;
   private markers: maplibregl.Marker[] = [];

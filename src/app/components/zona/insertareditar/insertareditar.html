@@ -1,9 +1,13 @@
-<div class="form-zona">
-  <div id="titu"><h1>{{edicion ? 'Modificar Zona': 'Registro de Zonas'}}</h1>
-</div>
-  <div>
+<div class="zona-cont">
+<div class="zona-layout">
+  <!-- 📝 Columna izquierda: formulario -->
+  <div class="form-zona">
+    <div id="titu">
+      <h1>{{ edicion ? 'Modificar Zona' : 'Registro de Zonas' }}</h1>
+    </div>
+
     <form [formGroup]="form" (submit)="aceptar()">
-      <mat-form-field  *ngIf="edicion">
+      <mat-form-field *ngIf="edicion" appearance="outline">
         <mat-label>ID</mat-label>
         <input matInput formControlName="codigo" />
         <mat-error *ngIf="form.get('codigo')?.hasError('required')">
@@ -11,41 +15,51 @@
         </mat-error>
       </mat-form-field>
       <br />
-      <mat-form-field>
+
+      <mat-form-field class="example-full-width">
         <mat-label>Provincia</mat-label>
-        <input matInput formControlName="provincia" />
+        <input matInput formControlName="provincia" readonly />
         <mat-error *ngIf="form.get('provincia')?.hasError('required')">
-          El nombre de la provincia es obligatorio!!
-        </mat-error>
-      </mat-form-field>
-      <br />
-      <mat-form-field>
-        <mat-label>Distrito</mat-label>
-        <input matInput formControlName="distrito" />
-        <mat-error *ngIf="form.get('distrito')?.hasError('required')">
-          El nombre del distrito es obligatorio!!
+          La provincia es obligatoria!!
         </mat-error>
       </mat-form-field>
       <br />
 
-      <mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Distrito</mat-label>
+        <input matInput formControlName="distrito" readonly />
+        <mat-error *ngIf="form.get('distrito')?.hasError('required')">
+          El distrito es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+
+      <mat-form-field class="example-full-width">
         <mat-label>Latitud</mat-label>
-        <input matInput formControlName="latitud" />
+        <input matInput formControlName="latitud" readonly />
         <mat-error *ngIf="form.get('latitud')?.hasError('required')">
           La latitud es obligatoria!!
         </mat-error>
       </mat-form-field>
       <br />
 
-      <mat-form-field>
+      <mat-form-field class="example-full-width">
         <mat-label>Longitud</mat-label>
-        <input matInput formControlName="longitud" />
+        <input matInput formControlName="longitud" readonly/>
         <mat-error *ngIf="form.get('longitud')?.hasError('required')">
           La longitud es obligatoria!!
         </mat-error>
       </mat-form-field>
       <br />
-      <button matButton="filled">Registrar</button>
+
+      <button mat-raised-button color="primary">Registrar</button>
     </form>
   </div>
+
+  <!--mapa -->
+  <div class="mapa">
+    <label>Haz clic en el mapa para seleccionar las coordenadas:</label>
+    <div id="map" style="width:500px; height:500px; border:1px dashed #1a1717; border-radius:8px;"></div>
+  </div>
+</div>
 </div>
