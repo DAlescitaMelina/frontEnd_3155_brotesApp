@@ -1,0 +1,74 @@
+<div class="fondo">
+
+  <div class="Listado-qw">
+    <h2>Lista de Notificaciones</h2>
+  </div>
+
+  <div class="container">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <!-- Columnas -->
+      <ng-container matColumnDef="c1">
+        <th mat-header-cell *matHeaderCellDef>Notificación Id</th>
+        <td mat-cell *matCellDef="let element">{{ element.idNotificacion }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c2">
+        <th mat-header-cell *matHeaderCellDef>Título</th>
+        <td mat-cell *matCellDef="let element">{{ element.titulo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c3">
+        <th mat-header-cell *matHeaderCellDef>Contenido</th>
+        <td mat-cell *matCellDef="let element">{{ element.contenido }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c4">
+        <th mat-header-cell *matHeaderCellDef>Estado</th>
+        <td mat-cell *matCellDef="let element">{{ element.estado }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c5">
+        <th mat-header-cell *matHeaderCellDef>Fecha Envío</th>
+        <td mat-cell *matCellDef="let element">{{ element.fechaEnvio }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c6">
+        <th mat-header-cell *matHeaderCellDef>Id del Brote</th>
+        <td mat-cell *matCellDef="let element">{{ element.brotes.idBrote }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="c7">
+        <th mat-header-cell *matHeaderCellDef>Actualizar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button [routerLink]="['ediciones', element.idTipoE]">
+            <mat-icon>edit</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="c8">
+        <th mat-header-cell *matHeaderCellDef>Eliminar</th>
+        <td mat-cell *matCellDef="let element">
+          <button mat-icon-button (click)="eliminar(element.idTipoE)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <!-- Encabezado con fondo celeste -->
+      <tr mat-header-row
+          *matHeaderRowDef="displayedColumns"
+          style="background-color: #72D7F3; color: black; font-weight: bold;">
+      </tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator #paginator
+                   [pageSize]="5"
+                   [pageSizeOptions]="[5, 10, 20]"
+                   showFirstLastButtons>
+    </mat-paginator>
+  </div>
+
+</div>

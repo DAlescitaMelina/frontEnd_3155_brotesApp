@@ -105,7 +105,7 @@ export const routes: Routes = [
     //enfermedad
    { path:'enfermedades',component:EnfermedadComponent,
         children:[
-            {path:'nuevo',component:Insertareditar},
+            {path:'inserta',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
         ],
             canActivate: [seguridadGuard],

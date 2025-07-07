@@ -123,13 +123,18 @@
 
 <mat-menu #menuEnfermedades="matMenu">
  <button mat-menu-item routerLink="/enfermedades">Listar</button>
- <button mat-menu-item routerLink="/enfermedades/nuevo">Registrar</button>
+ <button mat-menu-item routerLink="/enfermedades/inserta">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuEnfermedadSintoma="matMenu">
 <button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
 <button mat-menu-item routerLink="/EnfermedadSintomasE/nuevoESE">Registrar</button>
 </mat-menu>
+<button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
+   <mat-icon>file_copy</mat-icon>
+   Reportes
+  </button>
+
 
 <mat-menu #menuUsuario="matMenu">
 <button mat-menu-item routerLink="/usuarios">Listar</button>
@@ -148,9 +153,13 @@
 <button mat-menu-item routerLink="/brotes">Listar</button>
 <button mat-menu-item routerLink="/brotes/nuevo">Registrar</button>
 </mat-menu>
-
+<mat-menu #menuReportes="matMenu">
+ <button mat-menu-item routerLink="/reportes/qd1">QD1</button> 
+ <button mat-menu-item routerLink="/reportes/qd2">QD2</button> 
+</mat-menu>
 <mat-menu #menuPrevenciones="matMenu">
 </mat-menu>
+
 
 <mat-menu #menuNotificaciones="matMenu">
 <button mat-menu-item routerLink="/notificaciones">Listar</button>
