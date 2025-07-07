@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+
 import { MatButtonModule } from '@angular/material/button';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatFormFieldModule } from '@angular/material/form-field';
@@ -15,6 +17,7 @@ import { Enfermedad } from '../../../models/enfermedad';
 import { ContagiosService } from '../../../services/contagios';
 import { UsuarioService } from '../../../services/usuario';
 import { EnfermedadService } from '../../../services/enfermedad';
+
 import { ChangeDetectorRef } from '@angular/core';
 import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
 
@@ -31,9 +34,12 @@ import { MatSnackBarModule, MatSnackBar } from '@angular/material/snack-bar';
     MatSelectModule,
     MatButtonModule,
     MatSnackBarModule
+
   ],
   templateUrl: './insertareditar.html',
-  styleUrl: './insertareditar.css'
+  styleUrl: './insertareditar.css',
+  changeDetection: ChangeDetectionStrategy.OnPush,
+
 })
 export class InsertareditarComponentContagio implements OnInit {
   form: FormGroup = new FormGroup({});
@@ -54,6 +60,7 @@ export class InsertareditarComponentContagio implements OnInit {
     private route: ActivatedRoute,
     private cdr: ChangeDetectorRef,
     private snackBar: MatSnackBar
+
   ) {}
 
   ngOnInit(): void {
@@ -101,6 +108,7 @@ export class InsertareditarComponentContagio implements OnInit {
     });
   }
 
+
   aceptar(): void {
     if (this.form.valid) {
       const valores = this.form.getRawValue();
@@ -110,6 +118,7 @@ export class InsertareditarComponentContagio implements OnInit {
       this.contagio.zona.idZona = valores.zon;
       this.contagio.usuario.idUsuario = valores.usr;
       this.contagio.enfermedad.idEnfermedad = valores.enf;
+
 
       if (this.edicion) {
         this.contagio.idContagio = this.id;
@@ -121,6 +130,7 @@ export class InsertareditarComponentContagio implements OnInit {
           this.cS.list().subscribe(data => this.cS.setList(data));
         });
       }
+
 
       this.router.navigate(['homes']);
 

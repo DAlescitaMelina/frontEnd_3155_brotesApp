@@ -1,22 +1,45 @@
-<div class="title-container">
-  <div style="text-align: center" class="title">
-    <h1>Cantidad de Enfermedades por Provincia</h1>
+<div class="formulario-container">
+      <div class="title" style="text-align: center;">
+    <h1>Cantidad de enfermedades por provincia</h1>
   </div>
+  <form (ngSubmit)="buscarPorProvincia()">
+    <mat-form-field appearance="fill">
+      <mat-label>Provincia</mat-label>
+      <input
+        matInput
+        [(ngModel)]="provincia"
+        name="provincia"
+        placeholder="Ingrese una provincia"
+        required
+      />
+    </mat-form-field>
+    <button mat-raised-button color="primary" type="submit">Buscar</button>
+  </form>
 
-  <div style="text-align: center" class="chart-container" *ngIf="hasData">
-    <canvas
-      baseChart
-      [datasets]="barChartData"
-      [labels]="barChartLabels"
-      [options]="barChartOptions"
-      [legend]="barChartLegend"
-      [type]="barChartType"
-    >
-    </canvas>
-  </div>
+<div *ngIf="hasData">
+  <!--<h2>Cantidad de enfermedades por provincia</h2> -->
 
-  <div class="no-data" *ngIf="!hasData">
-    <mat-icon class="no-data-icon">info_outline</mat-icon>
-    <p class="no-data-message">No hay datos disponibles para mostrar.</p>
-  </div>
+  <!-- Leyenda de total de enfermedades -->
+  <p *ngIf="hasData" class="leyenda">
+    Total de enfermedades encontradas en "{{ provincia }}": <strong>{{ totalEnfermedades }}</strong>
+  </p>
 </div>
+
+<!-- Gráfico -->
+<div *ngIf="hasData">
+  <canvas
+    baseChart
+    [data]="barChartData"
+    [type]="barChartType"
+    [options]="barChartOptions"
+    [legend]="barChartLegend"
+  ></canvas>
+</div>
+
+<!-- Mensaje si no hay datos -->
+<div *ngIf="!hasData && fueBuscado">
+  <p class="mensaje-error">
+    No se encontraron resultados para la provincia ingresada.
+  </p>
+</div>
+ </div>

@@ -32,6 +32,11 @@ import { seguridadGuard } from './guard/seguridad.guard';
 import { Home } from './components/home/home';
 import { Qw1Component } from './components/reportes/qw1/qw1';
 import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
+import { sintomasEnfermedad } from './models/sintomasEnfermedad';
+import { InsertareditarComponentSintomasEnfermedad } from './components/sintomas-enfermedad/insertareditar/insertareditar';
+import { SintomasEnfermedad } from './components/sintomas-enfermedad/sintomas-enfermedad';
+import { PrevencionComponent } from './components/prevenciones/prevencion.component';
+import { InsertareditarPrevencionComponent } from './components/prevenciones/insertareditar-prevencion/insertareditar-prevencion.component';
 
 
 
@@ -105,7 +110,7 @@ export const routes: Routes = [
     //enfermedad
    { path:'enfermedades',component:EnfermedadComponent,
         children:[
-            {path:'nuevo',component:Insertareditar},
+            {path:'inserta',component:Insertareditar},
             {path:'ediciones/:id', component:Insertareditar}
         ],
             canActivate: [seguridadGuard],
@@ -118,6 +123,16 @@ export const routes: Routes = [
         ],
             canActivate: [seguridadGuard],
      },
+
+          //SintomasEnfermedad
+     { path:'sintomasE',component:SintomasEnfermedad,
+        children:[
+            {path:'nuevo',component:InsertareditarComponentSintomasEnfermedad},
+            {path:'ediciones/:id', component:InsertareditarComponentSintomasEnfermedad}
+        ],
+            canActivate: [seguridadGuard],
+     },
+
        //usuario
      { path:'usuarios',component:UsuarioComponent,
         children:[
@@ -150,37 +165,22 @@ export const routes: Routes = [
         children:[
             {path:'nuevo',component:InsertareditarNotificacionComponent},
             {path:'ediciones/:id', component:InsertareditarNotificacionComponent}
-
-        ]
+        ],
+          canActivate: [seguridadGuard],
      },
 
-
-    //reportes
-    {   path:'reportes',component:ReportesComponent,
+    //prevenciones
+    { path:'prevenciones',component:PrevencionComponent,
         children:[
-        //Q_WDTO  
-        {path:'qw1',component:Qw1Component},
-
+          {path:'nuevo',component:InsertareditarPrevencionComponent},
+            {path:'ediciones/:id', component:InsertareditarPrevencionComponent}
         ],
             canActivate: [seguridadGuard],
-     },
+    },
 
+    //reportes
     {
         path:'reportes',component:ReportesComponent,
-        children:[
-        //Q_1BDTO
-        {path:'cantidades-BrotesActivos-PorZona',component:Q1bdto},
-         //Q_2BDTO
-        {path:'cantidadBrotesTotales',component:Q2bdto},
-        
-        //Q_1DDTO
-        {path:'qd1',component:QD1},
-        //Q_2DDTO
-        {path:'qd2',component:QD2Component},
-                
-        //Q_1TDTO
-        {path:'qt1',component:Qt1Component}
-        ],
          canActivate: [seguridadGuard],
     },
   

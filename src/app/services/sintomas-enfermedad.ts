@@ -12,13 +12,18 @@ export class SintomasEnfermedadService  {
   private listaCambio = new Subject<sintomasEnfermedad[]>();
   constructor(private http:HttpClient) { }
   list() {
-      return this.http.get<sintomasEnfermedad[]>(this.url);
+      return this.http.get<sintomasEnfermedad[]>(this.url +"/lista");
     }
     listId(id: number) {
       return this.http.get<sintomasEnfermedad>(`${this.url}/${id}`);
     }
+
+    insert(se:sintomasEnfermedad){
+      return this.http.post(this.url+"/inserta",se)
+    }
+
     update(se:sintomasEnfermedad){
-      return this.http.put(this.url,se);
+      return this.http.put(this.url+"/modifica",se);
     }
     delete(id: number) {
       return this.http.delete(`${this.url}/${id}`);

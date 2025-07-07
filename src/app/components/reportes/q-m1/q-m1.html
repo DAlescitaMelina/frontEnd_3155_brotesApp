@@ -1,0 +1,24 @@
+<div class="fondo">
+  <div class="title-container">
+    <div class="title" style="text-align: center;">
+      <h1>Síntomas más comunes por enfermedad</h1>
+    </div>
+
+    <div class="table-container" style="display: flex; justify-content: center; margin-top: 30px;">
+      <table class="custom-table">
+        <thead>
+          <tr>
+            <th>Enfermedad</th>
+            <th>Síntoma</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of datosTabla">
+            <td>{{ item.nombreEnfermedad }}</td>
+            <td>{{ item.nombreSintoma }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
