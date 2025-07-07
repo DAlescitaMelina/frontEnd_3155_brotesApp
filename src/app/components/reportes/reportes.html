@@ -1,7 +1,56 @@
-
-<router-outlet></router-outlet> 
-<div [hidden]="route.children.length !==0">
-    <app-q1bdto></app-q1bdto>
+<div class="bienvenida">
+    <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
+    <span class="welcome-text">Reportes Consolidados</span>
 </div>
  
+<span class="spacer"></span>
 
+<div class="dashboard-container">
+<div class="dashboard-grid">
+  <div class="dashboard-card">
+    <h2>Reporte D1</h2>
+    <div class="dashboard-content">
+      <app-q-d1></app-q-d1>
+    </div>
+  </div>
+
+  <div class="dashboard-card">
+    <h2>Reporte B1</h2>
+    <div class="dashboard-content">
+      <app-q1bdto></app-q1bdto>
+    </div>
+  </div>
+
+  <!-- W1-->
+  <div class="dashboard-card">
+    <h2>Reporte T1</h2>
+    <div class="dashboard-content">
+      <app-qt1></app-qt1>
+    </div>
+  </div>
+
+    <div class="dashboard-card">
+        <h2>Reporte D2</h2>
+        <div class="dashboard-content">
+        <app-q-d2></app-q-d2>
+        </div>
+    </div>
+  
+
+  <div class="dashboard-card">
+    <h2>Reporte B2</h2>
+    <div class="dashboard-content">
+      <app-q2bdto></app-q2bdto>
+    </div>
+  </div>
+
+  <!-- T1-->
+  <div class="dashboard-card">
+    <h2>Reporte W1</h2>
+    <div class="dashboard-content">
+      <app-qw1></app-qw1>
+    </div>
+  </div>
+
+ 
+</div>

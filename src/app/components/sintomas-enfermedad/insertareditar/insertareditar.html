@@ -1,0 +1,25 @@
+ <div class="form-sintomasEnfermedad">
+  <div id="titulo"><h1>{{edicion ? 'Modificar síntoma de Enfermedad': 'Registro de síntoma de Enfermedad'}}</h1>
+  </div>
+  <div>
+    <form [formGroup]="form" (submit)="aceptar()">
+      <mat-form-field  *ngIf="edicion">
+        <mat-label>ID</mat-label>
+        <input matInput formControlName="codigo" />
+        <mat-error *ngIf="form.get('codigo')?.hasError('required')">
+          El código es obligatorio para actualizar, brindar un código
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <mat-form-field>
+        <mat-label>Transmision</mat-label>
+        <input matInput formControlName="sintomaE" />
+        <mat-error *ngIf="form.get('sintomaE')?.hasError('required')">
+          El síntoma es obligatorio!!
+        </mat-error>
+      </mat-form-field>
+      <br />
+      <button matButton="filled">Registrar</button>
+    </form>
+  </div>
+</div>

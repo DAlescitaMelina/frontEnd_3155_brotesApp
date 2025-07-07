@@ -1,108 +1,78 @@
 <mat-toolbar class="custom-toolbar" *ngIf="verificar()"> 
   <!-- LOGO -->
   <button class="logo">
-   <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
-   </button>
-    <span class="spacer"></span>
+    <img src="logo.png" alt="BrotesApp Logo" class="logo-img">
+  </button>
+  <span class="spacer"></span>
 
- <!-- HOME -->
-    <div>
-    <button mat-button [routerLink]="['/homes']">
-      <mat-icon>home</mat-icon>Home
+  <!-- HOME -->
+  <button mat-button [routerLink]="['/homes']">
+    <mat-icon>home</mat-icon> Home
+  </button>
+
+  <!-- ENTIDADES (botones con menú) -->
+  <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>person</mat-icon> Usuario
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuRol" class="btn-rojo" *ngIf="isAdmin()">
+    <mat-icon>business</mat-icon> Roles
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuZona" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>business</mat-icon> Zonas
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuTiposTransmision" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>coronavirus</mat-icon> Tipos de transmisión
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuTiposEnfermedad" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>business</mat-icon> Tipos de enfermedad
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuSintomasEnfermedad" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>business</mat-icon> Síntomas de Enfermedades
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuContagio" class="btn-rojo" *ngIf="isPersona() || isAdmin() ">
+    <mat-icon>sick</mat-icon> Contagios
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuEnfermedades" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>business</mat-icon> Enfermedades
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>business</mat-icon> Enfermedad-Síntoma
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuBrotes" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>track_changes</mat-icon> Brotes
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuPrevenciones" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>warning</mat-icon> Prevenciones
+  </button>
+
+  <button mat-button [matMenuTriggerFor]="menuNotificaciones" class="btn-rojo" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>flag</mat-icon> Notificaciones
+  </button>
+
+  <!-- BOTÓN SIMPLE DE REPORTES -->
+  <button mat-button class="btn-rojo" [routerLink]="'/reportes'" *ngIf="isAdmin() || isAutoridad()">
+    <mat-icon>file_copy</mat-icon> Reportes
+  </button>
+
+  <!-- LOGIN USUARIO -->
+  <span class="toolbar-spacer"></span>
+  <div class="right-menu">
+    <button mat-button [matMenuTriggerFor]="menuSalir">
+      <mat-icon>person</mat-icon> Usuario
     </button>
-    </div> 
-
- <!-- ENTIDADES -->
-  <div> 
-  <button mat-button [matMenuTriggerFor]="menuUsuario" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>person</mat-icon>
-   Usuario
-  </button>
- </div>
- <div>
-  <button mat-button [matMenuTriggerFor]="menuRol" class="btn-rojo" *ngIf="isAdmin()"> 
-   <mat-icon>business</mat-icon>
-   Roles
-  </button>
- </div>
- <div>
-  <button mat-button [matMenuTriggerFor]="menuZona" class="btn-rojo"   *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>business</mat-icon>
-   Zonas
-  </button>
- </div>
- <div>
-  <button mat-button [matMenuTriggerFor]="menuTiposTransmision" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>coronavirus</mat-icon>
-   Tipos de transmisión
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuTiposEnfermedad" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>business</mat-icon>
-   Tipos de enfermedad
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuSintomasEnfermedad" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>business</mat-icon>
-   Sintomas de Enfermedades
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuContagio" class="btn-rojo"   *ngIf="isAdmin() || isPersona()">
-   <mat-icon>sick</mat-icon>
-   Contagios
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuEnfermedades" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>business</mat-icon>
-   Enfermedades
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuEnfermedadSintoma" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>business</mat-icon>
-   Enfermedad-Sintoma
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuBrotes" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>track_changes</mat-icon>
-   Brotes
-  </button>
- </div>
-   <div>
-  <button mat-button [matMenuTriggerFor]="menuPrevenciones" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>warning</mat-icon>
-   Prevenciones
-  </button>
- </div>
-  <div>
-  <button mat-button [matMenuTriggerFor]="menuNotificaciones" class="btn-rojo"   *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>flag</mat-icon>
-   Notificaciones
-  </button>
   </div>
-   <div>
-  <button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo"  *ngIf="isAdmin() || isAutoridad()">
-   <mat-icon>file_copy</mat-icon>
-   Reportes
-  </button>
- </div> 
-
-
- <!-- LOGIN USUARIO -->
- <span class="toolbar-spacer"></span>
- <div class="right-menu">
-    <button mat-button [matMenuTriggerFor]="menuSalir" >
-      <mat-icon>person</mat-icon>Usuario
-    </button>
- </div>
-
 </mat-toolbar>
-
+ 
 
 <mat-menu #menuZona="matMenu">
  <button mat-menu-item routerLink="/zonas">Listar</button>
@@ -130,11 +100,6 @@
 <button mat-menu-item routerLink="/EnfermedadSintomasE">Listar</button>
 <button mat-menu-item routerLink="/EnfermedadSintomasE/nuevoESE">Registrar</button>
 </mat-menu>
-<button mat-button [matMenuTriggerFor]="menuReportes" class="btn-rojo">
-   <mat-icon>file_copy</mat-icon>
-   Reportes
-  </button>
-
 
 <mat-menu #menuUsuario="matMenu">
 <button mat-menu-item routerLink="/usuarios">Listar</button>
@@ -153,10 +118,7 @@
 <button mat-menu-item routerLink="/brotes">Listar</button>
 <button mat-menu-item routerLink="/brotes/nuevo">Registrar</button>
 </mat-menu>
-<mat-menu #menuReportes="matMenu">
- <button mat-menu-item routerLink="/reportes/qd1">QD1</button> 
- <button mat-menu-item routerLink="/reportes/qd2">QD2</button> 
-</mat-menu>
+
 <mat-menu #menuPrevenciones="matMenu">
 </mat-menu>
 
@@ -166,15 +128,16 @@
 <button mat-menu-item routerLink="/notificaciones/nuevo">Registrar</button>
 </mat-menu>
 
-<mat-menu #menuReportes="matMenu">
+<!-- <mat-menu #menuReportes="matMenu">
 <button mat-menu-item routerLink="/reportes/qw1">Cantidad de usuarios Notificados por brotes y Cantidad de contagios por Tipo de Transmisión</button>
 <button mat-menu-item routerLink="/reportes/cantidades-BrotesActivos-PorZona">Cantidad brotes activos por zona</button> 
 <button mat-menu-item routerLink="/reportes/cantidadBrotesTotales">Cantidad brotes totales</button> 
 <button mat-menu-item routerLink="/reportes/qd1">Cantidad de Enfermedades por Provincia</button> 
+<button mat-menu-item routerLink="/reportes/qd2">Cantidad de Enfermedades por Provincia</button> 
 <button mat-menu-item routerLink="/reportes/qd2">Cantidad de Enfermedades por Tipo de Transmisión</button> 
 <button mat-menu-item routerLink="/reportes/qt1">Cantidad de Usuarios por Distrito y Cantidad de Contagios por Distrito</button>
 
-</mat-menu>
+</mat-menu>-->
 
  <!-- MENU-LOGIN Y ROL -->
 <mat-menu #menuSalir="matMenu">

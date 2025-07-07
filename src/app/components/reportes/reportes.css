@@ -1,0 +1,62 @@
+.bienvenida {
+  background-color: #007792;  
+  padding: 20px;
+  text-align: center;
+  color: white;  
+  font-size: 5em;
+  border-radius: 8px; 
+  font-weight: bold;
+}
+
+.dashboard-container {
+  display: flex;
+  justify-content: center;      /* centra horizontalmente */
+  padding: 10px;                /* espacio alrededor */
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 0.7fr); /* 2 columnas iguales */
+  gap: 40px;                             /* separación entre tarjetas */
+  padding: 10px;
+}
+
+.dashboard-card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  height: 900px;       /* altura fija para mantenerlos cuadrados */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 1 / 1; /* hace que el ancho y alto sean iguales => cuadrados */
+  transition: transform 0.3s;
+}
+
+.dashboard-card:hover {
+  transform: translateY(-5px);
+}
+
+.dashboard-card h2 {
+  margin-bottom: 15px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.dashboard-content {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+ 
+.dashboard-content canvas,
+.dashboard-content table {
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0;
+  padding: 0;
+  object-fit: contain;
+}
+

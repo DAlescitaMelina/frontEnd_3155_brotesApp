@@ -1,4 +1,8 @@
-<div class="formulario">
+<div class="formulario-container">
+    <div class="title" style="text-align: center;">
+    <h1>Cantidad de enfermedades por transmision por provincia</h1>
+  </div>
+  
   <form (ngSubmit)="buscarPorProvincia()">
     <mat-form-field appearance="fill">
       <mat-label>Provincia</mat-label>
@@ -14,7 +18,7 @@
   </form>
   <div *ngIf="hasData">
      
-    <h2>Cantidad de enfermedades por transmision por provincia</h2>
+    <!-- <h2>Cantidad de enfermedades por transmision por provincia</h2> -->
 
     <p *ngIf="hasData" class="leyenda">
       Resultados para la provincia: <strong>{{ provincia }}</strong>
