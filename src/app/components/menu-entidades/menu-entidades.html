@@ -87,8 +87,8 @@
  <button mat-menu-item routerLink="/tiposT/nuevo">Registrar</button>
 </mat-menu>
 <mat-menu #menuContagio="matMenu">
- <button mat-menu-item routerLink="/contagios">Listar</button>
- <button mat-menu-item routerLink="/contagios/nuevo">Registrar</button>
+ <button mat-menu-item routerLink="/contagios" *ngIf="isAdmin()">Listar</button>
+ <button mat-menu-item routerLink="/contagios/nuevo" *ngIf="isPersona()">Registrar</button>
 </mat-menu>
 
 <mat-menu #menuEnfermedades="matMenu">

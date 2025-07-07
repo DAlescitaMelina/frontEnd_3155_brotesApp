@@ -6,6 +6,7 @@ import { UsuarioRegistro } from '../models/usuario-registro';
 import { Usuario } from '../models/usuario';
 import { UsuarioModi } from '../models/usuario-modi';
 import { QTDTO1 } from '../models/q_t1dto';
+import { ZonaUsuarioDTO } from '../models/ZonaUsuarioDTO';
 const base_url=environment.base
 @Injectable({
   providedIn: 'root'
@@ -40,8 +41,12 @@ export class UsuarioService  {
       this.listaCambio.next(listaNueva);
     }
 
-    
     getQW1(): Observable<QTDTO1[]> {
     return this.http.get<QTDTO1[]>(`${this.url}/cantidad-usuarios-zona`);
     }
+
+    getZonaYUsuario(): Observable<ZonaUsuarioDTO> {
+    return this.http.get<ZonaUsuarioDTO>(this.url+"/zona-usuario");
+}
+
 }
