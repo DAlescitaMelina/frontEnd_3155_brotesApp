@@ -1,4 +1,5 @@
 <div class="form-contagio">
+
     <div id="titulo">
         <h1>{{edicion ? 'Modificar tipo de trasmisión': 'Registro de tipo de trasmisión'}}</h1>
     </div>
@@ -11,6 +12,7 @@
                 <mat-datepicker-toggle matIconSuffix [for]="pickerDate"></mat-datepicker-toggle>
                 <mat-datepicker #pickerDate></mat-datepicker>
                 <mat-error *ngIf="form.get('fecha')?.hasError('required')">
+
                     La fecha del contagio es obligatoria!!
                 </mat-error>
                 <mat-error *ngIf="form.get('fecha')?.hasError('fechaNoPasada')">

@@ -44,6 +44,7 @@ export class MenuEntidades {
   isAdmin() {
     return this.role === 'ADMIN';
   }
+
 }
 
 

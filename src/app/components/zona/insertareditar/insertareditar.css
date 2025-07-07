@@ -1,3 +1,13 @@
+.zona-cont {
+  background-color: #C8ECF6;  
+  min-height: 100vh;          
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 40px 20px;
+}
+
+
 .form-zona {
   display: flex;
   justify-content: center;   
@@ -5,9 +15,25 @@
   flex-direction: column;    
   height: 100%;       
   padding: 24px;
-  background-color: #C8ECF6;
+
 }
 #titu {
   margin-top: -40px;
   margin-bottom: 34px;
+}
+
+.zona-layout {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  justify-content: center;
+  max-width: 1100px;    
+  margin: 40px auto;    
+  padding: 0 20px;    
+}
+
+
+.mapa {
+  flex: 1;
+  min-width: 200px;
 }

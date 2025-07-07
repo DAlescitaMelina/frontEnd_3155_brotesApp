@@ -55,6 +55,8 @@ export class InsertareditarComponentUsuario implements OnInit {
     private route: ActivatedRoute
   ) {}
 
+  
+
   ngOnInit(): void {
     this.route.params.subscribe((data: Params) => {
       this.id = data['id'];
@@ -72,7 +74,7 @@ export class InsertareditarComponentUsuario implements OnInit {
       ro: ['', Validators.required],
     });
 
-    this.zS.list().subscribe(data => {
+    this.zS.listsina().subscribe(data => {
       this.listaZonas = data;
     });
     this.rS.list().subscribe(data => {
