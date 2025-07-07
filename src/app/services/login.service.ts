@@ -46,18 +46,20 @@ export class LoginService {
       const decodedToken = helper.decodeToken(token);
       return decodedToken?.sub || 'Usuario'; // 'sub' es típico para el username en JWT
     }
-getIdUsuario(): Observable<number> {
-  const token = sessionStorage.getItem('token');
-  if (!token) {
-    return of(0); // o `of(null)` si preferís usar `null` como vacío
+    return 'Invitado'; // Si es SSR, retorna por defecto
   }
 
-  const helper = new JwtHelperService();
-  const username = helper.decodeToken(token)?.sub;
+  getIdUsuario(): Observable<number> {
+    const token = sessionStorage.getItem('token');
+    if (!token) {
+      return of(0); // o `of(null)` si prefieres usar null como vacío
+    }
 
-  return this.http.get<any>(`http://localhost:8081/usuario/poruser/${username}`)
-    .pipe(map(usuario => usuario?.idUsuario || 0));
+    const helper = new JwtHelperService();
+    const username = helper.decodeToken(token)?.sub;
+
+    return this.http.get<any>(`http://localhost:8081/usuario/poruser/${username}`)
+      .pipe(map(usuario => usuario?.idUsuario || 0));
+  }
+
 }
-
-}
-

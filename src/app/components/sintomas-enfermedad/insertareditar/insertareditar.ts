@@ -23,7 +23,7 @@ import { sintomasEnfermedad } from '../../../models/sintomasEnfermedad';
 })
 export class InsertareditarComponentSintomasEnfermedad implements OnInit {
   form:FormGroup=new FormGroup({})
-  sintomasEn:SintomasEnfermedad = new sintomasEnfermedad()
+  sintomasEn:sintomasEnfermedad = new sintomasEnfermedad()
   id:number=0
   edicion:boolean=false
 
@@ -48,17 +48,17 @@ export class InsertareditarComponentSintomasEnfermedad implements OnInit {
   } 
   aceptar(){
     if(this.form.valid){
-      this.sintomasEnfermedad.=this.form.value.codigo
-      this.sintomasEnfermedad.nombreSintoma=this.form.value.nombreSintoma
+      this.sintomasEn.idSintomasE=this.form.value.codigo
+      this.sintomasEn.nombreSintoma=this.form.value.nombreSintoma
   
       if(this.edicion){
-          this.tS.update(this.sintomasEnfermedad).subscribe(data=>{
+          this.tS.update(this.sintomasEn).subscribe(data=>{
             this.tS.list().subscribe(data=>{
               this.tS.setList(data)
             })
           })
       }else{
-          this.tS.insert(this.sintomasEnfermedad).subscribe(()=>{
+          this.tS.insert(this.sintomasEn).subscribe(()=>{
             this.tS.list().subscribe(data=>{
               this.tS.setList(data)
             })

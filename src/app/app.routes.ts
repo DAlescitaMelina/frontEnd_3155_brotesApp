@@ -34,6 +34,7 @@ import { Qw1Component } from './components/reportes/qw1/qw1';
 import { TipoEnfermedadComponent } from './components/tipo-enfermedad/tipo-enfermedad.component';
 import { sintomasEnfermedad } from './models/sintomasEnfermedad';
 import { InsertareditarComponentSintomasEnfermedad } from './components/sintomas-enfermedad/insertareditar/insertareditar';
+import { SintomasEnfermedad } from './components/sintomas-enfermedad/sintomas-enfermedad';
 
 
 
@@ -122,7 +123,7 @@ export const routes: Routes = [
      },
 
           //SintomasEnfermedad
-     { path:'sintomasE',component:sintomasEnfermedad,
+     { path:'sintomasE',component:SintomasEnfermedad,
         children:[
             {path:'nuevo',component:InsertareditarComponentSintomasEnfermedad},
             {path:'ediciones/:id', component:InsertareditarComponentSintomasEnfermedad}
